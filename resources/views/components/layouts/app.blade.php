@@ -16,7 +16,7 @@
 
 
 
-<body class="font-text bg-bgPrimary text-fontDark overflow-x-hidden">
+<body class="font-text font-light bg-bgPrimary text-fontDark overflow-x-hidden">
     @include('partials.gtm')
 
    
