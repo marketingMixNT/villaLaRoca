@@ -93,7 +93,7 @@
 
 
 
-<footer class="bg-primary-400 py-12 text-fontLight pb-24 lg:pb-12">
+<footer class="bg-secondary-400 py-12 text-fontLight pb-24 lg:pb-12">
    
     <div class="max-w-screen-xl mx-auto space-y-10">
       
@@ -154,7 +154,10 @@
             <hr class="opacity-40" />
             <ul class="flex justify-center items-center gap-8 text-xs py-4">
                 <li>
-                    <a href="" class="link-hover font-light">   {{__('footer.privacy-policy')}}</a>
+                    <a href="" class="link-hover font-light">   Polityka Prywatności</a>
+                </li>
+                <li>
+                    <a href="" class="link-hover font-light">   Regulamin</a>
                 </li>
            
             </ul>

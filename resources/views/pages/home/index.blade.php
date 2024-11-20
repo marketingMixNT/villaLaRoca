@@ -6,6 +6,8 @@
      @include('pages.home.partials.about')
      @include('pages.home.partials.features')
      @include('pages.home.partials.rooms')
+     @include('pages.home.partials.banner')
+     @include('pages.home.partials.garden-spa')
      @include('pages.home.partials.cta')
      @include('pages.home.partials.testimonials')
      @include('pages.home.partials.neighborhood')

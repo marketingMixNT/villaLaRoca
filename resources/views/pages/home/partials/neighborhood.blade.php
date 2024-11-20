@@ -1,5 +1,7 @@
 <!--CONTAINER-->
-<section class="pt-12 pb-20">
+<section class="pt-12 pb-20 relative overflow-hidden">
+
+    <img src="{{asset('assets/images/mandala.png')}}" alt="" class="absolute -bottom-64 -right-52  opacity-5 spin -z-10">
     <x-container class=" max-w-screen-2xl">
 
         <div class="grid lg:grid-cols-3 gap-12 lg:gap-20 2xl:gap-32 pt-12 lg:py-20 ">
@@ -62,7 +64,7 @@
                     class="pt-12 sm:mt-0 self-center sm:self-end flex flex-col justify-center sm:justify-end items-center sm:items-end gap-3 mb-12 sm:mb-24 lg:mb-12 ">
 
 
-                    <x-link href="" title="{{__('global.travel-link')}}" aria="Lokalne atrakcje"/>
+                    <x-link href="" title="dowiedz się więcej" aria="Lokalne atrakcje"/>
                 </div>
             </div>
 
@@ -72,8 +74,9 @@
 
                 <div class="flex flex-col justify-between items-center gap-12 ">
                     <x-title>
-                        rerewr</x-title>
-                    <x-text-wrapper>  eqweqweq
+                        Odkryj oszałamiające piękno Zakopanego
+</x-title>
+                    <x-text-wrapper>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit molestiae accusantium quasi ut tenetur explicabo quas? Aspernatur, a! Suscipit explicabo aliquid rem ullam consectetur. At illum obcaecati culpa officiis sit porro minima.
                     </x-text-wrapper>
 
           

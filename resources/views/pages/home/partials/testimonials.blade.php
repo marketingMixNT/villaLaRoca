@@ -1,4 +1,6 @@
-<section class="py-12 lg:pt-20 pb-8 ">
+<section class="py-12 lg:pt-20 pb-8 relative overflow-hidden">
+
+    <img src="{{asset('assets/images/mandala.png')}}" alt="" class="absolute -top-64 -left-52  opacity-5 spin -z-10">
 
     <x-container class="max-w-screen-xl mx-auto space-y-20">
 
@@ -31,8 +33,11 @@
                 @endforeach
 
             </div> --}}
-        <x-heading-horizontal title="wwww">
-            <x-text-wrapper>wwwww</x-text-wrapper>
+        <x-heading-horizontal title="Słowa naszych gości mówią wszystko
+">
+            <x-text-wrapper>Naszym priorytetem jest zapewnienie komfortu i wyjątkowych wrażeń. Z dumą dzielimy się opiniami osób, które odwiedziły nasz hotel i doświadczyły naszej gościnności. Przeczytaj, co o nas mówią, i przekonaj się, dlaczego warto nas odwiedzić!
+
+            </x-text-wrapper>
            
           
             
@@ -66,6 +71,22 @@
                         <img src="{{ asset('assets/icons/quote.svg') }}" alt="" class="absolute -top-7 -left-12 w-12 opacity-50 ">
                         <x-text class="text-lg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste officiis quibusdam eveniet ad, minima exercitationem, officia fuga unde corrupti quos magni vero laboriosam iusto natus eligendi, deleniti quam doloremque consequuntur. Consectetur et quas, tempora sed dolore quisquam voluptatibus corporis odio!</x-text>
                         <span class="font-text text-sm text-accent-400 tracking-widest ">Marian, google.pl</span>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+   
+                    <div class="testimonial relative mx-12 mt-12 flex flex-col gap-8 jc-center items-center">
+                        <img src="{{ asset('assets/icons/quote.svg') }}" alt="" class="absolute -top-7 -left-12 w-12 opacity-50 ">
+                        <x-text class="text-lg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste officiis quibusdam eveniet ad, minima exercitationem, officia fuga unde corrupti quos magni vero laboriosam iusto natus eligendi, deleniti quam doloremque consequuntur. Consectetur et quas, tempora sed dolore quisquam voluptatibus corporis odio!</x-text>
+                        <span class="font-text text-sm text-accent-400 tracking-widest ">Waldek, google.pl</span>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+   
+                    <div class="testimonial relative mx-12 mt-12 flex flex-col gap-8 jc-center items-center">
+                        <img src="{{ asset('assets/icons/quote.svg') }}" alt="" class="absolute -top-7 -left-12 w-12 opacity-50 ">
+                        <x-text class="text-lg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste officiis quibusdam eveniet ad, minima exercitationem, officia fuga unde corrupti quos magni vero laboriosam iusto natus eligendi, deleniti quam doloremque consequuntur. Consectetur et quas, tempora sed dolore quisquam voluptatibus corporis odio!</x-text>
+                        <span class="font-text text-sm text-accent-400 tracking-widest ">Arnold, google.pl</span>
                     </div>
                 </div>
 

@@ -10,8 +10,10 @@ export default {
             colors: {
                 primary: {
                     400: "#f8f5f1",
+                    800:"#F3EBE2"
                 },
                 secondary: {
+                    100: "#898fa3",
                     200: "#575c6b",
                     400: "#4c505d",
                 },

@@ -12,7 +12,7 @@
 
 <x-shared.footer/>
 
-<x-shared.scroll-to-top />
+{{-- <x-shared.scroll-to-top /> --}}
 <x-shared.mobile-buttons.mobile-buttons />
 
 {{-- <x-footer :home="$home" /> --}}
