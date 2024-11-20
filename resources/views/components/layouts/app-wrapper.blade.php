@@ -1,5 +1,6 @@
 {{--
 <x-preloader :home="$home" /> --}}
+<x-shared.preloader />
 <x-shared.topbar />
 <x-shared.header.header />
 {{--
@@ -9,9 +10,14 @@
 
 {{ $slot }}
 
+<x-shared.footer/>
+
+<x-shared.scroll-to-top />
+<x-shared.mobile-buttons.mobile-buttons />
+
+{{-- <x-footer :home="$home" /> --}}
 {{--
 <x-map :home="$home" />
-<x-footer :home="$home" />
 <x-mobile-buttons :home="$home" />
 
 <x-scroll-to-top />
