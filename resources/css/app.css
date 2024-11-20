@@ -33,3 +33,18 @@
     @apply transform  ease-in 
            -translate-y-[110%] opacity-0 duration-700;
 }
+
+
+.spin{
+
+    animation: spin 120s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

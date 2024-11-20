@@ -7,7 +7,7 @@
     </div>
 
     <div
-        class="w-full prose prose-headings:font-extralight prose-headings:text-3xl prose-headings:text-fontDark prose-p:text-base prose-p:font-extralight flex flex-col justify-center items-start prose-p:leading-loose prose-ul:list-none max-w-full">
+        class="w-full prose prose-headings:font-extralight prose-headings:text-3xl prose-headings:text-fontDark prose-headings:font-heading prose-h2:text-4xl prose-p:text-base prose-p:font-extralight flex flex-col justify-center items-start prose-p:leading-loose prose-ul:list-none max-w-full">
         {{$slot}}
     </div>
 

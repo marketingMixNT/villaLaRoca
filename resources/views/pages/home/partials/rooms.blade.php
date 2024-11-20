@@ -1,4 +1,4 @@
-<section id="o-nas" class="py-16 md:pt-16 md:pb-24 ">
+<section id="" class="py-16 md:py-24 ">
     <x-container class="max-w-screen-xl space-y-24 ">
 
 

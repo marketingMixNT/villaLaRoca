@@ -3,9 +3,9 @@
     <x-layouts.app-wrapper>
 
      @include('pages.home.partials.hero')
-     @include('pages.home.partials.rooms')
-     @include('pages.home.partials.features')
      @include('pages.home.partials.about')
+     @include('pages.home.partials.features')
+     @include('pages.home.partials.rooms')
      @include('pages.home.partials.cta')
      @include('pages.home.partials.testimonials')
      @include('pages.home.partials.neighborhood')
