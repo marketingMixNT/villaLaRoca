@@ -1,10 +1,12 @@
 created:
-    - database/factories/GalleryPageFactory.php
-    - database/factories/GalleryFactory.php
-    - database/migrations/2024_11_21_082257_create_gallery_pages_table.php
-    - database/migrations/2024_11_21_082258_create_galleries_table.php
-    - app/Models/GalleryPage.php
-    - app/Models/Gallery.php
+    - database/factories/AboutPageFactory.php
+    - database/factories/AboutPageBlockFactory.php
+    - database/migrations/2024_11_21_091250_create_about_pages_table.php
+    - database/migrations/2024_11_21_091251_create_about_page_blocks_table.php
+    - app/Models/AboutPage.php
+    - app/Models/AboutPageBlock.php
 models:
     GalleryPage: { meta_title: json, meta_desc: json, header_heading: json, banner: text, heading: 'json nullable', text: 'json nullable' }
     Gallery: { category: json, images: text, sort: 'integer nullable' }
+    AboutPage: { meta_title: json, meta_desc: json, header_heading: json, banner: text, relationships: { hasMany: AboutPageBlock } }
+    AboutPageBlock: { image: text, text: json, sort: 'integer nullable', relationships: { belongsTo: AboutPage } }

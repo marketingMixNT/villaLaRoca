@@ -1,4 +1,18 @@
 models:
+ AboutPage:
+    meta_title: json
+    meta_desc: json
+    header_heading: json
+    banner: text
+    relationships:
+      hasMany: AboutPageBlock
+  AboutPageBlock:
+    image: text
+    text: json
+    sort: integer nullable
+    relationships:
+      belongsTo: AboutPage
+
   GalleryPage:
     meta_title: json
     meta_desc: json
