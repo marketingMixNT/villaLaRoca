@@ -61,7 +61,7 @@ class ContactForm extends Component
         ], function ($message) {
             $message->from(env('MAIL_USERNAME'))
                 ->to(env('MAIL_TO'))
-                ->subject('Nowa wiadomość ze strony Hotel 32');
+                ->subject('Nowa wiadomość ze strony Villa la Roca');
         });
 
         $this->successMessage =  __('global.contact.success-message');

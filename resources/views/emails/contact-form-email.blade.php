@@ -57,7 +57,7 @@
                         <div class="sm-my-8" style="margin-top: 48px; margin-bottom: 48px; text-align: center">
                             <a href="https://villalaroca.pl">
                                 <img src="{{ asset('assets/logo/logo--dark.png') }}" width="200"
-                                    alt="logo Hotel 32" style="max-width: 100%; vertical-align: middle">
+                                    alt="logo Villa la Roca" style="max-width: 100%; vertical-align: middle">
                             </a>
                         </div>
                         <table style="width: 100%;" cellpadding="0" cellspacing="0" role="none">
