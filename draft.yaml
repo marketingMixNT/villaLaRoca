@@ -1,31 +1,13 @@
 models:
-  Home:
-   meta_title: json
-   meta_desc: json
-   title: json
-   logo: text
-   phone: text
-   phone_second: text nullable
-   phone_third: text nullable
-   mail: text
-    city: text
-    address: text
-    bank: text nullable
-    bank_account: text nullable
-    booking_link: json
-    booking_script: text
-    map: text
-    map_link: text
-    slider_title: json
-    slider_subtitle: json
-    slider_images: text
-    rooms_heading: json
-    rooms_text: json
-  relationships:
-      hasMany: HomeAboutBlock
-  HomeAboutBlock:
-    image: text
-    text: json
+  GalleryPage:
+    meta_title: json
+    meta_desc: json
+    header_heading: json
+    banner: text
+    heading: json nullable
+    text: json nullable
+
+  Gallery:
+    category: json
+    images: text
     sort: integer nullable
-    relationships:
-      belongsTo: Home

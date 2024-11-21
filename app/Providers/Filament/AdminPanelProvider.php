@@ -32,12 +32,13 @@ class AdminPanelProvider extends PanelProvider
             ->login()
             ->passwordReset()
             ->sidebarCollapsibleOnDesktop()
+          
             ->favicon('/favicon/favicon.ico')
-            ->brandLogo('/assets/logo/logo-dark.png')
-            ->darkModeBrandLogo('/assets/logo/logo.png')
+            ->brandLogo('/assets/logo/logo--dark.png')
+            ->darkModeBrandLogo('/assets/logo/logo--light.png')
             ->brandLogoHeight(fn() => auth()->check() ? '40px' : '100px')
             ->colors([
-                'primary' => Color::hex('#013333'),
+                'primary' => Color::hex('#575c6b'),
                 'gray' => Color::Slate,
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')

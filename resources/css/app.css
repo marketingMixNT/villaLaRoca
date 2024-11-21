@@ -35,6 +35,22 @@
 }
 
 
+.gallery-btn {
+  @apply bg-gray-900;
+}
+
+
+@layer utilities {
+    .clip-path-circle-0 {
+      clip-path: circle(0% at 100% 100%);
+    }
+    .clip-path-circle-full {
+      clip-path: circle(150% at 100% 100%);
+    }
+  }
+  
+
+
 .spin{
 
     animation: spin 120s linear infinite;

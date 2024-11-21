@@ -1,5 +1,7 @@
 import './bootstrap';
 import './partials/footerYear'
+import './partials/gallery'
+import './partials/lightbox'
 import './partials/mobileButtons'
 import './partials/mobileDropdown'
 import './partials/preloader'

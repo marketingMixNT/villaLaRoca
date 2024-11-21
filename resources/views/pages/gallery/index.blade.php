@@ -1,4 +1,4 @@
-<x-layouts.app title="Galeria" description="meta">
+<x-layouts.app title="{{$pageGallery->meta_title}}" description="{{$pageGallery->meta_desc}}">
 
     <x-layouts.app-wrapper>
 
@@ -11,27 +11,30 @@
 
             <x-container class="max-w-[1600px]">
 
+                
                 @if($pageGallery->heading && $pageGallery->text)
-                <x-heading-horizontal title="{{$pageGallery->heading}}" class="pb-32">
-                    <x-text-wrapper>{!!$pageGallery->text!!}
-                    </x-text-wrapper>
-                </x-heading-horizontal>
+                <div class="max-w-screen-lg mx-auto">
+                    <x-heading-horizontal title="{{$pageGallery->heading}}" class="pb-32">
+                        <x-text-wrapper>{!!$pageGallery->text!!}
+                        </x-text-wrapper>
+                    </x-heading-horizontal>
+                </div>
                 @endif
 
                 <div class="flex justify-center items-center gap-4 flex-wrap mb-12">
 
                     {{-- "All" Button --}}
                     <button
-                        class="border   px-8 py-3 uppercase text-xs duration-300 bg-primary-400   text-fontLight   gallery-btn filter-btn"
+                        class="border   px-8 py-3 uppercase text-xs duration-300 bg-secondary-400   text-fontLight   gallery-btn filter-btn"
                         data-title="">
-                        {{__('global.all')}}
+                        Wszystkie
                     </button>
 
                     {{-- Buttons to filter by title --}}
                     @foreach ($images as $image)
 
                     <button
-                        class="filter-btn border   px-8 py-3 uppercase text-xs duration-300  bg-primary-400   text-fontLight"
+                        class="filter-btn border   px-8 py-3 uppercase text-xs duration-300  bg-secondary-400   text-fontLight"
                         data-title="{{ $image->category }}">
                         {{ $image->category }}
                     </button>
