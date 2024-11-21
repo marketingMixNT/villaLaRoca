@@ -1,5 +1,18 @@
 models:
-  GardenAndSpaPage:
+  NeighborhoodPage:
+    meta_title: json
+    meta_desc: json
+    header_heading: json
+    banner: text
+    relationships:
+      hasMany: NeighborhoodPageBlock
+  NeighborhoodPageBlock:
+    image: text
+    text: json
+    sort: integer nullable
+    relationships:
+      belongsTo: NeighborhoodPage
+   GardenAndSpaPage:
     meta_title: json
     meta_desc: json
     header_heading: json
@@ -62,5 +75,3 @@ VillaRoomsPage:
     category: json
     images: text
     sort: integer nullable
-
-  

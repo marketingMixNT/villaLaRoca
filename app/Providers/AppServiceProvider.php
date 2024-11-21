@@ -9,20 +9,24 @@ use App\Models\AboutPageBlock;
 use App\Models\VillaRoomsPage;
 use App\Models\VillaCommonPage;
 use App\Models\GardenAndSpaPage;
+use App\Models\NeighborhoodPage;
 use App\Observers\GalleryObserver;
 use App\Models\VillaRoomsPageBlock;
 use App\Models\VillaCommonPageBlock;
 use App\Observers\AboutPageObserver;
 use App\Models\GardenAndSpaPageBlock;
+use App\Models\NeighborhoodPageBlock;
 use App\Observers\GalleryPageObserver;
 use Illuminate\Support\ServiceProvider;
 use App\Observers\AboutPageBlockObserver;
 use App\Observers\VillaRoomsPageObserver;
 use App\Observers\VillaCommonPageObserver;
 use App\Observers\GardenAndSpaPageObserver;
+use App\Observers\NeighborhoodPageObserver;
 use App\Observers\VillaRoomsPageBlockObserver;
 use App\Observers\VillaCommonPageBlockObserver;
 use App\Observers\GardenAndSpaPageBlockObserver;
+use App\Observers\NeighborhoodPageBlockObserver;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -50,6 +54,10 @@ class AppServiceProvider extends ServiceProvider
         //Garden & Spa
         GardenAndSpaPage::observe(GardenAndSpaPageObserver::class);
         GardenAndSpaPageBlock::observe(GardenAndSpaPageBlockObserver::class);
+
+        // Neighborhood
+        NeighborhoodPage::observe(NeighborhoodPageObserver::class);
+        NeighborhoodPageBlock::observe(NeighborhoodPageBlockObserver::class);
 
         // Villa common
         VillaCommonPage::observe(VillaCommonPageObserver::class);

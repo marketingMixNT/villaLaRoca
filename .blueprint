@@ -1,10 +1,10 @@
 created:
-    - database/factories/GardenAndSpaPageFactory.php
-    - database/factories/GardenAndSpaPageBlockFactory.php
-    - database/migrations/2024_11_21_111703_create_garden_and_spa_pages_table.php
-    - database/migrations/2024_11_21_111704_create_garden_and_spa_page_blocks_table.php
-    - app/Models/GardenAndSpaPage.php
-    - app/Models/GardenAndSpaPageBlock.php
+    - database/factories/NeighborhoodPageFactory.php
+    - database/factories/NeighborhoodPageBlockFactory.php
+    - database/migrations/2024_11_21_113546_create_neighborhood_pages_table.php
+    - database/migrations/2024_11_21_113547_create_neighborhood_page_blocks_table.php
+    - app/Models/NeighborhoodPage.php
+    - app/Models/NeighborhoodPageBlock.php
 models:
     GalleryPage: { meta_title: json, meta_desc: json, header_heading: json, banner: text, heading: 'json nullable', text: 'json nullable' }
     Gallery: { category: json, images: text, sort: 'integer nullable' }
@@ -16,3 +16,5 @@ models:
     VillaCommonPageBlock: { image: text, text: json, sort: 'integer nullable', relationships: { belongsTo: VillaCommonPage } }
     GardenAndSpaPage: { meta_title: json, meta_desc: json, header_heading: json, banner: text, relationships: { hasMany: GardenAndSpaPageBlock } }
     GardenAndSpaPageBlock: { image: text, text: json, sort: 'integer nullable', relationships: { belongsTo: GardenAndSpaPage } }
+    NeighborhoodPage: { meta_title: json, meta_desc: json, header_heading: json, banner: text, relationships: { hasMany: NeighborhoodPageBlock } }
+    NeighborhoodPageBlock: { image: text, text: json, sort: 'integer nullable', relationships: { belongsTo: NeighborhoodPage } }

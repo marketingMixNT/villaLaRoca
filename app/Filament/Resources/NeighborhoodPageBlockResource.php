@@ -8,17 +8,17 @@ use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use Filament\Resources\Resource;
-use App\Models\GardenAndSpaPageBlock;
+use App\Models\NeighborhoodPageBlock;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Illuminate\Database\Eloquent\Builder;
 use Filament\Resources\Concerns\Translatable;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use App\Filament\Resources\GardenAndSpaPageBlockResource\Pages;
+use App\Filament\Resources\NeighborhoodPageBlockResource\Pages;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
-use App\Filament\Resources\GardenAndSpaPageBlockResource\RelationManagers;
+use App\Filament\Resources\NeighborhoodPageBlockResource\RelationManagers;
 
-class GardenAndSpaPageBlockResource extends Resource
+class NeighborhoodPageBlockResource extends Resource
 {
     use Translatable;
 
@@ -26,11 +26,10 @@ class GardenAndSpaPageBlockResource extends Resource
     {
         return ['pl', 'en'];
     }
-    protected static ?string $model = GardenAndSpaPageBlock::class;
-
+    protected static ?string $model = NeighborhoodPageBlock::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    protected static ?string $navigationGroup = 'Garden & Spa';
+    protected static ?string $navigationGroup = 'Okolica';
 
     public static function form(Form $form): Form
     {
@@ -38,9 +37,9 @@ class GardenAndSpaPageBlockResource extends Resource
         ->schema([
             FileUpload::make('image')
             ->label('Obraz')
-            ->directory('pageGardenAndSpa')
+            ->directory('pageNeighborhood')
             ->getUploadedFileNameForStorageUsing(
-                callback: fn(TemporaryUploadedFile $file): string => 'garden-and-spa-' . now()->format('H-i-s') . '-' . str_replace([' ', '.'], '', microtime()) . '.' . $file->getClientOriginalExtension()
+                callback: fn(TemporaryUploadedFile $file): string => 'okolica-' . now()->format('H-i-s') . '-' . str_replace([' ', '.'], '', microtime()) . '.' . $file->getClientOriginalExtension()
             )
             ->maxSize(8192)
             ->columnSpanFull()
@@ -92,7 +91,6 @@ class GardenAndSpaPageBlockResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -111,13 +109,13 @@ class GardenAndSpaPageBlockResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListGardenAndSpaPageBlocks::route('/'),
-            'create' => Pages\CreateGardenAndSpaPageBlock::route('/create'),
-            'edit' => Pages\EditGardenAndSpaPageBlock::route('/{record}/edit'),
+            'index' => Pages\ListNeighborhoodPageBlocks::route('/'),
+            'create' => Pages\CreateNeighborhoodPageBlock::route('/create'),
+            'edit' => Pages\EditNeighborhoodPageBlock::route('/{record}/edit'),
         ];
     }
 
-     public static function getNavigationLabel(): string
+      public static function getNavigationLabel(): string
     {
         return ('Bloki');
     }

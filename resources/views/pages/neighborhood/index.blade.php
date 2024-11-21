@@ -1,8 +1,9 @@
-<x-layouts.app title="Okolica" description="meta">
+<x-layouts.app title="{{$content->meta_title}}" description="{{$content->meta_description}}">
 
     <x-layouts.app-wrapper>
 
-  <x-hero title="Okolica" subtitle="Lorem ipsum dolor sit amet." bgi="{{asset('assets/images/1600/villa-la-roca-51.webp')}}"/>
+      <x-hero title="{{$content->header_heading}}" subtitle="Lorem ipsum dolor sit amet."
+        bgi="{{asset('storage/' . $content->banner)}}" />
 
   <section  class="py-16 md:py-24 relative overflow-hidden">
 
@@ -11,36 +12,16 @@
     <x-container class="max-w-screen-xl space-y-24  ">
   
   
-          <x-text-image-block img="{{asset('assets/images/1200/villa-la-roca-23.webp')}}" alt="zdjęcie przedtawiające ">
-              <h2>Okolica</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, deleniti cumque voluptatem illum officia fugiat? Quia, beatae! Excepturi commodi officia laudantium mollitia cumque deserunt explicabo quidem similique? Iste magnam dicta vitae rem!</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In repellendus earum distinctio aliquid pariatur ex, corrupti fugiat, quaerat explicabo iste dolor, molestias praesentium sequi provident id natus libero! Voluptate autem nesciunt quas?</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In repellendus earum distinctio aliquid pariatur ex, corrupti fugiat, quaerat explicabo iste dolor, molestias praesentium sequi provident id natus libero! Voluptate autem nesciunt quas?</p>
-          </x-text-image-block>
-  
-          <x-text-image-block img="{{asset('assets/images/1200/villa-la-roca-69.webp')}}" alt="zdjęcie przedtawiające " mirrorLook>
-              <h2>Lorem ipsum dolor sit.</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In repellendus earum distinctio aliquid pariatur ex, corrupti fugiat, quaerat explicabo iste dolor, molestias praesentium sequi provident id natus libero! Voluptate autem nesciunt quas?</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In repellendus earum distinctio aliquid pariatur ex, corrupti fugiat, quaerat explicabo iste dolor, molestias praesentium sequi provident id natus libero! Voluptate autem nesciunt quas?</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In repellendus earum distinctio aliquid pariatur ex, corrupti fugiat, quaerat explicabo iste dolor, molestias praesentium sequi provident id natus libero! Voluptate autem nesciunt quas?</p>
-            
-          </x-text-image-block>
-  
-  
-          <x-text-image-block img="{{asset('assets/images/1200/villa-la-roca-54.webp')}}" alt="zdjęcie przedtawiające ">
-            <h2>Okolica</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, deleniti cumque voluptatem illum officia fugiat? Quia, beatae! Excepturi commodi officia laudantium mollitia cumque deserunt explicabo quidem similique? Iste magnam dicta vitae rem!</p>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In repellendus earum distinctio aliquid pariatur ex, corrupti fugiat, quaerat explicabo iste dolor, molestias praesentium sequi provident id natus libero! Voluptate autem nesciunt quas?</p>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In repellendus earum distinctio aliquid pariatur ex, corrupti fugiat, quaerat explicabo iste dolor, molestias praesentium sequi provident id natus libero! Voluptate autem nesciunt quas?</p>
-        </x-text-image-block>
+      @foreach ($content->neighborhoodPageBlocks as $block )
 
-        <x-text-image-block img="{{asset('assets/images/1200/villa-la-roca-143.webp')}}" alt="zdjęcie przedtawiające " mirrorLook>
-            <h2>Lorem ipsum dolor sit.</h2>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In repellendus earum distinctio aliquid pariatur ex, corrupti fugiat, quaerat explicabo iste dolor, molestias praesentium sequi provident id natus libero! Voluptate autem nesciunt quas?</p>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In repellendus earum distinctio aliquid pariatur ex, corrupti fugiat, quaerat explicabo iste dolor, molestias praesentium sequi provident id natus libero! Voluptate autem nesciunt quas?</p>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In repellendus earum distinctio aliquid pariatur ex, corrupti fugiat, quaerat explicabo iste dolor, molestias praesentium sequi provident id natus libero! Voluptate autem nesciunt quas?</p>
-          
-        </x-text-image-block>
+
+
+      <x-text-image-block img="{{ asset('storage/' . $block->image) }}" alt=""
+        mirrorLook="{{ $loop->iteration % 2 == 0 }}">
+        {!! $block->text !!}
+      </x-text-image-block>
+
+      @endforeach
   
   
   

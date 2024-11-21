@@ -38,7 +38,7 @@ class VillaRoomsPageBlockResource extends Resource
             ->schema([
                 FileUpload::make('image')
                 ->label('Obraz')
-                ->directory('pageAbout')
+                ->directory('pageVilla')
                 ->getUploadedFileNameForStorageUsing(
                     callback: fn(TemporaryUploadedFile $file): string => 'villa-' . now()->format('H-i-s') . '-' . str_replace([' ', '.'], '', microtime()) . '.' . $file->getClientOriginalExtension()
                 )
