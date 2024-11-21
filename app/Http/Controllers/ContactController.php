@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ContactPage;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -11,6 +12,9 @@ class ContactController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return view('pages.contact.index');
+
+        $content = ContactPage::first();
+
+        return view('pages.contact.index',compact('content'));
     }
 }

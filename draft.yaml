@@ -1,4 +1,9 @@
 models:
+  ContactPage:
+    meta_title: json
+    meta_desc: json
+    header_heading: json
+    banner: text
   PrivacyPolicy:
     banner: text
     content: json
@@ -81,3 +86,4 @@ VillaRoomsPage:
     category: json
     images: text
     sort: integer nullable
+

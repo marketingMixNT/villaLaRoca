@@ -24,3 +24,6 @@
 <meta property="og:url" content="">
 <meta property="og:type" content="website">
 <meta property="og:image" content="">
+
+{{-- cookieEasy --}}
+<script async src="https://app.cookieasy.pl/plugin/i0ahh25gp6n18xo.js"></script>

@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\Gallery;
 use App\Models\AboutPage;
+use App\Models\ContactPage;
 use App\Models\GalleryPage;
 use App\Models\AboutPageBlock;
 use App\Models\VillaRoomsPage;
@@ -16,6 +17,7 @@ use App\Models\VillaCommonPageBlock;
 use App\Observers\AboutPageObserver;
 use App\Models\GardenAndSpaPageBlock;
 use App\Models\NeighborhoodPageBlock;
+use App\Observers\ContactPageObserver;
 use App\Observers\GalleryPageObserver;
 use Illuminate\Support\ServiceProvider;
 use App\Observers\AboutPageBlockObserver;
@@ -46,6 +48,9 @@ class AppServiceProvider extends ServiceProvider
         // About
         AboutPage::observe(AboutPageObserver::class);
         AboutPageBlock::observe(AboutPageBlockObserver::class);
+
+        //Contact
+        ContactPage::observe(ContactPageObserver::class);
 
         // Gallery
         Gallery::observe(GalleryObserver::class);
