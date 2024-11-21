@@ -1,16 +1,10 @@
 created:
-    - database/factories/VillaRoomsPageFactory.php
-    - database/factories/VillaRoomsPageBlockFactory.php
-    - database/factories/VillaCommonPageFactory.php
-    - database/factories/VillaCommonPageBlockFactory.php
-    - database/migrations/2024_11_21_100143_create_villa_rooms_pages_table.php
-    - database/migrations/2024_11_21_100144_create_villa_rooms_page_blocks_table.php
-    - database/migrations/2024_11_21_100145_create_villa_common_pages_table.php
-    - database/migrations/2024_11_21_100146_create_villa_common_page_blocks_table.php
-    - app/Models/VillaRoomsPage.php
-    - app/Models/VillaRoomsPageBlock.php
-    - app/Models/VillaCommonPage.php
-    - app/Models/VillaCommonPageBlock.php
+    - database/factories/GardenAndSpaPageFactory.php
+    - database/factories/GardenAndSpaPageBlockFactory.php
+    - database/migrations/2024_11_21_111703_create_garden_and_spa_pages_table.php
+    - database/migrations/2024_11_21_111704_create_garden_and_spa_page_blocks_table.php
+    - app/Models/GardenAndSpaPage.php
+    - app/Models/GardenAndSpaPageBlock.php
 models:
     GalleryPage: { meta_title: json, meta_desc: json, header_heading: json, banner: text, heading: 'json nullable', text: 'json nullable' }
     Gallery: { category: json, images: text, sort: 'integer nullable' }
@@ -20,3 +14,5 @@ models:
     VillaRoomsPageBlock: { image: text, text: json, sort: 'integer nullable', relationships: { belongsTo: VillaRoomsPage } }
     VillaCommonPage: { meta_title: json, meta_desc: json, header_heading: json, banner: text, relationships: { hasMany: VillaCommonPageBlock } }
     VillaCommonPageBlock: { image: text, text: json, sort: 'integer nullable', relationships: { belongsTo: VillaCommonPage } }
+    GardenAndSpaPage: { meta_title: json, meta_desc: json, header_heading: json, banner: text, relationships: { hasMany: GardenAndSpaPageBlock } }
+    GardenAndSpaPageBlock: { image: text, text: json, sort: 'integer nullable', relationships: { belongsTo: GardenAndSpaPage } }

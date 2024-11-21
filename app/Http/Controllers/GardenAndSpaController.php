@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\GardenAndSpaPage;
 use Illuminate\Http\Request;
 
 class GardenAndSpaController extends Controller
@@ -11,6 +12,9 @@ class GardenAndSpaController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return view('pages.garden-and-spa.index');
+
+        $content = GardenAndSpaPage::with('gardenAndSpaPageBlocks')->first();
+
+        return view('pages.garden-and-spa.index',compact('content'));
     }
 }
