@@ -13,8 +13,8 @@ class AboutController extends Controller
     public function __invoke(Request $request)
     {
 
-        $about = AboutPage::with("aboutPageBlocks")->first();
+        $content = AboutPage::with("aboutPageBlocks")->first();
 
-        return view('pages.about.index',compact('about'));
+        return view('pages.about.index',compact('content'));
     }
 }

@@ -1,12 +1,22 @@
 created:
-    - database/factories/AboutPageFactory.php
-    - database/factories/AboutPageBlockFactory.php
-    - database/migrations/2024_11_21_091250_create_about_pages_table.php
-    - database/migrations/2024_11_21_091251_create_about_page_blocks_table.php
-    - app/Models/AboutPage.php
-    - app/Models/AboutPageBlock.php
+    - database/factories/VillaRoomsPageFactory.php
+    - database/factories/VillaRoomsPageBlockFactory.php
+    - database/factories/VillaCommonPageFactory.php
+    - database/factories/VillaCommonPageBlockFactory.php
+    - database/migrations/2024_11_21_100143_create_villa_rooms_pages_table.php
+    - database/migrations/2024_11_21_100144_create_villa_rooms_page_blocks_table.php
+    - database/migrations/2024_11_21_100145_create_villa_common_pages_table.php
+    - database/migrations/2024_11_21_100146_create_villa_common_page_blocks_table.php
+    - app/Models/VillaRoomsPage.php
+    - app/Models/VillaRoomsPageBlock.php
+    - app/Models/VillaCommonPage.php
+    - app/Models/VillaCommonPageBlock.php
 models:
     GalleryPage: { meta_title: json, meta_desc: json, header_heading: json, banner: text, heading: 'json nullable', text: 'json nullable' }
     Gallery: { category: json, images: text, sort: 'integer nullable' }
     AboutPage: { meta_title: json, meta_desc: json, header_heading: json, banner: text, relationships: { hasMany: AboutPageBlock } }
     AboutPageBlock: { image: text, text: json, sort: 'integer nullable', relationships: { belongsTo: AboutPage } }
+    VillaRoomsPage: { meta_title: json, meta_desc: json, header_heading: json, banner: text, relationships: { hasMany: VillaRoomsPageBlock } }
+    VillaRoomsPageBlock: { image: text, text: json, sort: 'integer nullable', relationships: { belongsTo: VillaRoomsPage } }
+    VillaCommonPage: { meta_title: json, meta_desc: json, header_heading: json, banner: text, relationships: { hasMany: VillaCommonPageBlock } }
+    VillaCommonPageBlock: { image: text, text: json, sort: 'integer nullable', relationships: { belongsTo: VillaCommonPage } }

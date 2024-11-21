@@ -1,5 +1,31 @@
 models:
- AboutPage:
+  VillaRoomsPage:
+    meta_title: json
+    meta_desc: json
+    header_heading: json
+    banner: text
+    relationships:
+      hasMany: VillaRoomsPageBlock
+  VillaRoomsPageBlock:
+    image: text
+    text: json
+    sort: integer nullable
+    relationships:
+      belongsTo: VillaRoomsPage
+  VillaCommonPage:
+    meta_title: json
+    meta_desc: json
+    header_heading: json
+    banner: text
+    relationships:
+      hasMany: VillaCommonPageBlock
+  VillaCommonPageBlock:
+    image: text
+    text: json
+    sort: integer nullable
+    relationships:
+      belongsTo: VillaCommonPage
+  AboutPage:
     meta_title: json
     meta_desc: json
     header_heading: json
@@ -12,7 +38,6 @@ models:
     sort: integer nullable
     relationships:
       belongsTo: AboutPage
-
   GalleryPage:
     meta_title: json
     meta_desc: json

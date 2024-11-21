@@ -1,9 +1,9 @@
-<x-layouts.app title="O nas" description="meta">
+<x-layouts.app title="{{$content->meta_title}}" description="{{$content->meta_description}}">
 
   <x-layouts.app-wrapper>
 
-    <x-hero title="O nas" subtitle="Lorem ipsum dolor sit amet."
-      bgi="{{asset('assets/images/1600/villa-la-roca-156.webp')}}" />
+    <x-hero title="{{$content->header_heading}}" subtitle="Lorem ipsum dolor sit amet."
+      bgi="{{asset('storage/' . $content->banner)}}" />
 
     <section class="py-16 md:py-24 relative overflow-hidden">
 
@@ -12,7 +12,7 @@
       <x-container class="max-w-screen-xl space-y-24  ">
 
 
-        @foreach ($about->aboutPageBlocks as $block )
+        @foreach ($content->aboutPageBlocks as $block )
 
 
 
