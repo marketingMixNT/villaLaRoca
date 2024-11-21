@@ -154,10 +154,10 @@
             <hr class="opacity-40" />
             <ul class="flex justify-center items-center gap-8 text-xs py-4">
                 <li>
-                    <a href="" class="link-hover font-light">   Polityka Prywatności</a>
+                    <a href="{{route('privacy-policy')}}" class="link-hover font-light">   Polityka Prywatności</a>
                 </li>
                 <li>
-                    <a href="" class="link-hover font-light">   Regulamin</a>
+                    <a href="{{route('regulations')}}" class="link-hover font-light">   Regulamin</a>
                 </li>
            
             </ul>
