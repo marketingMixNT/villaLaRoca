@@ -1,4 +1,10 @@
 models:
+  PrivacyPolicy:
+    banner: text
+    content: json
+  Regulations:
+    banner: text
+    content: json
   NeighborhoodPage:
     meta_title: json
     meta_desc: json

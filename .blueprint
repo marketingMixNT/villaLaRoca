@@ -1,10 +1,10 @@
 created:
-    - database/factories/NeighborhoodPageFactory.php
-    - database/factories/NeighborhoodPageBlockFactory.php
-    - database/migrations/2024_11_21_113546_create_neighborhood_pages_table.php
-    - database/migrations/2024_11_21_113547_create_neighborhood_page_blocks_table.php
-    - app/Models/NeighborhoodPage.php
-    - app/Models/NeighborhoodPageBlock.php
+    - database/factories/PrivacyPolicyFactory.php
+    - database/factories/RegulationsFactory.php
+    - database/migrations/2024_11_21_121747_create_privacy_policies_table.php
+    - database/migrations/2024_11_21_121748_create_regulations_table.php
+    - app/Models/PrivacyPolicy.php
+    - app/Models/Regulations.php
 models:
     GalleryPage: { meta_title: json, meta_desc: json, header_heading: json, banner: text, heading: 'json nullable', text: 'json nullable' }
     Gallery: { category: json, images: text, sort: 'integer nullable' }
@@ -18,3 +18,5 @@ models:
     GardenAndSpaPageBlock: { image: text, text: json, sort: 'integer nullable', relationships: { belongsTo: GardenAndSpaPage } }
     NeighborhoodPage: { meta_title: json, meta_desc: json, header_heading: json, banner: text, relationships: { hasMany: NeighborhoodPageBlock } }
     NeighborhoodPageBlock: { image: text, text: json, sort: 'integer nullable', relationships: { belongsTo: NeighborhoodPage } }
+    PrivacyPolicy: { banner: text, content: json }
+    Regulations: { banner: text, content: json }
