@@ -50,12 +50,12 @@
                     </div>
                 </div>
             </div> --}}
-            <div class="flex flex-col justify-between items-start w-full  mx-auto order-1 lg:order-none">
+            <div class="flex flex-col justify-between items-start w-full  mx-auto order-1 lg:order-none md:opacity-0 fadeIn-animation">
                 <div class="w-full lg:h-[60%] overflow-hidden ">
                     <div class="w-full h-full object-cover  ">
                         <img src="{{asset('assets/images/1200/villa-la-roca-55.webp' )}}"
                             alt="widok miasta"
-                            class="w-full h-full object-cover shadow-md aspect-[3/2] max-w-[600px] mx-auto" loading="lazy" width="420"
+                            class="w-full h-full object-cover shadow-md aspect-[3/2] max-w-[600px] mx-auto " loading="lazy" width="420"
                             height="480">
                     </div>
                 </div>
@@ -70,7 +70,7 @@
 
 
 
-            <div class="flex flex-col justify-between items-start gap-12 w-full mx-auto ">
+            <div class="flex flex-col justify-between items-start gap-12 w-full mx-auto md:opacity-0 fadeIn-animation">
 
                 <div class="flex flex-col justify-between items-center gap-12 ">
                     <x-title>
@@ -82,14 +82,14 @@
           
                 </div>
                 <img src="{{asset('assets/images/1200/villa-la-roca-55.webp'  )}}" alt=" widok miasta "
-                    class=" w-full object-cover shadow-md  aspect-[3/2] max-w-[600px] mx-auto" loading="lazy" width="430" height="320">
+                    class=" w-full object-cover shadow-md  aspect-[3/2] max-w-[600px] mx-auto md:opacity-0 fadeIn-animation" loading="lazy" width="430" height="320">
             </div>
             <div class="flex flex-col justify-start w-full mx-auto ">
                 <div class="lg:h-[80%] w-full overflow-hidden lg:mt-6 ">
                     <div class="h-full w-full object-cover ">
                         <img src="{{'assets/images/1200/villa-la-roca-45.webp' }}"
                             alt=" widok miasta "
-                            class="w-full h-full object-cover shadow-md  aspect-[3/2] lg:aspect-auto max-w-[600px] mx-auto" loading="lazy">
+                            class="w-full h-full object-cover shadow-md  aspect-[3/2] lg:aspect-auto max-w-[600px] mx-auto md:opacity-0 fadeIn-animation" loading="lazy">
                     </div>
                 </div>
             </div>

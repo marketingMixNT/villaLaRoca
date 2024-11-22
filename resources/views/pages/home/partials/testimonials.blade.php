@@ -33,27 +33,30 @@
                 @endforeach
 
             </div> --}}
-        <x-heading-horizontal title="Słowa naszych gości mówią wszystko
-">
-            <x-text-wrapper>Naszym priorytetem jest zapewnienie komfortu i wyjątkowych wrażeń. Z dumą dzielimy się opiniami osób, które odwiedziły nasz hotel i doświadczyły naszej gościnności. Przeczytaj, co o nas mówią, i przekonaj się, dlaczego warto nas odwiedzić!
+            <div class="md:opacity-0 fadeIn-animation">
 
-            </x-text-wrapper>
-           
-          
-            
-            <x-rating 
+                <x-heading-horizontal title="Słowa naszych gości mówią wszystko
+                ">
+                <x-text-wrapper>Naszym priorytetem jest zapewnienie komfortu i wyjątkowych wrażeń. Z dumą dzielimy się opiniami osób, które odwiedziły nasz hotel i doświadczyły naszej gościnności. Przeczytaj, co o nas mówią, i przekonaj się, dlaczego warto nas odwiedzić!
+                    
+                </x-text-wrapper>
+                
+                
+                
+                <x-rating 
                 source="google" 
                 rate="5" 
                 href="#" 
                 reviews="123 recenzje" 
-            />
-            <x-rating 
+                />
+                <x-rating 
                 source="tripAdvisor" 
                 rate="5" 
                 href="#" 
                 reviews="123 recenzje" 
-            />
-      
+                />
+                
+            </div>
 
        
           
@@ -61,7 +64,7 @@
         </x-heading-horizontal>
 
 
-        <div class="swiper testimonials-carousel max-w-screen-md">
+        <div class="swiper testimonials-carousel max-w-screen-md md:opacity-0 fadeIn-animation">
             <div class="swiper-wrapper ">
                 
 

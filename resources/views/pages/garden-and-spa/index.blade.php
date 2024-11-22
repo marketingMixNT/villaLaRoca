@@ -11,7 +11,7 @@
     <x-container class="max-w-screen-xl space-y-24  ">
   
       @if($content->heading && $content->text)
-      <div class="max-w-screen-lg mx-auto">
+      <div class="max-w-screen-lg mx-auto md:opacity-0 fadeIn-animation">
           <x-heading-horizontal title="{{$content->heading}}" class="pb-12">
               <x-text-wrapper>{!!$content->text!!}
               </x-text-wrapper>

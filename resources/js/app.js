@@ -4,6 +4,7 @@ import './partials/gallery'
 import './partials/lightbox'
 import './partials/mobileButtons'
 import './partials/mobileDropdown'
+import './partials/observer'
 import './partials/preloader'
 // import './partials/scrollToTop'
 import './partials/swiper';
