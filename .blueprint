@@ -1,7 +1,10 @@
 created:
-    - database/factories/ContactPageFactory.php
-    - database/migrations/2024_11_21_135117_create_contact_pages_table.php
-    - app/Models/ContactPage.php
+    - database/factories/PictogramFactory.php
+    - database/factories/TestimonialFactory.php
+    - database/migrations/2024_11_22_091210_create_pictograms_table.php
+    - database/migrations/2024_11_22_091211_create_testimonials_table.php
+    - app/Models/Pictogram.php
+    - app/Models/Testimonial.php
 models:
     GalleryPage: { meta_title: json, meta_desc: json, header_heading: json, banner: text, heading: 'json nullable', text: 'json nullable' }
     Gallery: { category: json, images: text, sort: 'integer nullable' }
@@ -18,3 +21,5 @@ models:
     PrivacyPolicy: { banner: text, content: json }
     Regulations: { banner: text, content: json }
     ContactPage: { meta_title: json, meta_desc: json, header_heading: json, banner: text }
+    Pictogram: { icon: text, title: json, description: json, sort: 'integer nullable' }
+    Testimonial: { name: json, source: json, content: json, sort: 'integer nullable' }

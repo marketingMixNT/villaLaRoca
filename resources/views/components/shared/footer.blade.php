@@ -111,7 +111,7 @@
                 class=" mx-4 md:mx-12 flex flex-col gap-6 justify-center items-center text-center sm:justify-start sm:items-start sm:text-start">
                 <div>
                     <h2 class="font-heading text-lg uppercase mb-2 font-light">
-                       {{__('footer.call-to-us')}}
+                       {{__('global.footer.call-to-us')}}
                     </h2>
                     <div class=" flex flex-col gap-2">
 
@@ -121,7 +121,7 @@
                 </div>
                 <div>
                     <h2 class="font-heading text-lg uppercase mb-2 font-light">
-                        {{__('footer.write-to-us')}}
+                        {{__('global.footer.write-to-us')}}
                     </h2>
                     <a href="mailto:"
                         class="font-thin font-heading link-hover text-sm">test@test.pl</a>
@@ -130,7 +130,7 @@
             <!--THREE-->
             <div
                 class="mx-4 md:mx-12 flex flex-col justify-center items-center text-center sm:justify-start sm:items-start sm:text-start">
-                <h2 class="font-heading text-lg uppercase mb-2 font-light">   {{__('footer.address')}}</h2>
+                <h2 class="font-heading text-lg uppercase mb-2 font-light">   {{__('global.footer.address')}}</h2>
                 <a href="" target="_blank"
                     class="font-thin font-heading link-hover text-sm">Testowa 123, <br />34-400 Nowy Targ</a>
             </div>

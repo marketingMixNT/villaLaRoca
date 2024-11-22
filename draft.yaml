@@ -1,5 +1,16 @@
 models:
-  ContactPage:
+  Pictogram:
+    icon: text
+    title: json
+    description: json
+    sort: integer nullable
+  Testimonial:
+    name: json
+    source: json
+    content: json
+    sort: integer nullable
+
+ContactPage:
     meta_title: json
     meta_desc: json
     header_heading: json
