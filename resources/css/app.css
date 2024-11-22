@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* links hover */
 .link-hover {
     @apply relative w-fit block after:block after:content-[''] after:absolute after:h-[1px] after:bg-primary-400  after:w-[75%] after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left;
@@ -21,10 +20,8 @@
     box-shadow: inset -10em 0 0 0 white, inset 10em 0 0 0 white;
 }
 
-
-
- /* menu */
- .menu-open {
+/* menu */
+.menu-open {
     @apply transform ease-in-out 
            opacity-100  duration-500;
 }
@@ -34,53 +31,45 @@
            -translate-y-[110%] opacity-0 duration-700;
 }
 
-
+/* gallery */
 .gallery-btn {
-  @apply bg-gray-900;
+    @apply bg-gray-900;
 }
 
-
-@layer utilities {
-    .clip-path-circle-0 {
-      clip-path: circle(0% at 100% 100%);
-    }
-    .clip-path-circle-full {
-      clip-path: circle(150% at 100% 100%);
-    }
-  }
-  
-
-
-.spin{
-
+/* animations */
+.spin {
     animation: spin 120s linear infinite;
 }
 
 @keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
-
-
-
-/* animations */
-
 .fade-in-top {
-	animation: fade-in-top 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: fade-in-top 2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
 @keyframes fade-in-top {
-  0% {
-    transform: translateY(-50px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@layer utilities {
+    .clip-path-circle-0 {
+        clip-path: circle(0% at 100% 100%);
+    }
+    .clip-path-circle-full {
+        clip-path: circle(150% at 100% 100%);
+    }
 }

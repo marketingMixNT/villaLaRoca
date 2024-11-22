@@ -55,7 +55,7 @@
                     <div class="w-full h-full object-cover  ">
                         <img src="{{asset('assets/images/1200/villa-la-roca-55.webp' )}}"
                             alt="widok miasta"
-                            class="w-full h-full object-cover shadow-md aspect-[3/2] max-w-[600px] mx-auto " loading="lazy" width="420"
+                            class="w-full h-full object-cover shadow-md aspect-[3/2] max-w-[600px] mx-auto hover:scale-105 duration-300" loading="lazy" width="420"
                             height="480">
                     </div>
                 </div>
