@@ -22,6 +22,8 @@ class GardenAndSpaPage extends Model
         'meta_desc',
         'header_heading',
         'banner',
+        'heading',
+        'text',
     ];
 
     /**
@@ -34,6 +36,8 @@ class GardenAndSpaPage extends Model
         'meta_title' => 'array',
         'meta_desc' => 'array',
         'header_heading' => 'array',
+        'heading' => 'array',
+        'text' => 'array',
     ];
 
     public function gardenAndSpaPageBlocks(): HasMany
@@ -45,5 +49,7 @@ class GardenAndSpaPage extends Model
         'meta_title',
         'meta_desc',
         'header_heading',
+        'heading',
+        'text',
     ];
 }

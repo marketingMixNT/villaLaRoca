@@ -6,13 +6,17 @@ use Filament\Forms;
 use Filament\Tables;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
+use Illuminate\Support\Str;
 use App\Models\PrivacyPolicy;
 use Filament\Resources\Resource;
+use Livewire\Component as Livewire;
+use Filament\Forms\Components\Component;
 use Illuminate\Database\Eloquent\Builder;
 use Filament\Resources\Concerns\Translatable;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\PrivacyPolicyResource\Pages;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
+use Schmeits\FilamentCharacterCounter\Forms\Components\TextInput;
 use App\Filament\Resources\PrivacyPolicyResource\RelationManagers;
 
 class PrivacyPolicyResource extends Resource
@@ -33,6 +37,33 @@ class PrivacyPolicyResource extends Resource
     {
         return $form
             ->schema([
+
+                TextInput::make('meta_title')
+                ->label('Tytuł Meta')
+                ->placeholder('Meta title to tytuł strony internetowej wyświetlany w wynikach wyszukiwarek i na kartach przeglądarki.')
+                ->characterLimit(60)
+                ->minLength(10)
+                ->maxLength(75)
+                ->live(debounce: 1000)
+                ->afterStateUpdated(function (Livewire $livewire, Component $component) {
+                    $validate = $livewire->validateOnly($component->getStatePath());
+                })
+                ->columnSpanFull()
+                ->required(),
+
+            TextInput::make('meta_desc')
+                ->label('Opis Meta')
+                ->placeholder('Meta description to krótki opis strony internetowej wyświetlany w wynikach wyszukiwarek.')
+                ->characterLimit(160)
+                ->minLength(10)
+                ->maxLength(180)
+                ->live(debounce: 1000)
+                ->afterStateUpdated(function (Livewire $livewire, Component $component) {
+                    $validate = $livewire->validateOnly($component->getStatePath());
+                })
+                ->columnSpanFull()
+                ->required(),
+
                 Forms\Components\FileUpload::make('banner')
                 ->label('Banner')
                 ->directory('banner')
@@ -69,6 +100,11 @@ class PrivacyPolicyResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('meta_title')
+                    ->label('Tytuł meta')
+                    ->description(function (PrivacyPolicy $record) {
+                        return Str::limit(strip_tags($record->meta_desc), 40);
+                    }),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

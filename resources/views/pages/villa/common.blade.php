@@ -10,15 +10,28 @@
     
     <x-container class="max-w-screen-xl space-y-24  ">
   
+
+            @if($content->heading && $content->text)
+                <div class="max-w-screen-lg mx-auto">
+                    <x-heading-horizontal title="{{$content->heading}}" class="pb-12">
+                        <x-text-wrapper>{!!$content->text!!}
+                        </x-text-wrapper>
+                    </x-heading-horizontal>
+                </div>
+                @endif
+
+   
   
       @foreach ($content->villaCommonPageBlocks as $block )
 
 
 
-      <x-text-image-block img="{{ asset('storage/' . $block->image) }}" alt=""
-        mirrorLook="{{ $loop->iteration % 2 == 0 }}">
-        {!! $block->text !!}
-      </x-text-image-block>
+      <x-text-image-block 
+      img="{{ asset('storage/' . $block->image) }}" 
+      alt=""
+      mirrorLook="{{ $loop->iteration % 2 == 1 }}">
+      {!! $block->text !!}
+  </x-text-image-block>
 
       @endforeach
   

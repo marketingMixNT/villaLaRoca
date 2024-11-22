@@ -12,6 +12,11 @@
             <section class="py-20">
                
                 <x-container class="max-w-screen-xl ">
+
+
+
+
+                    
                   
                 <!--CONTENT-->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 py-12  ">

@@ -1,4 +1,4 @@
-<x-layouts.app title="{{$pageGallery->meta_title}}" description="{{$pageGallery->meta_desc}}">
+<x-layouts.app title="{{$content->meta_title}}" description="{{$content->meta_desc}}">
 
     <x-layouts.app-wrapper>
 
@@ -12,10 +12,10 @@
             <x-container class="max-w-[1600px]">
 
                 
-                @if($pageGallery->heading && $pageGallery->text)
+                @if($content->heading && $content->text)
                 <div class="max-w-screen-lg mx-auto">
-                    <x-heading-horizontal title="{{$pageGallery->heading}}" class="pb-32">
-                        <x-text-wrapper>{!!$pageGallery->text!!}
+                    <x-heading-horizontal title="{{$content->heading}}" class="pb-32">
+                        <x-text-wrapper>{!!$content->text!!}
                         </x-text-wrapper>
                     </x-heading-horizontal>
                 </div>

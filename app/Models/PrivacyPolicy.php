@@ -18,6 +18,8 @@ class PrivacyPolicy extends Model
      * @var array
      */
     protected $fillable = [
+        'meta_title',
+        'meta_desc',
         'banner',
         'content',
     ];
@@ -29,9 +31,11 @@ class PrivacyPolicy extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'meta_title' => 'array',
+        'meta_desc' => 'array',
         'content' => 'array',
     ];
 
-    public $translatable = ['content'];
+    public $translatable = ['meta_title','meta_desc','content'];
 
 }

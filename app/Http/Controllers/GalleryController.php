@@ -14,10 +14,10 @@ class GalleryController extends Controller
     public function __invoke(Request $request)
     {
 
-        $pageGallery = GalleryPage::first();
+        $content = GalleryPage::first();
 
         $images = Gallery::orderBy('sort')->get();
 
-        return view('pages.gallery.index',compact('pageGallery','images'));
+        return view('pages.gallery.index',compact('content','images'));
     }
 }

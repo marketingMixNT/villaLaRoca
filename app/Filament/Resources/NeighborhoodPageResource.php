@@ -74,6 +74,18 @@ class NeighborhoodPageResource extends Resource
                     ->columns()
                     ->schema([
                         
+                        Shout::make('info')
+                                    ->content('Nagłówek oraz tekst są opcjonalne. Pojawią się nad blokami.')
+                                    ->type('info')
+                                    ->columnSpanFull(),
+                                    
+                                Forms\Components\TextInput::make('heading')
+                                    ->label('Nagłowek')
+                                    ->columnSpanFull(),
+
+                                Forms\Components\Textarea::make('text')
+                                    ->label('Tekst')
+                                    ->columnSpanFull(),
                            
                                 Repeater::make('neighborhoodPageBlocks')
                                     ->schema(NeighborhoodPageBlock::getForm())

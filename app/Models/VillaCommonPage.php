@@ -23,6 +23,8 @@ class VillaCommonPage extends Model
         'meta_desc',
         'header_heading',
         'banner',
+        'heading',
+        'text',
     ];
 
     /**
@@ -35,6 +37,8 @@ class VillaCommonPage extends Model
         'meta_title' => 'array',
         'meta_desc' => 'array',
         'header_heading' => 'array',
+        'heading' => 'array',
+        'text' => 'array',
     ];
 
     public function villaCommonPageBlocks(): HasMany
@@ -45,5 +49,7 @@ class VillaCommonPage extends Model
         'meta_title',
         'meta_desc',
         'header_heading',
+        'heading',
+        'text',
     ];
 }

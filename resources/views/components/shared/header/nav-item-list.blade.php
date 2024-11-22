@@ -13,7 +13,7 @@
 
     <x-shared.header.nav-item href="{{route('about')}}" activeRoute="about">O nas</x-shared.header.nav-item>
     
-    <x-shared.header.nav-item-dropdown href="" activeRoute="" title="Villa">
+    <x-shared.header.nav-item-dropdown  title="Villa">
         <x-shared.header.dropdown>
             <x-shared.header.dropdown-item href="{{route('villa.rooms')}}" activeRoute="villa.rooms">Pokoje</x-shared.header.dropdown-item>
             <x-shared.header.dropdown-item href="{{route('villa.common')}}" activeRoute="villa.common">Część Wspólna</x-shared.header.dropdown-item>
