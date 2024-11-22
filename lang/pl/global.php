@@ -16,12 +16,13 @@
 
 'nav'=>[
     '1'=>'O nas',
-    '2'=>"Nasze pokoje",
-    '3'=>"Restauracja",
-    '4'=>"Transfery i wycieczki",
-    '5'=>"Galeria",
-    '6'=>"Lokalizacja",
-    '7'=>"Kontakt",
+    '2'=>"Villa",
+    '3'=>"Pokoje",
+    '4'=>"Częsci wspólne",
+    '5'=>"Garden & Spa",
+    '6'=>"Okolica",
+    '7'=>"Galeria",
+    '8'=>"Kontakt",
 ],
 
 'footer'=>[

@@ -1,4 +1,7 @@
-<div class="relative swiper hero-carousel  w-full h-[calc(100vh-131px)] ">
+<div class="relative swiper hero-carousel  w-full h-screen ">
+
+    <x-shared.header.hamburger class="absolute top-12 right-12 z-50"/>
+
     <div class="swiper-wrapper">
         {{-- HEADING --}}
 

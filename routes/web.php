@@ -19,14 +19,21 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
     });
 
     Route::get('/', HomeController::class)->name('home');
-    Route::get('/o-nas', AboutController::class)->name('about');
-    Route::get('/villa/pokoje', [VillaController::class, 'rooms'])->name('villa.rooms');
-    Route::get('/villa/czesci-wspolne', [VillaController::class, 'common'])->name('villa.common');
-    Route::get('/garden-spa', GardenAndSpaController::class)->name('garden-and-spa');
-    Route::get('/okolica', NeighborhoodController::class)->name('neighborhood');
+    Route::get('/o-villi', AboutController::class)->name('about');
+    Route::get('/okolice', NeighborhoodController::class)->name('neighborhood');
+    Route::get('/pokoje', [VillaController::class, 'rooms'])->name('rooms');
+    Route::get('/serce-domu', [VillaController::class, 'common'])->name('house-heart');
+    Route::get('/strefa-relaksu', GardenAndSpaController::class)->name('relax-zone');
     Route::get('/galeria', GalleryController::class)->name('gallery');
-    Route::get('/kontakt', ContactController::class)->name('contact');
 
+    Route::get('/kontakt', ContactController::class)->name('contact');
     Route::get('/polityka-prywatnosci', [OtherPagesController::class, 'privacyPolicy'])->name('privacy-policy');
     Route::get('/regulamin', [OtherPagesController::class, 'regulations'])->name('regulations');
+
+    // regulamin spa
+    //opinie
+
+    Route::fallback(function () {
+        return redirect('/');
+    });
 });

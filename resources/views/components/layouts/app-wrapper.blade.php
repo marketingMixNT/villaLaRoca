@@ -1,8 +1,10 @@
 {{--
 <x-preloader :home="$home" /> --}}
 <x-shared.preloader />
-<x-shared.topbar />
+{{-- <x-shared.topbar /> --}}
 <x-shared.header.header />
+
+
 {{--
 <x-header.header-secondary :home="$home" :rooms="$rooms" /> --}}
 

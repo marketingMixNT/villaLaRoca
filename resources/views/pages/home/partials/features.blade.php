@@ -1,4 +1,4 @@
-<section class="py-16 lg:py-24  bg-gradient-to-b from-secondary-200 to-secondary-200">
+<section class="py-16 lg:py-24  bg-secondary-400">
     <x-container class="max-w-screen-2xl">
         <div
             class="grid justify-center items-center grid-cols-2  lg:grid-cols-3   xl:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-16 md:w-[75%] lg:w-full mx-auto">
