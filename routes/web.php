@@ -1,15 +1,16 @@
 <?php
 
-use App\Http\Controllers\AboutController;
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\GalleryController;
-use App\Http\Controllers\GardenAndSpaController;
 use Livewire\Livewire;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\NeighborhoodController;
-use App\Http\Controllers\OtherPagesController;
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\VillaController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\OtherPagesController;
+use App\Http\Controllers\GardenAndSpaController;
+use App\Http\Controllers\NeighborhoodController;
+use App\Http\Controllers\TestimonialsController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']], function () {
@@ -27,10 +28,13 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
     Route::get('/galeria', GalleryController::class)->name('gallery');
 
     Route::get('/kontakt', ContactController::class)->name('contact');
-    Route::get('/polityka-prywatnosci', [OtherPagesController::class, 'privacyPolicy'])->name('privacy-policy');
-    Route::get('/regulamin', [OtherPagesController::class, 'regulations'])->name('regulations');
+    Route::get('/opinie', TestimonialsController::class)->name('testimonials');
 
-    // regulamin spa
+    Route::get('/polityka-prywatnosci', [OtherPagesController::class, 'privacyPolicy'])->name('privacy-policy');
+    Route::get('/regulamin-obiektu', [OtherPagesController::class, 'regulations'])->name('regulations');
+    Route::get('/regulamin-spa', [OtherPagesController::class, 'spaRegulations'])->name('spa-regulations');
+
+    
     //opinie
 
     Route::fallback(function () {

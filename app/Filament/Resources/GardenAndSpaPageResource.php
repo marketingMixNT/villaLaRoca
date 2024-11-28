@@ -34,7 +34,7 @@ class GardenAndSpaPageResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-document';
 
-    protected static ?string $navigationGroup = 'Garden & Spa';
+    protected static ?string $navigationGroup = 'Strefa relaksu';
 
     public static function form(Form $form): Form
     {
@@ -90,14 +90,15 @@ class GardenAndSpaPageResource extends Resource
                                     ->label('')
                                     ->relationship()
                                     ->columnSpanFull()
-                                    ->reorderable()
+                                  
                                     ->addActionLabel('Dodaj blok')
                                     ->collapsed()
                                     ->collapsible()
                                     ->defaultItems(0),
 
                                     Shout::make('info')
-                                    ->content('Aby przetłumaczyć bloki przejdź do dedykowanej zakładki.')
+                                    ->content(content: 'Aby przetłumaczyć bloki bądź ułożyc je w innej kolejnosci przejdź do dedykowanej zakładki.')
+
                                     ->type('info')
                                     ->columnSpanFull()
                                     ->color('info'),

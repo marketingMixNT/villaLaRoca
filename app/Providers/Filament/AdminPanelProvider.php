@@ -33,7 +33,7 @@ class AdminPanelProvider extends PanelProvider
             ->login()
             ->passwordReset()
             ->sidebarCollapsibleOnDesktop()
-          
+
             ->favicon('/favicon/favicon.ico')
             ->brandLogo('/assets/logo/logo--dark.png')
             ->darkModeBrandLogo('/assets/logo/logo--light.png')
@@ -73,9 +73,7 @@ class AdminPanelProvider extends PanelProvider
                 NavigationGroup::make()
                     ->label('Galeria')
                     ->collapsed(),
-                    NavigationGroup::make()
-                    ->label('Garden & Spa')
-                    ->collapsed(),
+
                 NavigationGroup::make()
                     ->label('Kontakt')
                     ->collapsed(),
@@ -83,16 +81,19 @@ class AdminPanelProvider extends PanelProvider
                     ->label('Okolica')
                     ->collapsed(),
                 NavigationGroup::make()
-                    ->label('O nas')
+                    ->label('Opinie')
                     ->collapsed(),
                 NavigationGroup::make()
-                    ->label('Villa')
+                    ->label('O villi')
+                    ->collapsed(),
+                NavigationGroup::make()
+                    ->label('Strefa relaksu')
                     ->collapsed(),
                 NavigationGroup::make()
                     ->label('Strony informacyjne')
                     ->collapsed(),
-                
-         
+
+
             ])
             ->plugin(SpatieLaravelTranslatablePlugin::make()->defaultLocales(['pl', 'en']),);;
     }

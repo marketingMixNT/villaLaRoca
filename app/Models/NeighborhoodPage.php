@@ -43,7 +43,7 @@ class NeighborhoodPage extends Model
 
     public function neighborhoodPageBlocks(): HasMany
     {
-        return $this->hasMany(NeighborhoodPageBlock::class);
+        return $this->hasMany(NeighborhoodPageBlock::class)->orderBy('sort', 'asc');;
     }
 
     public $translatable = [

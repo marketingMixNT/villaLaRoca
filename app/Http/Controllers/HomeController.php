@@ -14,8 +14,8 @@ class HomeController extends Controller
     public function __invoke(Request $request)
     {
 
-        $pictograms = Pictogram::all();
-        $testimonials = Testimonial::all();
+        $pictograms = Pictogram::orderBy('sort','asc')->get();
+        $testimonials = Testimonial::orderBy('sort','asc')->get();
 
         return view('pages.home.index',compact('pictograms','testimonials'));
     }

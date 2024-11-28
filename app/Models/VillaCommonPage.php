@@ -43,7 +43,7 @@ class VillaCommonPage extends Model
 
     public function villaCommonPageBlocks(): HasMany
     {
-        return $this->hasMany(VillaCommonPageBlock::class);
+        return $this->hasMany(VillaCommonPageBlock::class)->orderBy('sort', 'asc');
     }
     public $translatable = [
         'meta_title',

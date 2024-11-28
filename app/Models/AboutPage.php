@@ -43,7 +43,7 @@ class AboutPage extends Model
 
     public function aboutPageBlocks(): HasMany
     {
-        return $this->hasMany(AboutPageBlock::class);
+        return $this->hasMany(AboutPageBlock::class)->orderBy('sort', 'asc');
     }
 
 

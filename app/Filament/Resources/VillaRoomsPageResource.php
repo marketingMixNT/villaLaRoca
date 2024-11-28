@@ -36,7 +36,7 @@ class VillaRoomsPageResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-document';
 
-    protected static ?string $navigationGroup = 'Villa';
+    protected static ?string $navigationGroup = 'Pokoje';
 
     public static function form(Form $form): Form
     {

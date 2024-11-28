@@ -1,4 +1,29 @@
 models:
+   TestimonialsPage:
+    meta_title: json
+    meta_desc: json
+    header_heading: json
+    banner: text
+
+
+ SpaRegulations:
+    banner: text
+    content: json
+
+  Room: 
+    meta_title: json nullable
+    meta_desc: json nullable
+    title: json unique
+    slug: json unique
+    short_desc: json
+    desc: json
+    equipment: json
+    thumbnail: text
+    gallery: text
+    beds: text nullable
+    bathrooms: text nullable
+    sort: integer nullable
+
   Pictogram:
     icon: text
     title: json

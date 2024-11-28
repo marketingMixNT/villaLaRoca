@@ -146,15 +146,15 @@ class RegulationsResource extends Resource
 
     public static function getNavigationLabel(): string
     {
-        return __('Regulamin');
+        return __('Regulamin obiektu');
     }
     public static function getPluralLabel(): string
     {
-        return __('Regulamin');
+        return __('Regulamin obiektu');
     }
 
     public static function getLabel(): string
     {
-        return __('Regulamin');
+        return __('Regulamin obiektu');
     }
 }

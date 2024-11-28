@@ -30,7 +30,7 @@ class VillaRoomsPageBlockResource extends Resource
     protected static ?string $model = VillaRoomsPageBlock::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    protected static ?string $navigationGroup = 'Villa';
+    protected static ?string $navigationGroup = 'Pokoje';
 
     public static function form(Form $form): Form
     {

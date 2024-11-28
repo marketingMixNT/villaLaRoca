@@ -30,7 +30,7 @@ class GardenAndSpaPageBlockResource extends Resource
 
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    protected static ?string $navigationGroup = 'Garden & Spa';
+    protected static ?string $navigationGroup = 'Strefa relaksu';
 
     public static function form(Form $form): Form
     {
@@ -64,7 +64,7 @@ class GardenAndSpaPageBlockResource extends Resource
     {
         return $table
         ->reorderable('sort')
-        ->defaultSort('sort', 'desc')
+        ->defaultSort('sort', 'asc')
         ->columns([
             Tables\Columns\TextColumn::make('sort')
                 ->label('#')

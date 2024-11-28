@@ -12,9 +12,11 @@ class AboutController extends Controller
      */
     public function __invoke(Request $request)
     {
-
-        $content = AboutPage::with("aboutPageBlocks")->first();
-
-        return view('pages.about.index',compact('content'));
+        $content = AboutPage::with(['aboutPageBlocks' => function($query) {
+            $query->orderBy('sort', 'asc');
+        }])->first();
+    
+        return view('pages.about.index', compact('content'));
     }
+    
 }

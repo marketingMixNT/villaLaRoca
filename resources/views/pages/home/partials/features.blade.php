@@ -1,66 +1,41 @@
-<section class="py-16 lg:py-24  bg-secondary-400">
-    <x-container class="max-w-screen-2xl">
-        <div
-            class="grid justify-center items-center grid-cols-2  lg:grid-cols-3   xl:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-16 md:w-[75%] lg:w-full mx-auto">
+<section class="py-16 lg:py-24  bg-secondary-400 ">
+    <x-container class="max-w-screen-2xl relative">
 
-            @foreach ($pictograms as $pictogram)
+        <div class="swiper features-carousel md:opacity-0 fadeIn-animation ">
+            <div class="mb-20 text-center">
 
-            <x-feature-card title="{{$pictogram->title}}" text="{{$pictogram->description}}">
-                <img src="{{'storage/'.$pictogram->icon}}" alt="{{$pictogram->title}}" class="w-14 sm:w-20"
-                    laoding="lazy" />
-            </x-feature-card>
-
-
-
-            @endforeach
+                <h2 class="text-3xl sm:text-4xl tracking-wider font-heading font-extralight text-fontLight ">
+                    Udogodnienia dla naszych gości
+                </h2>
+            </div>
+            <div class="swiper-wrapper ">
 
 
-            {{-- <x-feature-card title="Feature ex 1"
-                text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas totam tenetur quaerat?">
-                <x-lucide-user class="w-14 sm:w-20" />
-            </x-feature-card>
-            <x-feature-card title="Feature ex 1"
-                text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas totam tenetur quaerat?">
-                <x-lucide-user class="w-14 sm:w-20" />
-            </x-feature-card>
-            <x-feature-card title="Feature ex 1"
-                text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas totam tenetur quaerat?">
-                <x-lucide-user class="w-14 sm:w-20" />
-            </x-feature-card>
-            <x-feature-card title="Feature ex 1"
-                text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas totam tenetur quaerat?">
-                <x-lucide-user class="w-14 sm:w-20" />
-            </x-feature-card>
-            <x-feature-card title="Feature ex 1"
-                text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas totam tenetur quaerat?">
-                <x-lucide-user class="w-14 sm:w-20" />
-            </x-feature-card>
-            <x-feature-card title="Feature ex 1"
-                text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas totam tenetur quaerat?">
-                <x-lucide-user class="w-14 sm:w-20" />
-            </x-feature-card>
-            <x-feature-card title="Feature ex 1"
-                text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas totam tenetur quaerat?">
-                <x-lucide-user class="w-14 sm:w-20" />
-            </x-feature-card>
-            <x-feature-card title="Feature ex 1"
-                text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas totam tenetur quaerat?">
-                <x-lucide-user class="w-14 sm:w-20" />
-            </x-feature-card>
-            <x-feature-card title="Feature ex 1"
-                text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas totam tenetur quaerat?">
-                <x-lucide-user class="w-14 sm:w-20" />
-            </x-feature-card>
-            <x-feature-card title="Feature ex 1"
-                text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas totam tenetur quaerat?">
-                <x-lucide-user class="w-14 sm:w-20" />
-            </x-feature-card> --}}
+                @foreach ($pictograms as $pictogram)
+
+                <x-feature-card title="{{$pictogram->title}}" text="{{$pictogram->description}}">
+                    <img src="{{'storage/'.$pictogram->icon}}" alt="{{$pictogram->title}}" class="w-14 sm:w-20"
+                        laoding="lazy" />
+                </x-feature-card>
+              
+
+                @endforeach
 
 
-
-
-
+            </div>
 
         </div>
+        <nav
+            class="absolute right-5 -bottom-10 flex justify-center items-center gap-2 z-50 md:opacity-0 fadeIn-animation">
+            <button class="feature-prev">
+                <x-lucide-arrow-left aria-label="poprzednie udogodnienie" class="w-6 text-fontLight " />
+
+            </button>
+            <button class="feature-next" aria-label="następne udogodnienie">
+                <x-lucide-arrow-right class="w-6 text-primary-400 " />
+
+            </button>
+
+        </nav>
     </x-container>
 </section>

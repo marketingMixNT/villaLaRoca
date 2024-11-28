@@ -160,14 +160,14 @@
                     <a href="{{route('regulations')}}" class="link-hover font-light">Regulamin </a>
                 </li>
                 <li>
-                    <a href="" class="link-hover font-light">Regulamin SPA</a>
+                    <a href="{{route('spa-regulations')}}" class="link-hover font-light">Regulamin SPA</a>
                 </li>
                 <li>
                     <a href="{{route('contact')}}" class="link-hover font-light">Kontakt </a>
                 </li>
             
                 <li>
-                    <a href="" class="link-hover font-light">Opinie</a>
+                    <a href="{{route('testimonials')}}" class="link-hover font-light">Opinie</a>
                 </li>
                 <li>
                     <a href="" class="link-hover font-light">Przydatne informacje</a>

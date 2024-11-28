@@ -30,7 +30,7 @@ class AboutPageBlockResource extends Resource
     protected static ?string $model = AboutPageBlock::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    protected static ?string $navigationGroup = 'O nas';
+    protected static ?string $navigationGroup = 'O villi';
 
     public static function form(Form $form): Form
     {
@@ -64,7 +64,7 @@ class AboutPageBlockResource extends Resource
     {
         return $table
            ->reorderable('sort')
-            ->defaultSort('sort', 'desc')
+            ->defaultSort('sort', 'asc')
             ->columns([
                 Tables\Columns\TextColumn::make('sort')
                     ->label('#')

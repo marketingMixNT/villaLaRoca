@@ -36,7 +36,7 @@ class VillaCommonPageResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-document';
 
-    protected static ?string $navigationGroup = 'Villa';
+    protected static ?string $navigationGroup = 'Serce domu';
 
     public static function form(Form $form): Form
     {
@@ -93,15 +93,15 @@ class VillaCommonPageResource extends Resource
                                     ->label('')
                                     ->relationship()
                                     ->columnSpanFull()
-                                    ->reorderable()
+                                   
                                     ->addActionLabel('Dodaj blok')
                                     ->collapsed()
                                     ->collapsible()
                                     ->defaultItems(0),
 
                                 Shout::make('info')
-                                    ->content('Aby przetłumaczyć bloki przejdź do dedykowanej zakładki.')
-                                    ->type('info')
+                                ->content(content: 'Aby przetłumaczyć bloki bądź ułożyc je w innej kolejnosci przejdź do dedykowanej zakładki.')
+                                ->type('info')
                                     ->columnSpanFull()
                                     ->color('info'),
 
@@ -195,15 +195,15 @@ class VillaCommonPageResource extends Resource
 
     public static function getNavigationLabel(): string
     {
-        return ('Części wspólne - treść');
+        return ('Treść');
     }
     public static function getPluralLabel(): string
     {
-        return ('Części wspólne - treść');
+        return ('Treść');
     }
 
     public static function getLabel(): string
     {
-        return ('Części wspólne - treść');
+        return ('Treść');
     }
 }

@@ -42,7 +42,7 @@ class GardenAndSpaPage extends Model
 
     public function gardenAndSpaPageBlocks(): HasMany
     {
-        return $this->hasMany(GardenAndSpaPageBlock::class);
+        return $this->hasMany(GardenAndSpaPageBlock::class)->orderBy('sort', 'asc');
     }
 
     public $translatable = [

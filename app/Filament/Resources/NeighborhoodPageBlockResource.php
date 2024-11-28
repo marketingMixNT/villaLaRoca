@@ -63,7 +63,7 @@ class NeighborhoodPageBlockResource extends Resource
     {
         return $table
         ->reorderable('sort')
-        ->defaultSort('sort', 'desc')
+        ->defaultSort('sort', 'asc')
         ->columns([
             Tables\Columns\TextColumn::make('sort')
                 ->label('#')

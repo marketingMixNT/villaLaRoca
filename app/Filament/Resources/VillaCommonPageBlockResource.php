@@ -30,7 +30,7 @@ class VillaCommonPageBlockResource extends Resource
     protected static ?string $model = VillaCommonPageBlock::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    protected static ?string $navigationGroup = 'Villa';
+    protected static ?string $navigationGroup = 'Serce domu';
 
     public static function form(Form $form): Form
     {
@@ -64,7 +64,7 @@ class VillaCommonPageBlockResource extends Resource
     {
         return $table
         ->reorderable('sort')
-        ->defaultSort('sort', 'desc')
+        ->defaultSort('sort', 'asc')
         ->columns([
             Tables\Columns\TextColumn::make('sort')
                 ->label('#')
@@ -119,15 +119,15 @@ class VillaCommonPageBlockResource extends Resource
 
     public static function getNavigationLabel(): string
     {
-        return ('Części wspólne - bloki');
+        return ('Bloki');
     }
     public static function getPluralLabel(): string
     {
-        return ('Części wspólne - bloki');
+        return ('Bloki');
     }
 
     public static function getLabel(): string
     {
-        return ('Części wspólne - bloki');
+        return ('Bloki');
     }
 }

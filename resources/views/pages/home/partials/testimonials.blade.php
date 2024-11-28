@@ -62,7 +62,7 @@
           
 
         </x-heading-horizontal>
-
+    </div>
 
         <div class="swiper testimonials-carousel max-w-screen-md md:opacity-0 fadeIn-animation">
             <div class="swiper-wrapper ">

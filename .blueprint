@@ -1,25 +1,26 @@
 created:
-    - database/factories/PictogramFactory.php
-    - database/factories/TestimonialFactory.php
-    - database/migrations/2024_11_22_091210_create_pictograms_table.php
-    - database/migrations/2024_11_22_091211_create_testimonials_table.php
-    - app/Models/Pictogram.php
-    - app/Models/Testimonial.php
+    - database/factories/TestimonialsPageFactory.php
+    - database/migrations/2024_11_28_105839_create_testimonials_pages_table.php
+    - app/Models/TestimonialsPage.php
 models:
-    GalleryPage: { meta_title: json, meta_desc: json, header_heading: json, banner: text, heading: 'json nullable', text: 'json nullable' }
-    Gallery: { category: json, images: text, sort: 'integer nullable' }
-    AboutPage: { meta_title: json, meta_desc: json, header_heading: json, banner: text, relationships: { hasMany: AboutPageBlock } }
-    AboutPageBlock: { image: text, text: json, sort: 'integer nullable', relationships: { belongsTo: AboutPage } }
-    VillaRoomsPage: { meta_title: json, meta_desc: json, header_heading: json, banner: text, relationships: { hasMany: VillaRoomsPageBlock } }
-    VillaRoomsPageBlock: { image: text, text: json, sort: 'integer nullable', relationships: { belongsTo: VillaRoomsPage } }
-    VillaCommonPage: { meta_title: json, meta_desc: json, header_heading: json, banner: text, relationships: { hasMany: VillaCommonPageBlock } }
-    VillaCommonPageBlock: { image: text, text: json, sort: 'integer nullable', relationships: { belongsTo: VillaCommonPage } }
-    GardenAndSpaPage: { meta_title: json, meta_desc: json, header_heading: json, banner: text, relationships: { hasMany: GardenAndSpaPageBlock } }
-    GardenAndSpaPageBlock: { image: text, text: json, sort: 'integer nullable', relationships: { belongsTo: GardenAndSpaPage } }
-    NeighborhoodPage: { meta_title: json, meta_desc: json, header_heading: json, banner: text, relationships: { hasMany: NeighborhoodPageBlock } }
-    NeighborhoodPageBlock: { image: text, text: json, sort: 'integer nullable', relationships: { belongsTo: NeighborhoodPage } }
-    PrivacyPolicy: { banner: text, content: json }
-    Regulations: { banner: text, content: json }
-    ContactPage: { meta_title: json, meta_desc: json, header_heading: json, banner: text }
-    Pictogram: { icon: text, title: json, description: json, sort: 'integer nullable' }
-    Testimonial: { name: json, source: json, content: json, sort: 'integer nullable' }
+    AboutPage: { meta_title: longtext, meta_desc: longtext, header_heading: longtext, banner: text, heading: 'longtext nullable default:NULL', text: 'longtext nullable default:NULL' }
+    AboutPageBlock: { image: text, text: longtext, sort: 'integer nullable default:NULL', about_page_id: 'biginteger unsigned' }
+    ContactPage: { meta_title: longtext, meta_desc: longtext, header_heading: longtext, banner: text }
+    Gallery: { category: longtext, images: text, sort: 'integer nullable default:NULL' }
+    GalleryPage: { meta_title: longtext, meta_desc: longtext, header_heading: longtext, banner: text, heading: 'longtext nullable default:NULL', text: 'longtext nullable default:NULL' }
+    GardenAndSpaPage: { meta_title: longtext, meta_desc: longtext, header_heading: longtext, banner: text, heading: 'longtext nullable default:NULL', text: 'longtext nullable default:NULL' }
+    GardenAndSpaPageBlock: { image: text, text: longtext, sort: 'integer nullable default:NULL', garden_and_spa_page_id: 'biginteger unsigned' }
+    NeighborhoodPage: { meta_title: longtext, meta_desc: longtext, header_heading: longtext, banner: text, heading: 'longtext nullable default:NULL', text: 'longtext nullable default:NULL' }
+    NeighborhoodPageBlock: { image: text, text: longtext, sort: 'integer nullable default:NULL', neighborhood_page_id: 'biginteger unsigned' }
+    Pictogram: { icon: text, title: longtext, description: longtext, sort: 'integer nullable default:NULL' }
+    PrivacyPolicy: { banner: text, content: longtext, meta_title: 'longtext nullable default:NULL', meta_desc: 'longtext nullable default:NULL' }
+    Regulations: { banner: text, content: longtext, meta_title: 'longtext nullable default:NULL', meta_desc: 'longtext nullable default:NULL' }
+    Room: { meta_title: 'longtext nullable default:NULL', meta_desc: 'longtext nullable default:NULL', title: longtext, slug: longtext, short_desc: longtext, desc: longtext, equipment: longtext, thumbnail: text, gallery: text, beds: 'text nullable default:NULL', bathrooms: 'text nullable default:NULL', sort: 'integer nullable default:NULL' }
+    SpaRegulations: { meta_title: longtext, meta_desc: longtext, banner: text, content: longtext }
+    Testimonial: { name: longtext, source: longtext, content: longtext, sort: 'integer nullable default:NULL' }
+    User: { name: string, email: string, email_verified_at: 'timestamp nullable default:NULL', password: string, remember_token: 'string:100 nullable default:NULL' }
+    VillaCommonPage: { meta_title: longtext, meta_desc: longtext, header_heading: longtext, banner: text, heading: 'longtext nullable default:NULL', text: 'longtext nullable default:NULL' }
+    VillaCommonPageBlock: { image: text, text: longtext, sort: 'integer nullable default:NULL', villa_common_page_id: 'biginteger unsigned' }
+    VillaRoomsPage: { meta_title: longtext, meta_desc: longtext, header_heading: longtext, banner: text, heading: 'longtext nullable default:NULL', text: 'longtext nullable default:NULL' }
+    VillaRoomsPageBlock: { image: text, text: longtext, sort: 'integer nullable default:NULL', villa_rooms_page_id: 'biginteger unsigned' }
+    TestimonialsPage: { meta_title: json, meta_desc: json, header_heading: json, banner: text, heading: 'json nullable', text: 'json nullable' }
