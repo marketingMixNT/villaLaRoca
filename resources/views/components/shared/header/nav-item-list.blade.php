@@ -19,6 +19,8 @@
 
     <x-shared.header.nav-item href="{{route('gallery')}}" activeRoute="gallery">Galeria</x-shared.header.nav-item>
 
+    <x-shared.header.nav-item href="{{route('voucher')}}" activeRoute="voucher">Voucher</x-shared.header.nav-item>
+
     <li>
         <x-button-link class="hidden xl:block ">Zarezerwuj</x-button-link>
     </li>

@@ -170,7 +170,7 @@
                     <a href="{{route('testimonials')}}" class="link-hover font-light">Opinie</a>
                 </li>
                 <li>
-                    <a href="" class="link-hover font-light">Przydatne informacje</a>
+                    <a href="{{route('info')}}" class="link-hover font-light">Przydatne informacje</a>
                 </li>
            
             </ul>

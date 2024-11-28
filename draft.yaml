@@ -1,125 +1,18 @@
 models:
-   TestimonialsPage:
-    meta_title: json
-    meta_desc: json
-    header_heading: json
-    banner: text
-
-
- SpaRegulations:
-    banner: text
-    content: json
-
-  Room: 
-    meta_title: json nullable
-    meta_desc: json nullable
-    title: json unique
-    slug: json unique
-    short_desc: json
-    desc: json
-    equipment: json
-    thumbnail: text
-    gallery: text
-    beds: text nullable
-    bathrooms: text nullable
-    sort: integer nullable
-
-  Pictogram:
-    icon: text
-    title: json
-    description: json
-    sort: integer nullable
-  Testimonial:
-    name: json
-    source: json
-    content: json
-    sort: integer nullable
-
-ContactPage:
-    meta_title: json
-    meta_desc: json
-    header_heading: json
-    banner: text
-  PrivacyPolicy:
-    banner: text
-    content: json
-  Regulations:
-    banner: text
-    content: json
-  NeighborhoodPage:
-    meta_title: json
-    meta_desc: json
-    header_heading: json
-    banner: text
-    relationships:
-      hasMany: NeighborhoodPageBlock
-  NeighborhoodPageBlock:
-    image: text
-    text: json
-    sort: integer nullable
-    relationships:
-      belongsTo: NeighborhoodPage
-   GardenAndSpaPage:
-    meta_title: json
-    meta_desc: json
-    header_heading: json
-    banner: text
-    relationships:
-      hasMany: GardenAndSpaPageBlock
-  GardenAndSpaPageBlock:
-    image: text
-    text: json
-    sort: integer nullable
-    relationships:
-      belongsTo: GardenAndSpaPage
-VillaRoomsPage:
-    meta_title: json
-    meta_desc: json
-    header_heading: json
-    banner: text
-    relationships:
-      hasMany: VillaRoomsPageBlock
-  VillaRoomsPageBlock:
-    image: text
-    text: json
-    sort: integer nullable
-    relationships:
-      belongsTo: VillaRoomsPage
-  VillaCommonPage:
-    meta_title: json
-    meta_desc: json
-    header_heading: json
-    banner: text
-    relationships:
-      hasMany: VillaCommonPageBlock
-  VillaCommonPageBlock:
-    image: text
-    text: json
-    sort: integer nullable
-    relationships:
-      belongsTo: VillaCommonPage
-  AboutPage:
-    meta_title: json
-    meta_desc: json
-    header_heading: json
-    banner: text
-    relationships:
-      hasMany: AboutPageBlock
-  AboutPageBlock:
-    image: text
-    text: json
-    sort: integer nullable
-    relationships:
-      belongsTo: AboutPage
-  GalleryPage:
+  VoucherPage:
     meta_title: json
     meta_desc: json
     header_heading: json
     banner: text
     heading: json nullable
     text: json nullable
-  Gallery:
-    category: json
-    images: text
+    relationships:
+      hasMany: VourcherPageBlock
+  VoucherPageBlock:
+    image: text
+    text: json
     sort: integer nullable
+    relationships:
+      belongsTo: VoucherPage
 
+ 

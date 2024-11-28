@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\InfoPage;
 use App\Models\Regulations;
 use Illuminate\Http\Request;
 use App\Models\PrivacyPolicy;
@@ -9,24 +10,36 @@ use App\Models\SpaRegulations;
 
 class OtherPagesController extends Controller
 {
-    public function privacyPolicy(){
+    public function privacyPolicy()
+    {
 
         $content = PrivacyPolicy::first();
 
-        return view('pages.other-pages.privacy-policy',compact('content'));
+        return view('pages.other-pages.privacy-policy', compact('content'));
     }
 
-    public function regulations(){
+    public function regulations()
+    {
 
         $content = Regulations::first();
 
-        return view('pages.other-pages.regulations',compact('content'));
+        return view('pages.other-pages.regulations', compact('content'));
     }
-    
-    public function SpaRegulations(){
+
+    public function SpaRegulations()
+    {
 
         $content = SpaRegulations::first();
 
-        return view('pages.other-pages.spa-regulations',compact('content'));
+        return view('pages.other-pages.spa-regulations', compact('content'));
+    }
+
+    public function info()
+    {
+        $content = InfoPage::with(['infoPageBlocks' => function ($query) {
+            $query->orderBy('sort', 'asc');
+        }])->first();
+
+        return view('pages.other-pages.info', compact('content'));
     }
 }

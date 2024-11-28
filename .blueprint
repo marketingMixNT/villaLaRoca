@@ -1,7 +1,10 @@
 created:
-    - database/factories/TestimonialsPageFactory.php
-    - database/migrations/2024_11_28_105839_create_testimonials_pages_table.php
-    - app/Models/TestimonialsPage.php
+    - database/factories/VoucherPageFactory.php
+    - database/factories/VoucherPageBlockFactory.php
+    - database/migrations/2024_11_28_132840_create_voucher_pages_table.php
+    - database/migrations/2024_11_28_132841_create_voucher_page_blocks_table.php
+    - app/Models/VoucherPage.php
+    - app/Models/VoucherPageBlock.php
 models:
     AboutPage: { meta_title: longtext, meta_desc: longtext, header_heading: longtext, banner: text, heading: 'longtext nullable default:NULL', text: 'longtext nullable default:NULL' }
     AboutPageBlock: { image: text, text: longtext, sort: 'integer nullable default:NULL', about_page_id: 'biginteger unsigned' }
@@ -18,9 +21,13 @@ models:
     Room: { meta_title: 'longtext nullable default:NULL', meta_desc: 'longtext nullable default:NULL', title: longtext, slug: longtext, short_desc: longtext, desc: longtext, equipment: longtext, thumbnail: text, gallery: text, beds: 'text nullable default:NULL', bathrooms: 'text nullable default:NULL', sort: 'integer nullable default:NULL' }
     SpaRegulations: { meta_title: longtext, meta_desc: longtext, banner: text, content: longtext }
     Testimonial: { name: longtext, source: longtext, content: longtext, sort: 'integer nullable default:NULL' }
+    TestimonialsPage: { meta_title: longtext, meta_desc: longtext, header_heading: longtext, banner: text, heading: 'longtext nullable default:NULL', text: 'longtext nullable default:NULL' }
     User: { name: string, email: string, email_verified_at: 'timestamp nullable default:NULL', password: string, remember_token: 'string:100 nullable default:NULL' }
     VillaCommonPage: { meta_title: longtext, meta_desc: longtext, header_heading: longtext, banner: text, heading: 'longtext nullable default:NULL', text: 'longtext nullable default:NULL' }
     VillaCommonPageBlock: { image: text, text: longtext, sort: 'integer nullable default:NULL', villa_common_page_id: 'biginteger unsigned' }
     VillaRoomsPage: { meta_title: longtext, meta_desc: longtext, header_heading: longtext, banner: text, heading: 'longtext nullable default:NULL', text: 'longtext nullable default:NULL' }
     VillaRoomsPageBlock: { image: text, text: longtext, sort: 'integer nullable default:NULL', villa_rooms_page_id: 'biginteger unsigned' }
-    TestimonialsPage: { meta_title: json, meta_desc: json, header_heading: json, banner: text, heading: 'json nullable', text: 'json nullable' }
+    InfoPage: { meta_title: json, meta_desc: json, header_heading: json, banner: text, heading: 'json nullable', text: 'json nullable', relationships: { hasMany: InfoPageBlock } }
+    InfoPageBlock: { image: text, text: json, sort: 'integer nullable', relationships: { belongsTo: InfoPage } }
+    VoucherPage: { meta_title: json, meta_desc: json, header_heading: json, banner: text, heading: 'json nullable', text: 'json nullable', relationships: { hasMany: VourcherPageBlock } }
+    VoucherPageBlock: { image: text, text: json, sort: 'integer nullable', relationships: { belongsTo: VoucherPage } }

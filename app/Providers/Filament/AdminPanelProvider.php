@@ -92,6 +92,9 @@ class AdminPanelProvider extends PanelProvider
                 NavigationGroup::make()
                     ->label('Strony informacyjne')
                     ->collapsed(),
+                NavigationGroup::make()
+                    ->label('Voucher')
+                    ->collapsed(),
 
 
             ])

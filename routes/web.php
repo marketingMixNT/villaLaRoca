@@ -7,6 +7,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\VillaController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\VoucherController;
 use App\Http\Controllers\OtherPagesController;
 use App\Http\Controllers\GardenAndSpaController;
 use App\Http\Controllers\NeighborhoodController;
@@ -26,6 +27,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
     Route::get('/serce-domu', [VillaController::class, 'common'])->name('house-heart');
     Route::get('/strefa-relaksu', GardenAndSpaController::class)->name('relax-zone');
     Route::get('/galeria', GalleryController::class)->name('gallery');
+    Route::get('/voucher', VoucherController::class)->name('voucher');
 
     Route::get('/kontakt', ContactController::class)->name('contact');
     Route::get('/opinie', TestimonialsController::class)->name('testimonials');
@@ -33,6 +35,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
     Route::get('/polityka-prywatnosci', [OtherPagesController::class, 'privacyPolicy'])->name('privacy-policy');
     Route::get('/regulamin-obiektu', [OtherPagesController::class, 'regulations'])->name('regulations');
     Route::get('/regulamin-spa', [OtherPagesController::class, 'spaRegulations'])->name('spa-regulations');
+    Route::get('/przydatne-informacje', [OtherPagesController::class, 'info'])->name('info');
 
     
     //opinie
