@@ -42,7 +42,7 @@ class AttractionPage extends Model
         'text' => 'array',
     ];
 
-    public function vAttractionPageBlocks(): HasMany
+    public function AttractionPageBlocks(): HasMany
     {
         return $this->hasMany(AttractionPageBlock::class)->orderBy('sort', 'asc');
     }

@@ -4,6 +4,7 @@ use Livewire\Livewire;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AttractionController;
 use App\Http\Controllers\VillaController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GalleryController;
@@ -29,6 +30,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
 
     Route::get('/serce-domu', [VillaController::class, 'common'])->name('house-heart');
     Route::get('/strefa-relaksu', GardenAndSpaController::class)->name('relax-zone');
+    Route::get('/atrakcje', AttractionController::class)->name('attractions');
     Route::get('/galeria', GalleryController::class)->name('gallery');
     Route::get('/voucher', VoucherController::class)->name('voucher');
 

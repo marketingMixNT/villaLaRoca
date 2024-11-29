@@ -17,7 +17,8 @@
     <x-shared.header.nav-item-mobile href="{{route('relax-zone')}}" activeRoute="relax-zone">Strefa Relaksu
     </x-shared.header.nav-item-mobile>
 
-    <x-shared.header.nav-item-mobile href="" activeRoute="">Atrakcje</x-shared.header.nav-item-mobile>
+    <x-shared.header.nav-item-mobile href="{{route('attractions')}}" activeRoute="attractions">Atrakcje
+    </x-shared.header.nav-item-mobile>
 
     <x-shared.header.nav-item-mobile href="{{route('gallery')}}" activeRoute="gallery">Galeria
     </x-shared.header.nav-item-mobile>

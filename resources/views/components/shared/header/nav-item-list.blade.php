@@ -14,7 +14,7 @@
     <x-shared.header.nav-item href="{{route('relax-zone')}}" activeRoute="relax-zone">Strefa Relaksu
     </x-shared.header.nav-item>
 
-    <x-shared.header.nav-item href="#" activeRoute="">Atrakcje
+    <x-shared.header.nav-item href="{{route('attractions')}}" activeRoute="attractions">Atrakcje
     </x-shared.header.nav-item>
 
     <x-shared.header.nav-item href="{{route('gallery')}}" activeRoute="gallery">Galeria</x-shared.header.nav-item>

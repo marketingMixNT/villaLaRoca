@@ -71,9 +71,11 @@ class AdminPanelProvider extends PanelProvider
                     ->label('Strona główna')
                     ->collapsed(),
                 NavigationGroup::make()
+                    ->label('Atrakcje')
+                    ->collapsed(),
+                NavigationGroup::make()
                     ->label('Galeria')
                     ->collapsed(),
-
                 NavigationGroup::make()
                     ->label('Kontakt')
                     ->collapsed(),
@@ -85,6 +87,12 @@ class AdminPanelProvider extends PanelProvider
                     ->collapsed(),
                 NavigationGroup::make()
                     ->label('O villi')
+                    ->collapsed(),
+                NavigationGroup::make()
+                    ->label('Pokoje')
+                    ->collapsed(),
+                NavigationGroup::make()
+                    ->label('Serce domu')
                     ->collapsed(),
                 NavigationGroup::make()
                     ->label('Strefa relaksu')
