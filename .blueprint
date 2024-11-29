@@ -1,10 +1,10 @@
 created:
-    - database/factories/VoucherPageFactory.php
-    - database/factories/VoucherPageBlockFactory.php
-    - database/migrations/2024_11_28_132840_create_voucher_pages_table.php
-    - database/migrations/2024_11_28_132841_create_voucher_page_blocks_table.php
-    - app/Models/VoucherPage.php
-    - app/Models/VoucherPageBlock.php
+    - database/factories/AttractionPageFactory.php
+    - database/factories/AttractionPageBlockFactory.php
+    - database/migrations/2024_11_28_143838_create_attraction_pages_table.php
+    - database/migrations/2024_11_28_143839_create_attraction_page_blocks_table.php
+    - app/Models/AttractionPage.php
+    - app/Models/AttractionPageBlock.php
 models:
     AboutPage: { meta_title: longtext, meta_desc: longtext, header_heading: longtext, banner: text, heading: 'longtext nullable default:NULL', text: 'longtext nullable default:NULL' }
     AboutPageBlock: { image: text, text: longtext, sort: 'integer nullable default:NULL', about_page_id: 'biginteger unsigned' }
@@ -31,3 +31,5 @@ models:
     InfoPageBlock: { image: text, text: json, sort: 'integer nullable', relationships: { belongsTo: InfoPage } }
     VoucherPage: { meta_title: json, meta_desc: json, header_heading: json, banner: text, heading: 'json nullable', text: 'json nullable', relationships: { hasMany: VourcherPageBlock } }
     VoucherPageBlock: { image: text, text: json, sort: 'integer nullable', relationships: { belongsTo: VoucherPage } }
+    AttractionPage: { meta_title: json, meta_desc: json, header_heading: json, banner: text, heading: 'json nullable', text: 'json nullable', relationships: { hasMany: VAttractionPageBlock } }
+    AttractionPageBlock: { image: text, text: json, sort: 'integer nullable', relationships: { belongsTo: AttractionPage } }

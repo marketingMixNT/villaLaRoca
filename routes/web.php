@@ -11,6 +11,7 @@ use App\Http\Controllers\VoucherController;
 use App\Http\Controllers\OtherPagesController;
 use App\Http\Controllers\GardenAndSpaController;
 use App\Http\Controllers\NeighborhoodController;
+use App\Http\Controllers\RoomController;
 use App\Http\Controllers\TestimonialsController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -23,7 +24,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
     Route::get('/', HomeController::class)->name('home');
     Route::get('/o-villi', AboutController::class)->name('about');
     Route::get('/okolice', NeighborhoodController::class)->name('neighborhood');
-    Route::get('/pokoje', [VillaController::class, 'rooms'])->name('rooms');
+    Route::get('/pokoje', [RoomController::class, 'index'])->name('room.index');
+    Route::get('/pokoje/{slug}', [RoomController::class, 'show'])->name('room.show');
+
     Route::get('/serce-domu', [VillaController::class, 'common'])->name('house-heart');
     Route::get('/strefa-relaksu', GardenAndSpaController::class)->name('relax-zone');
     Route::get('/galeria', GalleryController::class)->name('gallery');

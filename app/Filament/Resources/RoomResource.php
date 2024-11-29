@@ -64,17 +64,7 @@ class RoomResource extends Resource
                                     ->placeholder('Przyjazny adres url który wygeneruje się automatycznie')
                                     ->readOnly(),
 
-                                Forms\Components\TextInput::make('beds')
-                                    ->label('Liczba łóżek')
-                                    ->required()
-                                    ->placeholder('np. 1 podwójne')
-                                    ->columns(1),
-
-                                Forms\Components\TextInput::make('bathrooms')
-                                    ->label('Liczba łazienek')
-                                    ->required()
-                                    ->placeholder('np. 1 łazienka')
-                                    ->columns(1),
+                                
 
 
 
@@ -250,6 +240,7 @@ class RoomResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

@@ -1,5 +1,5 @@
 models:
-  VoucherPage:
+  AttractionPage:
     meta_title: json
     meta_desc: json
     header_heading: json
@@ -7,12 +7,12 @@ models:
     heading: json nullable
     text: json nullable
     relationships:
-      hasMany: VourcherPageBlock
-  VoucherPageBlock:
+      hasMany: VAttractionPageBlock
+  AttractionPageBlock:
     image: text
     text: json
     sort: integer nullable
     relationships:
-      belongsTo: VoucherPage
+      belongsTo: AttractionPage
 
  

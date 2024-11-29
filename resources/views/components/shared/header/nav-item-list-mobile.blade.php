@@ -8,7 +8,7 @@
     <x-shared.header.nav-item-mobile href="{{route('neighborhood')}}" activeRoute="neighborhood">Okolice
     </x-shared.header.nav-item-mobile>
 
-    <x-shared.header.nav-item-mobile href="{{route('rooms')}}" activeRoute="rooms">Pokoje
+    <x-shared.header.nav-item-mobile href="{{route('room.index')}}" activeRoute="rooms">Pokoje
     </x-shared.header.nav-item-mobile>
 
     <x-shared.header.nav-item-mobile href="{{route('house-heart')}}" activeRoute="house-heart">Serce domu

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Room;
 use App\Models\Pictogram;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
@@ -16,7 +17,8 @@ class HomeController extends Controller
 
         $pictograms = Pictogram::orderBy('sort','asc')->get();
         $testimonials = Testimonial::orderBy('sort','asc')->get();
+        $rooms = Room::orderBy('sort','asc')->get();
 
-        return view('pages.home.index',compact('pictograms','testimonials'));
+        return view('pages.home.index',compact('pictograms','testimonials','rooms'));
     }
 }

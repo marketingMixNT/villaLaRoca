@@ -30,6 +30,25 @@
   </x-text-image-block>
 
       @endforeach
+      
+      <x-heading title="Zobacz nasze pokoje"/>
+      <div class="flex flex-wrap  justify-center items-center gap-16  mx-auto gap-y-12">
+
+
+
+        @foreach ($rooms as $room)
+
+        {{-- item --}}
+       <x-room-card :room="$room" size="w-[30%]"/>
+     
+      
+        
+       
+      
+
+        @endforeach
+
+    </div>
   
       </x-container>
   </section>

@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Spatie\Translatable\HasTranslations;
 
-class VillaRoomsPage extends Model
+class AttractionPage extends Model
 {
+
     use HasTranslations;
 
     use HasFactory;
@@ -41,9 +42,9 @@ class VillaRoomsPage extends Model
         'text' => 'array',
     ];
 
-    public function villaRoomsPageBlocks(): HasMany
+    public function vAttractionPageBlocks(): HasMany
     {
-        return $this->hasMany(VillaRoomsPageBlock::class)->orderBy('sort', 'asc');
+        return $this->hasMany(AttractionPageBlock::class)->orderBy('sort', 'asc');
     }
 
     public $translatable = [

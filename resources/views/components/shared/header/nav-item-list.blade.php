@@ -5,7 +5,7 @@
     <x-shared.header.nav-item href="{{route('neighborhood')}}" activeRoute="neighborhood">Okolice
     </x-shared.header.nav-item>
 
-    <x-shared.header.nav-item href="{{route('rooms')}}" activeRoute="rooms">Pokoje
+    <x-shared.header.nav-item href="{{route('room.index')}}" activeRoute="rooms">Pokoje
     </x-shared.header.nav-item>
 
     <x-shared.header.nav-item href="{{route('house-heart')}}" activeRoute="house-heart">Serce domu

@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Room;
 use App\Models\Gallery;
 use App\Models\InfoPage;
 use App\Models\AboutPage;
@@ -16,6 +17,7 @@ use App\Models\AboutPageBlock;
 use App\Models\SpaRegulations;
 use App\Models\VillaRoomsPage;
 use App\Models\VillaCommonPage;
+use App\Observers\RoomObserver;
 use App\Models\GardenAndSpaPage;
 use App\Models\NeighborhoodPage;
 use App\Models\TestimonialsPage;
@@ -102,6 +104,7 @@ class AppServiceProvider extends ServiceProvider
         // Villa rooms
         VillaRoomsPage::observe(VillaRoomsPageObserver::class);
         VillaRoomsPageBlock::observe(VillaRoomsPageBlockObserver::class);
+        Room::observe(RoomObserver::class);
 
          // Voucher
          VoucherPage::observe(VoucherPageObserver::class);

@@ -78,7 +78,7 @@ class VillaRoomsPageResource extends Resource
                                     ->content('Nagłówek oraz tekst są opcjonalne. Pojawią się nad blokami.')
                                     ->type('info')
                                     ->columnSpanFull(),
-                                    
+
                                 Forms\Components\TextInput::make('heading')
                                     ->label('Nagłowek')
                                     ->columnSpanFull(),
@@ -92,14 +92,14 @@ class VillaRoomsPageResource extends Resource
                                     ->label('')
                                     ->relationship()
                                     ->columnSpanFull()
-                                    ->reorderable()
+                                    // ->reorderable()
                                     ->addActionLabel('Dodaj blok')
                                     ->collapsed()
                                     ->collapsible()
                                     ->defaultItems(0),
 
                                 Shout::make('info')
-                                    ->content('Aby przetłumaczyć bloki przejdź do dedykowanej zakładki.')
+                                    ->content(content: 'Aby przetłumaczyć bloki bądź ułożyc je w innej kolejnosci przejdź do dedykowanej zakładki.')
                                     ->type('info')
                                     ->columnSpanFull()
                                     ->color('info'),
