@@ -1,18 +1,35 @@
 models:
-  AttractionPage:
+  Home:
     meta_title: json
     meta_desc: json
-    header_heading: json
-    banner: text
-    heading: json nullable
-    text: json nullable
+    
+
+   
+ 
+
+ 
+
+
+
     relationships:
-      hasMany: VAttractionPageBlock
-  AttractionPageBlock:
+      hasMany: social, homeFirstSectionBlock,homeSecondSectionBlock
+
+  HomeFirstSectionBlock:
     image: text
     text: json
     sort: integer nullable
     relationships:
-      belongsTo: AttractionPage
+      belongsTo: Home
 
- 
+  HomeSecondSectionBlock:
+    image: text
+    text: json
+    sort: integer nullable
+    relationships:
+      belongsTo: Home
+
+  Social:
+    name: text
+    link: text
+    relationships:
+      belongsTo: Home

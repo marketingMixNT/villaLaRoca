@@ -1,10 +1,16 @@
 created:
-    - database/factories/AttractionPageFactory.php
-    - database/factories/AttractionPageBlockFactory.php
-    - database/migrations/2024_11_28_143838_create_attraction_pages_table.php
-    - database/migrations/2024_11_28_143839_create_attraction_page_blocks_table.php
-    - app/Models/AttractionPage.php
-    - app/Models/AttractionPageBlock.php
+    - database/factories/HomeFactory.php
+    - database/factories/HomeFirstSectionBlockFactory.php
+    - database/factories/HomeSecondSectionBlockFactory.php
+    - database/factories/SocialFactory.php
+    - database/migrations/2024_12_02_091737_create_homes_table.php
+    - database/migrations/2024_12_02_091738_create_home_first_section_blocks_table.php
+    - database/migrations/2024_12_02_091739_create_home_second_section_blocks_table.php
+    - database/migrations/2024_12_02_091740_create_socials_table.php
+    - app/Models/Home.php
+    - app/Models/HomeFirstSectionBlock.php
+    - app/Models/HomeSecondSectionBlock.php
+    - app/Models/Social.php
 models:
     AboutPage: { meta_title: longtext, meta_desc: longtext, header_heading: longtext, banner: text, heading: 'longtext nullable default:NULL', text: 'longtext nullable default:NULL' }
     AboutPageBlock: { image: text, text: longtext, sort: 'integer nullable default:NULL', about_page_id: 'biginteger unsigned' }
@@ -33,3 +39,7 @@ models:
     VoucherPageBlock: { image: text, text: json, sort: 'integer nullable', relationships: { belongsTo: VoucherPage } }
     AttractionPage: { meta_title: json, meta_desc: json, header_heading: json, banner: text, heading: 'json nullable', text: 'json nullable', relationships: { hasMany: VAttractionPageBlock } }
     AttractionPageBlock: { image: text, text: json, sort: 'integer nullable', relationships: { belongsTo: AttractionPage } }
+    Home: { meta_title: json, meta_desc: json, title: json, logo: text, phone: text, phone_second: 'text nullable', mail: text, mail_second: 'text nullable', city: text, address: text, booking_link: json, booking_script: text, map: 'text nullable', map_link: 'text nullable', slider_title: json, slider_subtitle: json, slider_images: 'text nullable', slider_movie: 'text nullable', rooms_heading: json, rooms_text: json, testimonials_heading: json, testimonials_text: json, google_reviews: 'text nullable', google_reviews_average: 'text nullable', google_reviews_link: 'text nullable', tripadvisor_reviews: 'text nullable', tripadvisor_reviews_average: 'text nullable', tripadvisor_reviews_link: 'text nullable', neighborhood_heading: json, neighborhood_text: json, neighborhood_images: text, relationships: { hasMany: 'social, homeFirstSectionBlock,homeSecondSectionBlock' } }
+    HomeFirstSectionBlock: { image: text, text: json, sort: 'integer nullable', relationships: { belongsTo: Home } }
+    HomeSecondSectionBlock: { image: text, text: json, sort: 'integer nullable', relationships: { belongsTo: Home } }
+    Social: { name: text, link: text, relationships: { belongsTo: Home } }

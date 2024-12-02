@@ -128,7 +128,7 @@
         {{-- @if ($cta)
         <x-cta :cta="$cta" />
         @endif --}}
-
+<x-cta/>
 
           {{-- other apartments --}}
 

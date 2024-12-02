@@ -1,3 +1,7 @@
+
+
+@if($home->slider_movie)
+
 <div class="relative   w-full h-screen ">
 
     <x-shared.header.hamburger class="absolute top-12 right-12 z-40" />
@@ -14,10 +18,17 @@
 
 
     <div class=" z-40 flex justify-center items-center flex-col w-full h-full gap-12">
-        <img src="{{asset('assets/logo/logo--light.png')}}" alt="" class="sm:w-[250px]  w-[300px] lg:w-[450px] z-40">
-        <h1
-            class="px-6 md:px-12  text-center text-4xl xs:text-5xl lg:text-5xl     font-heading  text-fontWhite  tracking-wide z-40 text-fontLight font-extralight  ">
-            Twoja wymarzona willa  w sercu Tatr</h1>
+        <img src="{{asset('storage/' . $home->logo)}}" alt="logo {{$home->title}}" class="sm:w-[250px]  w-[300px] lg:w-[450px] z-40">
+        <h1 class=" px-6 md:px-12 text-center text-4xl xs:text-5xl lg:text-7xl     font-heading  text-fontWhite  tracking-wide z-50 text-fontLight font-extralight pb-44"
+                style="line-height: 1.2">
+                {{$home->slider_title}} 
+                
+                @if($home->slider_subtitle)
+                <br> <span class=" text-sm lg:text-2xl font-text ">
+                    Lorem ipsum dolor sit amet.</span>
+                @endif
+                
+            </h1>
 
         <x-button-link href="#" class="z-40 mt-12 lg:mt-32">tutaj będzie panel do rezerwacji</x-button-link>
     </div>
@@ -34,7 +45,9 @@
 
     </a>
 </div>
-{{-- <div class="relative swiper hero-carousel  w-full h-screen ">
+
+@else
+<div class="relative swiper hero-carousel  w-full h-screen ">
 
     <x-shared.header.hamburger class="absolute top-12 right-12 z-50" />
 
@@ -42,10 +55,16 @@
 
 
         <div class="absolute top-1/2 left-0 right-0 -translate-y-1/2 z-40 flex justify-center items-center flex-col">
+            <img src="{{asset('storage/' . $home->logo)}}" alt="logo {{$home->title}}" class="sm:w-[250px]  w-[300px] lg:w-[450px] z-40">
             <h1 class=" px-6 md:px-12 text-center text-4xl xs:text-5xl lg:text-7xl     font-heading  text-fontWhite  tracking-wide z-50 text-fontLight font-extralight pb-44"
                 style="line-height: 1.2">
-                Villa la Roca <br> <span class=" text-sm lg:text-2xl font-text ">
+                {{$home->slider_title}} 
+                
+                @if($home->slider_subtitle)
+                <br> <span class=" text-sm lg:text-2xl font-text ">
                     Lorem ipsum dolor sit amet.</span>
+                @endif
+                
             </h1>
 
 
@@ -97,4 +116,6 @@
 
         </a>
     </div>
-</div> --}}
+</div>
+
+@endif

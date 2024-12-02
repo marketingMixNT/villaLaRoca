@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Home;
 use App\Models\Room;
 use App\Models\Gallery;
 use App\Models\InfoPage;
@@ -18,6 +19,7 @@ use App\Models\AttractionPage;
 use App\Models\SpaRegulations;
 use App\Models\VillaRoomsPage;
 use App\Models\VillaCommonPage;
+use App\Observers\HomeObserver;
 use App\Observers\RoomObserver;
 use App\Models\GardenAndSpaPage;
 use App\Models\NeighborhoodPage;
@@ -31,7 +33,9 @@ use App\Models\VillaCommonPageBlock;
 use App\Observers\AboutPageObserver;
 use App\Observers\PictogramObserver;
 use App\Models\GardenAndSpaPageBlock;
+use App\Models\HomeFirstSectionBlock;
 use App\Models\NeighborhoodPageBlock;
+use App\Models\HomeSecondSectionBlock;
 use App\Observers\ContactPageObserver;
 use App\Observers\GalleryPageObserver;
 use App\Observers\RegulationsObserver;
@@ -52,7 +56,9 @@ use App\Observers\AttractionPageBlockObserver;
 use App\Observers\VillaRoomsPageBlockObserver;
 use App\Observers\VillaCommonPageBlockObserver;
 use App\Observers\GardenAndSpaPageBlockObserver;
+use App\Observers\HomeFirstSectionBlockObserver;
 use App\Observers\NeighborhoodPageBlockObserver;
+use App\Observers\HomeSecondSectionBlockObserver;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -89,6 +95,9 @@ class AppServiceProvider extends ServiceProvider
         GardenAndSpaPageBlock::observe(GardenAndSpaPageBlockObserver::class);
 
         // Home
+        Home::observe(HomeObserver::class);
+        HomeFirstSectionBlock::observe(HomeFirstSectionBlockObserver::class);
+        HomeSecondSectionBlock::observe(HomeSecondSectionBlockObserver::class);
         Pictogram::observe(PictogramObserver::class);
 
         // Neighborhood

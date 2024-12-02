@@ -32,14 +32,14 @@
       @endforeach
       
       <x-heading title="Zobacz nasze pokoje"/>
-      <div class="flex flex-wrap  justify-center items-center gap-16  mx-auto gap-y-12">
+      <div class="flex flex-wrap justify-center items-stretch gap-12  mx-auto ">
 
 
 
         @foreach ($rooms as $room)
 
         {{-- item --}}
-       <x-room-card :room="$room" size="w-[30%]"/>
+       <x-room-card :room="$room" size="w-[80%] sm:w-[75%]  lg:w-[40%] xl:w-[29%]  2xl:w-[30%]"/>
      
       
         

@@ -22,6 +22,6 @@
     <x-shared.header.nav-item href="{{route('voucher')}}" activeRoute="voucher">Voucher</x-shared.header.nav-item>
 
     <li>
-        <x-button-link class="hidden xl:block ">Zarezerwuj</x-button-link>
+        <x-button-link class="hidden xl:block " href="{{$home->booking_link}}">Zarezerwuj</x-button-link>
     </li>
 </ul>

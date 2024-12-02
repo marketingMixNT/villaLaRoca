@@ -13,7 +13,7 @@
     <div class="relative  flex flex-col justify-center items-center gap-6 w-full sm:min-h-[800px] md:gap-12  px-6 md:px-12 py-20   bg-no-repeat bg-cover bg-center bg-blend-multiply bg-gray-500 text-fontLight"
         style="background-image: url('{{ asset('assets/images/1600/villa-la-roca-71.webp') }}')">
        
-        <div class="max-w-screen-xl text-center  space-y-12">
+        <div class="max-w-screen-xl text-center  space-y-12 md:opacity-0 fadeIn-animation">
 
             <h2 class="text-center text-5xl 2xl:text-7xl  tracking-wider font-heading font-extralight text-fontWhite">
                 Zanurz się w relaksie</h2>
