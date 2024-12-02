@@ -1,9 +1,9 @@
 <x-layouts.app title="{{ $room->getMetaTitle() }}" description="{{ $room->getMetaDesc() }}">
 
-    <x-layouts.app-wrapper >
+    <x-layouts.app-wrapper :home="$home" >
 
         {{-- HEADER --}}
-        <x-hero title="{{$room->title}}" subtitle="Villa La Roca" bgi="{{asset('storage/' . $room->thumbnail)}}" />
+        <x-hero title="{{$room->title}}" subtitle="{{$home->title}}" bgi="{{asset('storage/' . $room->thumbnail)}}" />
 
 
         {{-- short_desc --}}
@@ -64,7 +64,7 @@
 
         {{-- description --}}
         <section class="pb-8 pt-20">
-            <x-container class="max-w-screen-xl mx-auto">
+            <x-container class="max-w-screen-xl mx-auto md:opacity-0 fadeIn-animation">
 
                 <div class="flex flex-col lg:flex-row gap-y-12">
 
@@ -96,7 +96,7 @@
 
 
         {{-- gallery --}}
-        <section class="py-20 ">
+        <section class="py-20 md:opacity-0 fadeIn-animation ">
 
             {{-- heading --}}
             <div class="max-w-screen-xl mx-auto  px-6 md:px-12 2xl:px-0 text-center pb-4">
@@ -128,12 +128,12 @@
         {{-- @if ($cta)
         <x-cta :cta="$cta" />
         @endif --}}
-<x-cta/>
+<x-cta :cta="$cta"/>
 
           {{-- other apartments --}}
 
 
-    <section class="pt-20 pb-16">
+    <section class="pt-20 pb-16 md:opacity-0 fadeIn-animation">
         <x-container class="max-w-screen-2xl 2xl:px-12">
 
 
@@ -148,7 +148,7 @@
 
                     @foreach ($otherRooms as $room)
 
-                <x-room-card :room="$room" size="md:w-[80%] lg:w-1/3 swiper-slide" />
+                <x-room-card :room="$room" :home="$home" size="md:w-[80%] lg:w-1/3 swiper-slide" />
 
                 @endforeach
                 </div>

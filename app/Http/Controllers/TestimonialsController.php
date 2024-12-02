@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Home;
 use App\Models\Testimonial;
-use App\Models\TestimonialsPage;
 use Illuminate\Http\Request;
+use App\Models\TestimonialsPage;
 
 class TestimonialsController extends Controller
 {
@@ -15,9 +16,16 @@ class TestimonialsController extends Controller
 
 
     {        
+
+        $home = Home::select('logo','logo_dark', 'phone', 'phone_second', 'address', 'city', 'booking_link', 'booking_script', 'map', 'map_link', 'title', 'mail','mail_second','google_reviews','google_reviews_average','google_reviews_link','google_reviews')
+        ->addSelect(['id'])
+        ->with('socials')
+        ->first();
+    
+
         $content = TestimonialsPage::first();
         $testimonials = Testimonial::orderBy('sort','asc')->get();
 
-        return view('pages.testimonials.index',compact('testimonials','content'));
+        return view('pages.testimonials.index',compact('testimonials','content','home'));
     }
 }

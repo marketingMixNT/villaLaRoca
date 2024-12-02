@@ -48,6 +48,10 @@
     "success-message"=>"Dziękujemy za wiadomość",
 ],
 
-
+'other-pages'=>[
+    'privacy-policy'=>'Polityka Prywatności',
+    'regulations'=>"Regulamin",
+    'spa-regulations'=>"Regulamin Spa"
+]
 
 ];

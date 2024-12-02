@@ -1,9 +1,9 @@
 <x-layouts.app title="{{$content->meta_title}}" description="{{$content->meta_desc}}">
 
-    <x-layouts.app-wrapper>
+    <x-layouts.app-wrapper :home="$home">
 
-        <x-hero title="Galeria" subtitle="Lorem ipsum dolor sit amet."
-            bgi="{{asset('assets/images/1600/villa-la-roca-82.webp')}}" />
+        <x-hero title="{{$content->header_heading}}" subtitle="{{$home->title}}"
+            bgi="{{asset('storage/' . $content->banner)}}" />
 
         <section class="py-16 md:py-24 relative overflow-hidden">
 
@@ -35,7 +35,7 @@
 
                     <button
                         class="filter-btn border   px-8 py-3 uppercase text-xs duration-300  bg-secondary-400   text-fontLight"
-                        data-title="{{ $image->category }}">
+                        data-title="{{ $image->category }}" aria-label="Filtruj przez: {{ $image->category }}">
                         {{ $image->category }}
                     </button>
                     @endforeach
@@ -49,7 +49,7 @@
                         <a href="{{asset('storage/' .  $img)}}" class="glightbox">
 
                             <img src="{{asset('storage/' .  $img)}}"
-                                alt="zdjęcie przedstawiające {{ $image->title }} w hotelu Jan w Krakowie" loading="lazy"
+                                alt="{{$home->title}}" loading="lazy"
                                 class="w-full object-cover aspect-square">
                         </a>
 

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\NeighborhoodPage;
+use App\Models\Home;
 use Illuminate\Http\Request;
+use App\Models\NeighborhoodPage;
 
 class NeighborhoodController extends Controller
 {
@@ -13,13 +14,16 @@ class NeighborhoodController extends Controller
     public function __invoke(Request $request)
     {
 
-        // $content = NeighborhoodPage::with("neighborhoodPageBlocks")->first();
+        $home = Home::select('logo','logo_dark', 'phone', 'phone_second', 'address', 'city', 'booking_link', 'booking_script', 'map', 'map_link', 'title', 'mail','mail_second')
+            ->addSelect(['id'])
+            ->with('socials')
+            ->first();
 
         $content = NeighborhoodPage::with(['neighborhoodPageBlocks' => function($query) {
             $query->orderBy('sort', 'asc');
         }])->first();
 
 
-        return view('pages.neighborhood.index',compact('content'));
+        return view('pages.neighborhood.index',compact('content','home'));
     }
 }

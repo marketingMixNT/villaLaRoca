@@ -12,7 +12,7 @@
             <x-rating 
                 source="google" 
                 rate="{{ $home->google_reviews_average }}" 
-                href="{{ $home->reviews_links  }}" 
+                href="{{ $home->google_reviews_link  }}" 
                 reviews="{{ $home->google_reviews }} {{ __('global.reviews') }}" 
             />
         @endif
