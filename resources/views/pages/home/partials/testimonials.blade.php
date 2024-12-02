@@ -1,4 +1,4 @@
-<section class="py-12 lg:pt-20 pb-8 relative overflow-hidden">
+<section class="py-12 lg:pt-20 pb-8 relative overflow-hidden md:opacity-0 fadeIn-animation">
 
     <img src="{{asset('assets/images/mandala.png')}}" alt="" class="absolute -top-64 -left-52  opacity-5 spin -z-10">
 

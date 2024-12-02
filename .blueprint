@@ -1,16 +1,10 @@
 created:
-    - database/factories/HomeFactory.php
-    - database/factories/HomeFirstSectionBlockFactory.php
-    - database/factories/HomeSecondSectionBlockFactory.php
-    - database/factories/SocialFactory.php
-    - database/migrations/2024_12_02_091737_create_homes_table.php
-    - database/migrations/2024_12_02_091738_create_home_first_section_blocks_table.php
-    - database/migrations/2024_12_02_091739_create_home_second_section_blocks_table.php
-    - database/migrations/2024_12_02_091740_create_socials_table.php
-    - app/Models/Home.php
-    - app/Models/HomeFirstSectionBlock.php
-    - app/Models/HomeSecondSectionBlock.php
-    - app/Models/Social.php
+    - database/factories/HomeBannerFactory.php
+    - database/factories/CtaFactory.php
+    - database/migrations/2024_12_02_120735_create_home_banners_table.php
+    - database/migrations/2024_12_02_120736_create_ctas_table.php
+    - app/Models/HomeBanner.php
+    - app/Models/Cta.php
 models:
     AboutPage: { meta_title: longtext, meta_desc: longtext, header_heading: longtext, banner: text, heading: 'longtext nullable default:NULL', text: 'longtext nullable default:NULL' }
     AboutPageBlock: { image: text, text: longtext, sort: 'integer nullable default:NULL', about_page_id: 'biginteger unsigned' }
@@ -43,3 +37,5 @@ models:
     HomeFirstSectionBlock: { image: text, text: json, sort: 'integer nullable', relationships: { belongsTo: Home } }
     HomeSecondSectionBlock: { image: text, text: json, sort: 'integer nullable', relationships: { belongsTo: Home } }
     Social: { name: text, link: text, relationships: { belongsTo: Home } }
+    HomeBanner: { image: text, title: json, text: json, link-text: json }
+    Cta: { image: text, title: json, text: json }

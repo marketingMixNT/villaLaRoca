@@ -40,6 +40,11 @@ class HomeResource extends Resource
 
     protected static ?string $navigationGroup = 'Strona główna';
 
+    public static function getNavigationSort(): ?int
+    {
+        return 1; 
+    }
+
     public static function form(Form $form): Form
     {
         return $form
@@ -222,7 +227,7 @@ class HomeResource extends Resource
                                 ->schema([
 
                                     Shout::make('so-important')
-                                    ->content('Wybierz film lub pokaz slajdów')
+                                    ->content('Wybierz film lub pokaz slajdów. Jezeli wybierasz film pamiętaj o dodaniu plakatu.')
                                     ->color('warning')
                                     ->columnSpanFull(),
                             
@@ -236,6 +241,25 @@ class HomeResource extends Resource
                                     ->appendFiles()
                                     ->columnSpanFull(),
 
+                                    Forms\Components\FileUpload::make(name: 'poster')
+                                        ->label('Plakat')
+                                        ->directory('home')
+                                        ->getUploadedFileNameForStorageUsing(
+                                            fn(TemporaryUploadedFile $file): string => 'poster-' . now()->format('H-i-s') . '-' . str_replace([' ', '.'], '', microtime()) . '.' . $file->getClientOriginalExtension()
+                                        )
+                                        ->appendFiles()
+                                        ->image()
+                                        ->maxSize(8192)
+                                        ->optimize('webp')
+                                        ->imageEditor()
+                                        ->imageEditorAspectRatios([
+                                            null,
+                                            '16:9',
+                                            '4:3',
+                                            '1:1',
+                                        ])
+                                        
+                                        ->columnSpanFull(),
 
                                     Forms\Components\FileUpload::make(name: 'slider_images')
                                         ->label('Zdjęcia')

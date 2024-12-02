@@ -8,7 +8,7 @@
 
     @foreach ($home->homeFirstSectionBlocks as $block )
 
-    <x-text-image-block img="{{ asset('storage/' . $block->image) }}" alt=""
+    <x-text-image-block img="{{ asset('storage/' . $block->image) }}" alt="wnętrze {{$home->title}}"
       mirrorLook="{{ $loop->iteration % 2 == 1 }}">
       {!! $block->text !!}
     </x-text-image-block>

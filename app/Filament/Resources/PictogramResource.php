@@ -27,9 +27,15 @@ class PictogramResource extends Resource
     }
     protected static ?string $model = Pictogram::class;
 
+
     protected static ?string $navigationIcon = 'heroicon-o-sparkles';
 
     protected static ?string $navigationGroup = 'Strona główna';
+
+    public static function getNavigationSort(): ?int
+    {
+        return 6; 
+    }
     public static function form(Form $form): Form
     {
         return $form

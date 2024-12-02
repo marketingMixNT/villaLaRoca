@@ -38,6 +38,7 @@ class Home extends Model
         'slider_subtitle',
         'slider_images',
         'slider_movie',
+        'poster',
         'rooms_heading',
         'rooms_text',
         'testimonials_heading',

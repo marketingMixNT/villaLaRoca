@@ -2,12 +2,14 @@
 
 namespace App\Providers;
 
+use App\Models\Cta;
 use App\Models\Home;
 use App\Models\Room;
 use App\Models\Gallery;
 use App\Models\InfoPage;
 use App\Models\AboutPage;
 use App\Models\Pictogram;
+use App\Models\HomeBanner;
 use App\Models\ContactPage;
 use App\Models\GalleryPage;
 use App\Models\Regulations;
@@ -18,6 +20,7 @@ use App\Models\AboutPageBlock;
 use App\Models\AttractionPage;
 use App\Models\SpaRegulations;
 use App\Models\VillaRoomsPage;
+use App\Observers\CtaObserver;
 use App\Models\VillaCommonPage;
 use App\Observers\HomeObserver;
 use App\Observers\RoomObserver;
@@ -98,6 +101,8 @@ class AppServiceProvider extends ServiceProvider
         Home::observe(HomeObserver::class);
         HomeFirstSectionBlock::observe(HomeFirstSectionBlockObserver::class);
         HomeSecondSectionBlock::observe(HomeSecondSectionBlockObserver::class);
+        Cta::observe(CtaObserver::class);
+        HomeBanner::observe(HomeObserver::class);
         Pictogram::observe(PictogramObserver::class);
 
         // Neighborhood

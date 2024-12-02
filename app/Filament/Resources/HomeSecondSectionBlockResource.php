@@ -30,6 +30,11 @@ class HomeSecondSectionBlockResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
     protected static ?string $navigationGroup = 'Strona główna';
 
+    public static function getNavigationSort(): ?int
+    {
+        return 3; 
+    }
+
     public static function form(Form $form): Form
     {
         return $form

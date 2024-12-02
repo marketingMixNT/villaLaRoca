@@ -7,11 +7,11 @@
     <x-shared.header.hamburger class="absolute top-12 right-12 z-40" />
 
 
-    <video autoplay loop muted poster="https://medbeautycenter.com.pl/assets/images/mbc_11.webp"
+    <video autoplay loop muted poster="{{$home->poster}}"
         class="absolute inset-0 w-full h-full object-cover ">
-        <source src="{{asset('assets/hero.mp4')}}" type="video/mp4">
+        <source src="{{asset('storage/' . $home->slider_movie)}}" type="video/mp4">
 
-        Twoja przeglądarka nie obsługuje odtwarzacza wideo.
+       {{__('global.movie')}}
     </video>
 
     <div class="bg-black absolute top-0 right-0 left-0 bottom-0 opacity-50"></div>
@@ -25,7 +25,7 @@
                 
                 @if($home->slider_subtitle)
                 <br> <span class=" text-sm lg:text-2xl font-text ">
-                    Lorem ipsum dolor sit amet.</span>
+                   {{$home->slider_subtitle}}</span>
                 @endif
                 
             </h1>
@@ -62,7 +62,7 @@
                 
                 @if($home->slider_subtitle)
                 <br> <span class=" text-sm lg:text-2xl font-text ">
-                    Lorem ipsum dolor sit amet.</span>
+                    {{$home->slider_subtitle}}</span>
                 @endif
                 
             </h1>

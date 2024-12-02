@@ -1,35 +1,11 @@
 models:
-  Home:
-    meta_title: json
-    meta_desc: json
-    
-
-   
- 
-
- 
-
-
-
-    relationships:
-      hasMany: social, homeFirstSectionBlock,homeSecondSectionBlock
-
-  HomeFirstSectionBlock:
+  HomeBanner:
     image: text
+    title: json
     text: json
-    sort: integer nullable
-    relationships:
-      belongsTo: Home
-
-  HomeSecondSectionBlock:
+    link-text: json
+  
+  Cta:
     image: text
+    title: json
     text: json
-    sort: integer nullable
-    relationships:
-      belongsTo: Home
-
-  Social:
-    name: text
-    link: text
-    relationships:
-      belongsTo: Home

@@ -5,7 +5,7 @@
             <div class="mb-20 text-center">
 
                 <h2 class="text-3xl sm:text-4xl tracking-wider font-heading font-extralight text-fontLight ">
-                    Udogodnienia dla naszych gości
+                   {{__('global.pictograms.heading')}}
                 </h2>
             </div>
             <div class="swiper-wrapper ">

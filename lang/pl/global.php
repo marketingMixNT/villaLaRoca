@@ -6,6 +6,7 @@
 'book' => "Zarezerwuj",
 'anchor'=>'o-nas',
 'all'=>'wszystkie',
+'movie'=>" Twoja przeglądarka nie obsługuje odtwarzacza wideo.",
 
 'mobile-buttons'=>[
     'booking'=>'Zarezerwuj',
@@ -15,14 +16,18 @@
 ],
 
 'nav'=>[
-    '1'=>'O nas',
-    '2'=>"Villa",
+    '1'=>'O Villi',
+    '2'=>"Okolice",
     '3'=>"Pokoje",
-    '4'=>"Częsci wspólne",
-    '5'=>"Garden & Spa",
-    '6'=>"Okolica",
+    '4'=>"Serce domu",
+    '5'=>"Strefa Relaksu",
+    '6'=>"Atrakcje",
     '7'=>"Galeria",
-    '8'=>"Kontakt",
+    '8'=>"Voucher",
+],
+
+'pictograms'=>[
+    'heading'=>"  Udogodnienia dla naszych gości"
 ],
 
 'footer'=>[
