@@ -1,5 +1,5 @@
 @props(['class'=>''])
 
-<div class="leading-loose font-extralight {{$class}}">
+<div class="leading-loose font-light {{$class}}">
     {{$slot}}
 </div>

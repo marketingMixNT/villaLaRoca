@@ -1,9 +1,9 @@
-<x-layouts.app title="{{ $room->getMetaTitle() }}" description="{{ $room->getMetaDesc() }}">
+<x-layouts.app title="{!! $room->getMetaTitle() !!}" description="{!! $room->getMetaDesc() !!}">
 
     <x-layouts.app-wrapper :home="$home" >
 
         {{-- HEADER --}}
-        <x-hero title="{{$room->title}}" subtitle="{{$home->title}}" bgi="{{asset('storage/' . $room->thumbnail)}}" />
+        <x-hero title="{{$room->title}}" subtitle="{!!$home->title!!}" bgi="{{asset('storage/' . $room->thumbnail)}}" />
 
 
         {{-- short_desc --}}

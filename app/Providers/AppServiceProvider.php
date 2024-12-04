@@ -17,6 +17,7 @@ use App\Models\VoucherPage;
 use App\Models\InfoPageBlock;
 use App\Models\PrivacyPolicy;
 use App\Models\AboutPageBlock;
+use App\Models\AboutPageGallery;
 use App\Models\AttractionPage;
 use App\Models\SpaRegulations;
 use App\Models\VillaRoomsPage;
@@ -81,6 +82,7 @@ class AppServiceProvider extends ServiceProvider
         // About
         AboutPage::observe(AboutPageObserver::class);
         AboutPageBlock::observe(AboutPageBlockObserver::class);
+        AboutPageGallery::observe(AboutPageGallery::class);
 
         // Attractions
         AttractionPage::observe(AttractionPageObserver::class);

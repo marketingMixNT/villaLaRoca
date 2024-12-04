@@ -15,7 +15,8 @@ export default {
                 secondary: {
                     100: "#898fa3",
                     200: "#575c6b",
-                    400: "#976f5d",
+                    300: "#9ca3af",
+                    400:"#888d96"
                 },
 
                 accent: {

@@ -1,4 +1,4 @@
-<x-layouts.app title="{{$content->meta_title}}" description="{{$content->meta_description}}">
+<x-layouts.app title="{!!$content->meta_title!!}" description="{!!$content->meta_description!!}">
 
 
     {{-- <x-layouts.app-wrapper :home="$home" :rooms="$rooms"> --}}
@@ -6,7 +6,7 @@
 
 
         {{-- HEADER --}}
-        <x-hero title="{{$content->header_heading}}" subtitle="{{$home->title}}"
+        <x-hero title="{{$content->header_heading}}" subtitle="{!!$home->title!!}"
             bgi="{{asset('storage/' . $content->banner)}}" />
 
             <section class="py-20">

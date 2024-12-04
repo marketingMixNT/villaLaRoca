@@ -36,7 +36,7 @@ class AboutPageResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-document';
 
-    protected static ?string $navigationGroup = 'O villi';
+    protected static ?string $navigationGroup = 'O willi';
 
     public static function form(Form $form): Form
     {

@@ -1,4 +1,4 @@
-<x-layouts.app title="{{$content->meta_title}}" description="{{$content->meta_description}}">
+<x-layouts.app title="{!!$content->meta_title!!}" description="{!!$content->meta_description!!}">
 
   <x-layouts.app-wrapper :home="$home">
 

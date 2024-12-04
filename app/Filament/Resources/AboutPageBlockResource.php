@@ -30,7 +30,7 @@ class AboutPageBlockResource extends Resource
     protected static ?string $model = AboutPageBlock::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    protected static ?string $navigationGroup = 'O villi';
+    protected static ?string $navigationGroup = 'O willi';
 
     public static function form(Form $form): Form
     {

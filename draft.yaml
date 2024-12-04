@@ -1,11 +1,4 @@
 models:
-  HomeBanner:
-    image: text
+  AboutPageGallery:
+    images: text
     title: json
-    text: json
-    link-text: json
-  
-  Cta:
-    image: text
-    title: json
-    text: json

@@ -17,7 +17,7 @@
     <div class="bg-black absolute top-0 right-0 left-0 bottom-0 opacity-50"></div>
 
 
-    <div class=" z-40 flex justify-center items-center flex-col w-full h-full gap-12">
+    <div class=" z-30 flex justify-center items-center flex-col w-full h-full gap-12">
         <img src="{{asset('storage/' . $home->logo)}}" alt="logo {{$home->title}}" class="sm:w-[250px]  w-[300px] lg:w-[450px] z-40">
         <h1 class=" px-6 md:px-12 text-center text-4xl xs:text-5xl lg:text-7xl     font-heading  text-fontWhite  tracking-wide z-50 text-fontLight font-extralight pb-44"
                 style="line-height: 1.2">
@@ -68,7 +68,7 @@
             </h1>
 
 
-            <x-button-link href="#" class=" ">tutaj będzie panel do rezerwacji</x-button-link>
+            <x-booking-panel />
 
         </div>
 
@@ -77,30 +77,21 @@
 
 
 
+        @foreach ($home->slider_images as $slide)
+
+
+        {
         <div class="swiper-slide relative w-full h-full ">
 
 
-            <img src="{{asset('assets/images/1600/villa-la-roca-11.webp')}}" alt="www"
+            <img src="{{asset('storage/' .  $slide)}}" alt="{{$home->slider_title}}"
                 class="absolute inset-0 w-full h-full object-cover " />
 
-            <div class="absolute inset-0 bg-black opacity-40"></div>
+            <div class="absolute inset-0 bg-black opacity-20"></div>
         </div>
-        <div class="swiper-slide relative w-full h-full ">
-
-
-            <img src="{{asset('assets/images/1600/villa-la-roca-46.webp')}}" alt="www"
-                class="absolute inset-0 w-full h-full object-cover " />
-
-            <div class="absolute inset-0 bg-black opacity-40"></div>
-        </div>
-        <div class="swiper-slide relative w-full h-full ">
-
-
-            <img src="{{asset('assets/images/1600/villa-la-roca-72.webp')}}" alt="www"
-                class="absolute inset-0 w-full h-full object-cover " />
-
-            <div class="absolute inset-0 bg-black opacity-40"></div>
-        </div>
+        }
+        @endforeach
+       
 
 
 

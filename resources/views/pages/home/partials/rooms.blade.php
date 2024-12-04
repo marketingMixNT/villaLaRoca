@@ -2,18 +2,21 @@
 
     <x-mandala/>
     
-    <x-container class="max-w-screen-2xl space-y-24  md:opacity-0 fadeIn-animation">
+    <x-container class="max-w-screen-2xl space-y-24  ">
   
-  
-      <x-heading-horizontal title="{{$home->rooms_heading}}">
+      <div class="md:opacity-0 fadeIn-animation">
 
-
-        <x-text-wrapper>{!!$home->rooms_text!!}</x-text-wrapper>
-
-
-    </x-heading-horizontal>
-
-        <div class="flex flex-wrap justify-center items-stretch gap-12  mx-auto ">
+        
+        <x-heading-horizontal title="{{$home->rooms_heading}}">
+          
+          
+          <x-text-wrapper>{!!$home->rooms_text!!}</x-text-wrapper>
+          
+          
+        </x-heading-horizontal>
+      </div>
+        
+        <div class="flex flex-wrap justify-center items-stretch gap-12  mx-auto md:opacity-0 fadeIn-animation">
 
             @foreach ($rooms as $room)
 

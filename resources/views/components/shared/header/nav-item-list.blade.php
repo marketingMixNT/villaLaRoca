@@ -2,7 +2,7 @@
 
     <x-shared.header.nav-item href="{{route('about')}}" activeRoute="about">O Villi</x-shared.header.nav-item>
 
-    <x-shared.header.nav-item href="{{route('neighborhood')}}" activeRoute="neighborhood">Okolice
+    <x-shared.header.nav-item href="{{route('neighborhood')}}" activeRoute="neighborhood">Atrakcje okolicy
     </x-shared.header.nav-item>
 
     <x-shared.header.nav-item href="{{route('room.index')}}" activeRoute="rooms">Pokoje
@@ -14,8 +14,11 @@
     <x-shared.header.nav-item href="{{route('relax-zone')}}" activeRoute="relax-zone">Strefa Relaksu
     </x-shared.header.nav-item>
 
-    <x-shared.header.nav-item href="{{route('attractions')}}" activeRoute="attractions">Atrakcje
+    <x-shared.header.nav-item href="" activeRoute="">Oferta
     </x-shared.header.nav-item>
+
+    {{-- <x-shared.header.nav-item href="{{route('attractions')}}" activeRoute="attractions">Atrakcje
+    </x-shared.header.nav-item> --}}
 
     <x-shared.header.nav-item href="{{route('gallery')}}" activeRoute="gallery">Galeria</x-shared.header.nav-item>
 

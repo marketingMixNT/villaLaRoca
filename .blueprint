@@ -1,10 +1,7 @@
 created:
-    - database/factories/HomeBannerFactory.php
-    - database/factories/CtaFactory.php
-    - database/migrations/2024_12_02_120735_create_home_banners_table.php
-    - database/migrations/2024_12_02_120736_create_ctas_table.php
-    - app/Models/HomeBanner.php
-    - app/Models/Cta.php
+    - database/factories/AboutPageGalleryFactory.php
+    - database/migrations/2024_12_04_131746_create_about_page_galleries_table.php
+    - app/Models/AboutPageGallery.php
 models:
     AboutPage: { meta_title: longtext, meta_desc: longtext, header_heading: longtext, banner: text, heading: 'longtext nullable default:NULL', text: 'longtext nullable default:NULL' }
     AboutPageBlock: { image: text, text: longtext, sort: 'integer nullable default:NULL', about_page_id: 'biginteger unsigned' }
@@ -39,3 +36,4 @@ models:
     Social: { name: text, link: text, relationships: { belongsTo: Home } }
     HomeBanner: { image: text, title: json, text: json, link-text: json }
     Cta: { image: text, title: json, text: json }
+    AboutPageGallery: { images: text, title: json }

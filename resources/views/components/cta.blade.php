@@ -16,7 +16,7 @@
 
             <div>
 
-                <x-button-link href="#" class=" ">tutaj będzie panel do rezerwacji</x-button-link>
+                <x-booking-panel />
             </div>
 
             {{-- <x-booking-bar  style="position: relative; margin-top:170px;bottom:-20px" /> --}}
