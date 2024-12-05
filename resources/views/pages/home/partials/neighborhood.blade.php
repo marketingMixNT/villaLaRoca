@@ -1,7 +1,7 @@
 <!--CONTAINER-->
 <section class="pt-12 pb-20 relative overflow-hidden">
 
-    <img src="{{asset('assets/images/mandala.png')}}" alt="" class="absolute -bottom-64 -right-52  opacity-5 spin -z-10">
+    
     <x-container class=" max-w-screen-2xl md:opacity-0 fadeIn-animation">
 
         <div class="grid lg:grid-cols-3 gap-12 lg:gap-20 2xl:gap-32 pt-12 lg:py-20 ">
