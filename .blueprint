@@ -1,28 +1,7 @@
 created:
-    - database/factories/PackagesPageFactory.php
-    - database/factories/PackagesPageBlockFactory.php
-    - database/factories/PackagesFactory.php
-    - database/factories/ExclusiveHomePageFactory.php
-    - database/factories/ExclusiveHomePageBlockFactory.php
-    - database/factories/BreakfastPageFactory.php
     - database/factories/BreakfastPageBlockFactory.php
-    - database/factories/BreakfastPageGalleryFactory.php
-    - database/migrations/2024_12_04_144958_create_packages_pages_table.php
-    - database/migrations/2024_12_04_144959_create_packages_page_blocks_table.php
-    - database/migrations/2024_12_04_145000_create_packages_table.php
-    - database/migrations/2024_12_04_145001_create_exclusive_home_pages_table.php
-    - database/migrations/2024_12_04_145002_create_exclusive_home_page_blocks_table.php
-    - database/migrations/2024_12_04_145003_create_breakfast_pages_table.php
-    - database/migrations/2024_12_04_145004_create_breakfast_page_blocks_table.php
-    - database/migrations/2024_12_04_145005_create_breakfast_page_galleries_table.php
-    - app/Models/PackagesPage.php
-    - app/Models/PackagesPageBlock.php
-    - app/Models/Packages.php
-    - app/Models/ExclusiveHomePage.php
-    - app/Models/ExclusiveHomePageBlock.php
-    - app/Models/BreakfastPage.php
+    - database/migrations/2024_12_05_090737_create_breakfast_page_blocks_table.php
     - app/Models/BreakfastPageBlock.php
-    - app/Models/BreakfastPageGallery.php
 models:
     AboutPage: { meta_title: longtext, meta_desc: longtext, header_heading: longtext, banner: text, heading: 'longtext nullable default:NULL', text: 'longtext nullable default:NULL' }
     AboutPageBlock: { image: text, text: longtext, sort: 'integer nullable default:NULL', about_page_id: 'biginteger unsigned' }
@@ -66,5 +45,5 @@ models:
     ExclusiveHomePage: { meta_title: json, meta_description: json, header_heading: json, banner: text, heading: 'json nullable', text: 'json nullable', content: 'json nullable', relationships: { hasMany: ExclusiveHomeBlock } }
     ExclusiveHomePageBlock: { image: text, text: json, sort: integer, relationships: { belongsTo: PackagesPage } }
     BreakfastPage: { meta_title: json, meta_description: json, header_heading: json, banner: text, heading: 'json nullable', text: 'json nullable', content: 'json nullable', relationships: { hasMany: BreakfastPageBlock } }
-    BreakfastPageBlock: { image: text, text: json, sort: integer, relationships: { belongsTo: PackagesPage } }
+    BreakfastPageBlock: { image: text, text: json, sort: integer, relationships: { belongsTo: BreakfastPage } }
     BreakfastPageGallery: { images: text, title: json }

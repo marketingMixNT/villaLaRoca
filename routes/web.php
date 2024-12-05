@@ -11,6 +11,7 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\VoucherController;
 use App\Http\Controllers\PackagesController;
 use App\Http\Controllers\AttractionController;
+use App\Http\Controllers\BreakfastController;
 use App\Http\Controllers\OtherPagesController;
 use App\Http\Controllers\GardenAndSpaController;
 use App\Http\Controllers\NeighborhoodController;
@@ -34,6 +35,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
     Route::get('/atrakcje', AttractionController::class)->name('attractions');
     Route::get('/galeria', GalleryController::class)->name('gallery');
     Route::get('/voucher', VoucherController::class)->name('voucher');
+    Route::get('/sniadania', BreakfastController::class)->name('breakfast');
 
     Route::get('/pakiety', [PackagesController::class, 'index'])->name('packages.index');
     Route::get('/pakiety/{slug}', [PackagesController::class, 'show'])->name('packages.show');

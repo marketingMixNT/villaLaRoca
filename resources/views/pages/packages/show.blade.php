@@ -14,7 +14,7 @@
             <x-mandala />
 
 
-            <x-container class="max-w-screen-lg prose">
+            <x-container class="max-w-screen-lg prose md:opacity-0 fadeIn-animation">
                 {!! $package->content !!}
 
 
@@ -25,7 +25,7 @@
         </section>
 
         @if(!$otherPackages->isEmpty())
-        <section class="pt-20 pb-16">
+        <section class="pt-20 pb-16 md:opacity-0 fadeIn-animation">
             <x-container class="max-w-screen-2xl 2xl:px-12">
     
     
@@ -48,7 +48,7 @@
                 </div>
                 <div class="flex justify-center items-center mt-12">
     
-                    <x-button-link href="{{route('relax-zone')}}" class="bg-red-500">zobacz wszystkie</x-button-link>
+                    <x-button-link href="{{route('relax-zone')}}" class="bg-secondary-400 text-fontLight">zobacz wszystkie</x-button-link>
                 </div>
     
             </x-container>

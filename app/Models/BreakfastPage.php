@@ -5,9 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Spatie\Translatable\HasTranslations;
 
 class BreakfastPage extends Model
 {
+    use HasTranslations;
+
     use HasFactory;
 
     /**
@@ -42,6 +45,15 @@ class BreakfastPage extends Model
 
     public function breakfastPageBlocks(): HasMany
     {
-        return $this->hasMany(BreakfastPageBlock::class);
+        return $this->hasMany(BreakfastPageBlock::class)->orderBy('sort', 'asc');;
     }
+
+    public $translatable = [
+        'meta_title',
+        'meta_desc',
+        'header_heading',
+        'heading',
+        'text',
+        'content'
+    ];
 }

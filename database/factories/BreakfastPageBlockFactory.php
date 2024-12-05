@@ -4,8 +4,8 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use App\Models\BreakfastPage;
 use App\Models\BreakfastPageBlock;
-use App\Models\PackagesPage;
 
 class BreakfastPageBlockFactory extends Factory
 {
@@ -25,7 +25,7 @@ class BreakfastPageBlockFactory extends Factory
             'image' => $this->faker->text(),
             'text' => '{}',
             'sort' => $this->faker->numberBetween(-10000, 10000),
-            'packages_page_id' => PackagesPage::factory(),
+            'breakfast_page_id' => BreakfastPage::factory(),
         ];
     }
 }

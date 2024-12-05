@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->text('image');
             $table->json('text');
-            $table->integer('sort');
-            $table->foreignId('packages_page_id');
+            $table->integer('sort')->nullable;
+            $table->foreignId('breakfast_page_id');
             $table->timestamps();
         });
     }

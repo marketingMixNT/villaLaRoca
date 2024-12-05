@@ -16,6 +16,7 @@ use App\Models\GalleryPage;
 use App\Models\Regulations;
 use App\Models\VoucherPage;
 use App\Models\PackagesPage;
+use App\Models\BreakfastPage;
 use App\Models\InfoPageBlock;
 use App\Models\PrivacyPolicy;
 use App\Models\AboutPageBlock;
@@ -32,11 +33,13 @@ use App\Models\NeighborhoodPage;
 use App\Models\TestimonialsPage;
 use App\Models\VoucherPageBlock;
 use App\Models\PackagesPageBlock;
+use App\Models\BreakfastPageBlock;
 use App\Observers\GalleryObserver;
 use App\Models\AttractionPageBlock;
 use App\Models\VillaRoomsPageBlock;
 use App\Observers\InfoPageObserver;
 use App\Observers\PackagesObserver;
+use App\Models\BreakfastPageGallery;
 use App\Models\VillaCommonPageBlock;
 use App\Observers\AboutPageObserver;
 use App\Observers\PictogramObserver;
@@ -50,6 +53,7 @@ use App\Observers\RegulationsObserver;
 use App\Observers\VoucherPageObserver;
 use App\Observers\PackagesPageObserver;
 use Illuminate\Support\ServiceProvider;
+use App\Observers\BreakfastPageObserver;
 use App\Observers\InfoPageBlockObserver;
 use App\Observers\PrivacyPolicyObserver;
 use App\Observers\AboutPageBlockObserver;
@@ -62,6 +66,7 @@ use App\Observers\NeighborhoodPageObserver;
 use App\Observers\TestimonialsPageObserver;
 use App\Observers\VoucherPageBlockObserver;
 use App\Observers\PackagesBlockPageObserver;
+use App\Observers\BreakfastPageBlockObserver;
 use App\Observers\AttractionPageBlockObserver;
 use App\Observers\VillaRoomsPageBlockObserver;
 use App\Observers\VillaCommonPageBlockObserver;
@@ -93,6 +98,11 @@ class AppServiceProvider extends ServiceProvider
         // Attractions
         AttractionPage::observe(AttractionPageObserver::class);
         AttractionPageBlock::observe(AttractionPageBlockObserver::class);
+
+        // Breakfast
+        BreakfastPage::observe(BreakfastPageObserver::class);
+        BreakfastPageBlock::observe(BreakfastPageBlockObserver::class);
+        BreakfastPageGallery::observe(BreakfastPageGallery::class);
 
         //Contact
         ContactPage::observe(ContactPageObserver::class);
@@ -141,8 +151,8 @@ class AppServiceProvider extends ServiceProvider
         VillaRoomsPageBlock::observe(VillaRoomsPageBlockObserver::class);
         Room::observe(RoomObserver::class);
 
-         // Voucher
-         VoucherPage::observe(VoucherPageObserver::class);
-         VoucherPageBlock::observe(VoucherPageBlockObserver::class);
+        // Voucher
+        VoucherPage::observe(VoucherPageObserver::class);
+        VoucherPageBlock::observe(VoucherPageBlockObserver::class);
     }
 }

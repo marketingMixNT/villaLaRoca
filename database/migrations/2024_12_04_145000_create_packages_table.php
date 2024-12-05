@@ -15,9 +15,11 @@ return new class extends Migration
             $table->id();
             $table->json('meta_title');
             $table->json('meta_description');
-            $table->json('header_heading');
+            $table->json('header_heading')->unique();
+            $table->json('slug')->unique();
             $table->text('banner');
             $table->json('content');
+            $table->integer('sort')->nullable();
             $table->timestamps();
         });
     }
