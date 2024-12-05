@@ -27,8 +27,8 @@
                 </section>
 
                 {{-- blocks --}}
-                @if(!$content->packagesPageBlocks->isEmpty())
-                @foreach ($content->packagesPageBlocks as $block )
+                @if(!$content->exclusiveHomePageBlocks->isEmpty())
+                @foreach ($content->exclusiveHomePageBlocks as $block )
 
 
                 <x-text-image-block img="{{ asset('storage/' . $block->image) }}" alt="wnętrze {{$home->title}}"
@@ -37,46 +37,18 @@
                 </x-text-image-block>
 
                 @endforeach
-@endif
-              
-
-
-                {{-- <x-heading title="Zobacz nasze pakiety" /> --}}
-
-                <div class="flex flex-wrap justify-center items-stretch gap-12  mx-auto md:opacity-0 fadeIn-animation">
-
-
-
-                    @foreach ($packages as $package)
-
-                    {{-- item --}}
-                    
-                    <x-package-card :package="$package" :home="$home"
-                        size="w-[80%] sm:w-[75%]  lg:w-[40%] xl:w-[29%]  2xl:w-[30%]" />
-                    {{-- <img src="{{asset('storage/' . $package->banner)}}" alt="">
-                    <p>{{$package->header_heading}}</p> --}}
-
-
-
-
-
-                    @endforeach
-
-                </div>
-
-
-
-
-
-
+                @endif
 
 
             </x-container>
         </section>
 
+
+
+
         @if ($home->map)
         {!! $home->map !!}
-    @endif
+        @endif
 
     </x-layouts.app-wrapper>
 

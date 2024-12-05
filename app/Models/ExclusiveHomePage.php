@@ -5,9 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Spatie\Translatable\HasTranslations;
 
 class ExclusiveHomePage extends Model
 {
+    use HasTranslations;
+
     use HasFactory;
 
     /**
@@ -40,8 +43,17 @@ class ExclusiveHomePage extends Model
         'content' => 'array',
     ];
 
-    public function exclusiveHomeBlocks(): HasMany
+    public function exclusiveHomePageBlocks(): HasMany
     {
-        return $this->hasMany(ExclusiveHomeBlock::class);
+        return $this->hasMany(ExclusiveHomePageBlock::class)->orderBy('sort', 'asc');
     }
+
+    public $translatable = [
+        'meta_title',
+        'meta_desc',
+        'header_heading',
+        'heading',
+        'text',
+        'content'
+    ];
 }

@@ -27,6 +27,7 @@
                 </section>
 
                 {{-- blocks --}}
+                @if(!$content->breakfastPageBlocks->isEmpty())
                 @foreach ($content->breakfastPageBlocks as $block )
 
 
@@ -36,7 +37,7 @@
                 </x-text-image-block>
 
                 @endforeach
-
+                @endif
 
 
             </x-container>

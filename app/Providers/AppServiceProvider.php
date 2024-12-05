@@ -32,6 +32,7 @@ use App\Models\GardenAndSpaPage;
 use App\Models\NeighborhoodPage;
 use App\Models\TestimonialsPage;
 use App\Models\VoucherPageBlock;
+use App\Models\ExclusiveHomePage;
 use App\Models\PackagesPageBlock;
 use App\Models\BreakfastPageBlock;
 use App\Observers\GalleryObserver;
@@ -46,6 +47,7 @@ use App\Observers\PictogramObserver;
 use App\Models\GardenAndSpaPageBlock;
 use App\Models\HomeFirstSectionBlock;
 use App\Models\NeighborhoodPageBlock;
+use App\Models\ExclusiveHomePageBlock;
 use App\Models\HomeSecondSectionBlock;
 use App\Observers\ContactPageObserver;
 use App\Observers\GalleryPageObserver;
@@ -65,6 +67,7 @@ use App\Observers\GardenAndSpaPageObserver;
 use App\Observers\NeighborhoodPageObserver;
 use App\Observers\TestimonialsPageObserver;
 use App\Observers\VoucherPageBlockObserver;
+use App\Observers\ExclusiveHomePageObserver;
 use App\Observers\PackagesBlockPageObserver;
 use App\Observers\BreakfastPageBlockObserver;
 use App\Observers\AttractionPageBlockObserver;
@@ -73,6 +76,7 @@ use App\Observers\VillaCommonPageBlockObserver;
 use App\Observers\GardenAndSpaPageBlockObserver;
 use App\Observers\HomeFirstSectionBlockObserver;
 use App\Observers\NeighborhoodPageBlockObserver;
+use App\Observers\ExclusiveHomePageBlockObserver;
 use App\Observers\HomeSecondSectionBlockObserver;
 
 class AppServiceProvider extends ServiceProvider
@@ -106,6 +110,11 @@ class AppServiceProvider extends ServiceProvider
 
         //Contact
         ContactPage::observe(ContactPageObserver::class);
+
+        // Exclusive House
+        ExclusiveHomePage::observe(ExclusiveHomePageObserver::class);
+        ExclusiveHomePageBlock::observe(ExclusiveHomePageBlockObserver::class);
+        
 
         // Gallery
         Gallery::observe(GalleryObserver::class);

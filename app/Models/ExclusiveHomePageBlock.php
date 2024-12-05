@@ -2,12 +2,19 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Translatable\HasTranslations;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\RichEditor;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
+
 
 class ExclusiveHomePageBlock extends Model
 {
+    use HasTranslations;
+
     use HasFactory;
 
     /**
@@ -19,7 +26,7 @@ class ExclusiveHomePageBlock extends Model
         'image',
         'text',
         'sort',
-        'packages_page_id',
+        'exclusive_home_page_id',
     ];
 
     /**
@@ -30,11 +37,43 @@ class ExclusiveHomePageBlock extends Model
     protected $casts = [
         'id' => 'integer',
         'text' => 'array',
-        'packages_page_id' => 'integer',
+        'exclusive_home_page_id' => 'integer',
     ];
 
-    public function packagesPage(): BelongsTo
+    public function exclusiveHomePage(): BelongsTo
     {
-        return $this->belongsTo(PackagesPage::class);
+        return $this->belongsTo(ExclusiveHomePage::class);
     }
+
+    public static function getForm(): array
+    {
+        return [
+            FileUpload::make('image')
+                ->label('Obraz')
+                ->directory('pageExclusieHome')
+                ->getUploadedFileNameForStorageUsing(
+                    fn(TemporaryUploadedFile $file): string => 'dom-na-wylacznosc-' . now()->format('H-i-s') . '-' . str_replace([' ', '.'], '', microtime()) . '.' . $file->getClientOriginalExtension()
+                )
+                ->maxSize(8192)
+                ->columnSpanFull()
+                ->optimize('webp')
+                ->required(),
+
+            RichEditor::make('text')
+                ->label('Tekst')
+                ->disableToolbarButtons([
+                    'blockquote',
+                    'strike',
+                    'codeBlock',
+                   
+                    
+                ])
+                ->required()
+                ->columnSpanFull(),
+        ];
+    }
+    public $translatable = [
+
+        'text'
+    ];
 }
