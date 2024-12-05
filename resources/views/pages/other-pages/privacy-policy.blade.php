@@ -1,7 +1,7 @@
 <x-layouts.app title="{!!$content->meta_title!!}" description="{!!$content->meta_description!!}">
 
 
-    <x-layouts.app-wrapper :home="$home">
+  <x-layouts.app-wrapper :home="$home" :rooms="$rooms">
 
       <x-hero title="{{__('global.other-pages.privacy-policy')}}" subtitle="{!!$home->title!!}"
         bgi="{{asset('storage/' . $content->banner)}}" />

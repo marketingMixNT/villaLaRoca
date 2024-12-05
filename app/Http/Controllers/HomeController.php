@@ -26,6 +26,8 @@ class HomeController extends Controller
             }
         ])->first();
 
+        
+
         $cta = Cta::firstOrFail();
         $banner = HomeBanner::firstOrFail();
         $pictograms = Pictogram::orderBy('sort', 'asc')->get();

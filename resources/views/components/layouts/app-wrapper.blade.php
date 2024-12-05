@@ -1,9 +1,9 @@
 
 <x-shared.preloader :home="$home"/>
 
-<x-shared.header.header :home="$home"/>
+<x-shared.header.header :home="$home" :rooms="$rooms"/>
 
-<x-shared.header.mobile-menu  :home="$home"/>
+<x-shared.header.mobile-menu  :home="$home" :rooms="$rooms"/>
 
 {{ $slot }}
 

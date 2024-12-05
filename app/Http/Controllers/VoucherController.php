@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Home;
+use App\Models\Room;
 use App\Models\VoucherPage;
 use Illuminate\Http\Request;
 
@@ -19,10 +20,12 @@ class VoucherController extends Controller
         ->with('socials')
         ->first();
 
+        $rooms = Room::orderBy('sort')->select('title', 'slug',)->get();
+
         $content = VoucherPage::with(['voucherPageBlocks' => function($query) {
             $query->orderBy('sort', 'asc');
         }])->first();
 
-        return view('pages.voucher.index', compact('content','home'));
+        return view('pages.voucher.index', compact('content','home','rooms'));
     }
 }

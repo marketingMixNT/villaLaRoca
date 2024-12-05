@@ -1,6 +1,6 @@
 <x-layouts.app title="{!!$home->meta_title!!}" description="{!!$home->meta_desc!!}">
 
-    <x-layouts.app-wrapper :home="$home">
+    <x-layouts.app-wrapper :home="$home" :rooms="$rooms">
 
      @include('pages.home.partials.hero')
      @include('pages.home.partials.about')

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Home;
+use App\Models\Room;
 use App\Models\Gallery;
 use App\Models\GalleryPage;
 use Illuminate\Http\Request;
@@ -20,10 +21,12 @@ class GalleryController extends Controller
         ->with('socials')
         ->first();
 
+        $rooms = Room::orderBy('sort')->select('title', 'slug',)->get();
+
         $content = GalleryPage::first();
 
         $images = Gallery::orderBy('sort')->get();
 
-        return view('pages.gallery.index',compact('content','images','home'));
+        return view('pages.gallery.index',compact('content','images','home','rooms'));
     }
 }

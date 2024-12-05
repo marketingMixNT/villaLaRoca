@@ -2,7 +2,7 @@
 
 
     {{-- <x-layouts.app-wrapper :home="$home" :rooms="$rooms"> --}}
-    <x-layouts.app-wrapper :home="$home">
+        <x-layouts.app-wrapper :home="$home" :rooms="$rooms">
 
 
         {{-- HEADER --}}

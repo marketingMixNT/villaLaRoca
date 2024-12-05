@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Home;
+use App\Models\Room;
 use Illuminate\Http\Request;
 use App\Models\BreakfastPage;
 use App\Models\BreakfastPageGallery;
@@ -19,6 +20,8 @@ class BreakfastController extends Controller
             ->with('socials')
             ->first();
 
+            $rooms = Room::orderBy('sort')->select('title', 'slug',)->get();
+
         $content = BreakfastPage::with(['breakfastPageBlocks' => function ($query) {
             $query->orderBy('sort', 'asc');
         }])->first();
@@ -26,6 +29,6 @@ class BreakfastController extends Controller
         $gallery = BreakfastPageGallery::first();
 
 
-        return view('pages.breakfast.index', compact('content',  'home','gallery'));
+        return view('pages.breakfast.index', compact('content',  'home','gallery','rooms'));
     }
 }

@@ -3,7 +3,7 @@
 <x-layouts.app title="{!!$package->meta_title!!}" description="{!!$package->meta_description!!}">
 
 
-    <x-layouts.app-wrapper :home="$home">
+    <x-layouts.app-wrapper :home="$home" :rooms="$rooms">
 
         <x-hero title="{{$package->header_heading}}" subtitle="{!!$home->title!!}"
             bgi="{{asset('storage/' . $package->banner)}}" />

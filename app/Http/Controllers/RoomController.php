@@ -35,6 +35,8 @@ class RoomController extends Controller
         ->with('socials')
         ->first();
 
+        $rooms = Room::orderBy('sort')->select('title', 'slug',)->get();
+
         $locale = app()->getLocale();
 
 
@@ -49,6 +51,6 @@ class RoomController extends Controller
             ->orderBy('sort')
             ->get();
 
-        return view('pages.room.show', compact('room','otherRooms','home','cta'));
+        return view('pages.room.show', compact('room','otherRooms','home','cta','rooms'));
     }
 }

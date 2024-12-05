@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Home;
+use App\Models\Room;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use App\Models\TestimonialsPage;
@@ -22,10 +23,11 @@ class TestimonialsController extends Controller
         ->with('socials')
         ->first();
     
+        $rooms = Room::orderBy('sort')->select('title', 'slug',)->get();
 
         $content = TestimonialsPage::first();
         $testimonials = Testimonial::orderBy('sort','asc')->get();
 
-        return view('pages.testimonials.index',compact('testimonials','content','home'));
+        return view('pages.testimonials.index',compact('testimonials','content','home','rooms'));
     }
 }

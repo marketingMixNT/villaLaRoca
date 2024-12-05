@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Home;
+use App\Models\Room;
 use App\Models\Packages;
 use App\Models\PackagesPage;
 use Illuminate\Http\Request;
@@ -17,13 +18,15 @@ class PackagesController extends Controller
             ->with('socials')
             ->first();
 
+        $rooms = Room::orderBy('sort')->select('title', 'slug',)->get();
+
         $content = PackagesPage::with(['packagesPageBlocks' => function ($query) {
             $query->orderBy('sort', 'asc');
         }])->first();
 
         $packages = Packages::orderBy('sort', 'asc')->get();
 
-        return view('pages.packages.index', compact('content', 'packages', 'home'));
+        return view('pages.packages.index', compact('content', 'packages', 'home','rooms'));
     }
 
     public function show($slug)
@@ -33,6 +36,8 @@ class PackagesController extends Controller
             ->addSelect(['id'])
             ->with('socials')
             ->first();
+
+            $rooms = Room::orderBy('sort')->select('title', 'slug',)->get();
 
         $locale = app()->getLocale();
 
@@ -51,6 +56,6 @@ class PackagesController extends Controller
 
 
 
-        return view('pages.packages.show', compact('package', 'otherPackages', 'home',));
+        return view('pages.packages.show', compact('package', 'otherPackages', 'home','rooms'));
     }
 }

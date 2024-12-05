@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Home;
+use App\Models\Room;
 use App\Models\AboutPage;
 use App\Models\Pictogram;
 use Illuminate\Http\Request;
@@ -20,7 +21,9 @@ class AboutController extends Controller
             ->addSelect(['id'])
             ->with('socials')
             ->first();
-            
+
+        $rooms = Room::orderBy('sort')->select('title', 'slug',)->get();
+
         $pictograms = Pictogram::orderBy('sort', 'asc')->get();
         $gallery = AboutPageGallery::first();
 
@@ -28,6 +31,6 @@ class AboutController extends Controller
             $query->orderBy('sort', 'asc');
         }])->first();
 
-        return view('pages.about.index', compact('content', 'home','pictograms','gallery'));
+        return view('pages.about.index', compact('content', 'home', 'pictograms', 'gallery','rooms'));
     }
 }

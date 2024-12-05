@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Home;
+use App\Models\Room;
 use Illuminate\Http\Request;
 use App\Models\VillaRoomsPage;
 use App\Models\VillaCommonPage;
@@ -17,6 +18,7 @@ class VillaController extends Controller
         ->with('socials')
         ->first();
 
+        $rooms = Room::orderBy('sort')->select('title', 'slug',)->get();
         $gallery = VillaCommonPageGallery::first();
 
 
@@ -24,7 +26,7 @@ class VillaController extends Controller
             $query->orderBy('sort', 'asc');
         }])->first();
 
-        return view('pages.villa.common', compact('content','home','gallery'));
+        return view('pages.villa.common', compact('content','home','gallery','rooms'));
     }
  
 }
