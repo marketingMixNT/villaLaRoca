@@ -31,7 +31,7 @@
 
       @endforeach
       
-      <x-heading title="Zobacz nasze pokoje"/>
+      {{-- <x-heading title="Zobacz nasze pokoje"/> --}}
       <div class="flex flex-wrap justify-center items-stretch gap-12  mx-auto md:opacity-0 fadeIn-animation">
 
 

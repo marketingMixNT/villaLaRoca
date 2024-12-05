@@ -11,12 +11,16 @@
                 {{$banner->title}}</h2>
             <x-text class="text-fontWhite ">{{$banner->text}}</h2>
             </x-text>
-            <x-link href="{{route('relax-zone')}}" title="{{$banner->link_text}}"
-                class="text-fontWhite text-center mx-auto" />
+           
 
+            
             {{--
             <x-booking-bar style="position: relative; margin-top:170px;bottom:-20px" /> --}}
+            
+        </div>
+        <div class="md:opacity-0 fadeIn-animation">
 
+            <x-button-link href="{{route('relax-zone')}}" class="bg-black">{{$banner->link_text}}</x-button-link>
         </div>
         {{-- btns --}}
 

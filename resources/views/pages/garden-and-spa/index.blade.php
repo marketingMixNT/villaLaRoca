@@ -37,7 +37,44 @@
       </x-container>
   </section>
 
+  <section class="py-20 md:opacity-0 fadeIn-animation ">
 
+    {{-- heading --}}
+    <div class="max-w-screen-xl mx-auto  px-6 md:px-12 2xl:px-0 text-center pb-4">
+        <h2 class="text-4xl sm:text-5xl 2xl:text-6xl tracking-wider font-heading font-extralight ">
+           Zobacz nasze zdjęcia
+        </h2>
+
+    </div>
+
+    {{-- swiper --}}
+    <div class="swiper attraction-gallery-swiper">
+        <div class="py-10  swiper-wrapper">
+
+            @foreach ($gallery->images as $img)
+            <a href="{{ asset('storage/' . $img) }}" class=" swiper-slide glightbox">
+
+                <img src="{{ asset('storage/' . $img) }}"
+                    alt="zdjęcie przedstawiające {{$home->title}}"
+                    class=" h-full w-full object-cover aspect-square shadow-md" loading="lazy">
+            </a>
+            @endforeach
+        </div>
+
+
+    </div>
+
+    <div class="flex justify-center items-center mt-12">
+
+      {{-- <x-button-link href="{{route('gallery')}}" class="bg-black"></x-button-link> --}}
+
+      <a href="{{route('gallery')}}" class=" px-8 py-2.5 border bg-secondary-200  text-xs  uppercase   text-fontLight  duration-300 cursor-pointer  hover:text-black  close
+">
+Zobacz galerię
+</a>
+    </div>
+
+</section>
 
   @if ($home->map)
   {!! $home->map !!}

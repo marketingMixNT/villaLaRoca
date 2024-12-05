@@ -28,7 +28,7 @@ class AdminPanelProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
         return $panel
-            ->spa()
+            ->default()
             ->id('admin')
             ->path('studio')
             ->login()
@@ -71,7 +71,7 @@ class AdminPanelProvider extends PanelProvider
                 NavigationGroup::make()
                     ->label('Strona główna')
                     ->collapsed(),
-                    
+
                 NavigationGroup::make()
                     ->label('Atrakcje')
                     ->collapsed(),
@@ -81,6 +81,9 @@ class AdminPanelProvider extends PanelProvider
                 NavigationGroup::make()
                     ->label('Kontakt')
                     ->collapsed(),
+                    NavigationGroup::make()
+                    ->label('Oferty')
+                    ->collapsed(),
                 NavigationGroup::make()
                     ->label('Okolica')
                     ->collapsed(),
@@ -89,6 +92,9 @@ class AdminPanelProvider extends PanelProvider
                     ->collapsed(),
                 NavigationGroup::make()
                     ->label('O villi')
+                    ->collapsed(),
+                NavigationGroup::make()
+                    ->label('Pakiety')
                     ->collapsed(),
                 NavigationGroup::make()
                     ->label('Pokoje')

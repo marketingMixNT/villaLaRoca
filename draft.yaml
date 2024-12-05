@@ -1,4 +1,58 @@
 models:
-  AboutPageGallery:
+  PackagesPage:
+    meta_title: json
+    meta_description: json
+    header_heading: json
+    banner: text
+    heading: json nullable
+    text: json nullable
+    content: json nullable
+    relationships:
+      hasMany: PackagesPageBlock
+  PackagesPageBlock:
+    image: text
+    text: json
+    sort: integer
+    relationships:
+      belongsTo: PackagesPage
+  Packages:
+    meta_title: json
+    meta_description: json
+    header_heading: json
+    banner: text
+    content: json
+  ExclusiveHomePage:
+    meta_title: json
+    meta_description: json
+    header_heading: json
+    banner: text
+    heading: json nullable
+    text: json nullable
+    content: json nullable
+    relationships:
+      hasMany: ExclusiveHomeBlock
+  ExclusiveHomePageBlock:
+    image: text
+    text: json
+    sort: integer
+    relationships:
+      belongsTo: PackagesPage
+  BreakfastPage:
+    meta_title: json
+    meta_description: json
+    header_heading: json
+    banner: text
+    heading: json nullable
+    text: json nullable
+    content: json nullable
+    relationships:
+      hasMany: BreakfastPageBlock
+  BreakfastPageBlock:
+    image: text
+    text: json
+    sort: integer
+    relationships:
+      belongsTo: PackagesPage
+  BreakfastPageGallery:
     images: text
     title: json

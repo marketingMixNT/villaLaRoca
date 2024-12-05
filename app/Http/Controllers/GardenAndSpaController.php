@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Home;
 use Illuminate\Http\Request;
 use App\Models\GardenAndSpaPage;
+use App\Models\GardenAndSpaPageGallery;
 
 class GardenAndSpaController extends Controller
 {
@@ -19,10 +20,13 @@ class GardenAndSpaController extends Controller
         ->with('socials')
         ->first();
 
+        $gallery = GardenAndSpaPageGallery::first();
+
+
         $content = GardenAndSpaPage::with(['gardenAndSpaPageBlocks' => function($query) {
             $query->orderBy('sort', 'asc');
         }])->first();
 
-        return view('pages.garden-and-spa.index',compact('content','home'));
+        return view('pages.garden-and-spa.index',compact('content','home','gallery'));
     }
 }

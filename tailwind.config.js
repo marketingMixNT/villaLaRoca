@@ -10,19 +10,19 @@ export default {
             colors: {
                 primary: {
                     400: "#f8f5f1",
-                    800:"#F3EBE2"
+                    800: "#F3EBE2",
                 },
                 secondary: {
-                    100: "#898fa3",
-                    200: "#575c6b",
-                    300: "#9ca3af",
-                    400:"#888d96"
+                    100: "#9ca3af",
+                    200: "#888d96",
+                    300: "#898fa3",
+                    400: "#575c6b",
                 },
 
-                accent: {
-                    400: "#d9b000",
-                    600: "#b59100",
-                },
+                // accent: {
+                //     400: "#d9b000",
+                //     600: "#b59100",
+                // },
 
                 bgPrimary: "#f8f5f1",
                 bgSecondary: "#ffffff",

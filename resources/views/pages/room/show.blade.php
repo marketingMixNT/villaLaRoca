@@ -63,8 +63,8 @@
         </section> --}}
 
         {{-- description --}}
-        <section class="pb-8 pt-20">
-            <x-container class="max-w-screen-xl mx-auto md:opacity-0 fadeIn-animation">
+        <section class="pb-8 pt-20 ">
+            <x-container class="max-w-screen-xl mx-auto ">
 
                 <div class="flex flex-col lg:flex-row gap-y-12">
 
@@ -80,13 +80,14 @@
                     </div>
                     <div class="w-full lg:w-[45%] lg:pl-12  sticky top-32 space-y-6 h-full">
 
-                        <div class="prose max-w-full font-light">
-
-                            {!! $room->desc !!}
-                        </div>
+                       
                         <div class="prose font-light pt-3">
                             <x-title> Wyposażenie:</x-title>
                             {!! $room->equipment !!}
+                        </div>
+                        <div class="prose max-w-full font-light">
+
+                            {!! $room->desc !!}
                         </div>
                     </div>
                 </div>

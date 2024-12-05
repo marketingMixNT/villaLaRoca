@@ -7,6 +7,7 @@ use App\Models\Home;
 use App\Models\Room;
 use App\Models\Gallery;
 use App\Models\InfoPage;
+use App\Models\Packages;
 use App\Models\AboutPage;
 use App\Models\Pictogram;
 use App\Models\HomeBanner;
@@ -14,10 +15,10 @@ use App\Models\ContactPage;
 use App\Models\GalleryPage;
 use App\Models\Regulations;
 use App\Models\VoucherPage;
+use App\Models\PackagesPage;
 use App\Models\InfoPageBlock;
 use App\Models\PrivacyPolicy;
 use App\Models\AboutPageBlock;
-use App\Models\AboutPageGallery;
 use App\Models\AttractionPage;
 use App\Models\SpaRegulations;
 use App\Models\VillaRoomsPage;
@@ -25,14 +26,17 @@ use App\Observers\CtaObserver;
 use App\Models\VillaCommonPage;
 use App\Observers\HomeObserver;
 use App\Observers\RoomObserver;
+use App\Models\AboutPageGallery;
 use App\Models\GardenAndSpaPage;
 use App\Models\NeighborhoodPage;
 use App\Models\TestimonialsPage;
 use App\Models\VoucherPageBlock;
+use App\Models\PackagesPageBlock;
 use App\Observers\GalleryObserver;
 use App\Models\AttractionPageBlock;
 use App\Models\VillaRoomsPageBlock;
 use App\Observers\InfoPageObserver;
+use App\Observers\PackagesObserver;
 use App\Models\VillaCommonPageBlock;
 use App\Observers\AboutPageObserver;
 use App\Observers\PictogramObserver;
@@ -44,6 +48,7 @@ use App\Observers\ContactPageObserver;
 use App\Observers\GalleryPageObserver;
 use App\Observers\RegulationsObserver;
 use App\Observers\VoucherPageObserver;
+use App\Observers\PackagesPageObserver;
 use Illuminate\Support\ServiceProvider;
 use App\Observers\InfoPageBlockObserver;
 use App\Observers\PrivacyPolicyObserver;
@@ -56,6 +61,7 @@ use App\Observers\GardenAndSpaPageObserver;
 use App\Observers\NeighborhoodPageObserver;
 use App\Observers\TestimonialsPageObserver;
 use App\Observers\VoucherPageBlockObserver;
+use App\Observers\PackagesBlockPageObserver;
 use App\Observers\AttractionPageBlockObserver;
 use App\Observers\VillaRoomsPageBlockObserver;
 use App\Observers\VillaCommonPageBlockObserver;
@@ -110,6 +116,11 @@ class AppServiceProvider extends ServiceProvider
         // Neighborhood
         NeighborhoodPage::observe(NeighborhoodPageObserver::class);
         NeighborhoodPageBlock::observe(NeighborhoodPageBlockObserver::class);
+
+        // Packages
+        Packages::observe(PackagesObserver::class);
+        PackagesPage::observe(PackagesPageObserver::class);
+        PackagesPageBlock::observe(PackagesBlockPageObserver::class);
 
         //Other Pages
         PrivacyPolicy::observe(PrivacyPolicyObserver::class);

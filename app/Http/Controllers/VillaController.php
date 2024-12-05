@@ -6,6 +6,7 @@ use App\Models\Home;
 use Illuminate\Http\Request;
 use App\Models\VillaRoomsPage;
 use App\Models\VillaCommonPage;
+use App\Models\VillaCommonPageGallery;
 
 class VillaController extends Controller
 {
@@ -16,11 +17,14 @@ class VillaController extends Controller
         ->with('socials')
         ->first();
 
+        $gallery = VillaCommonPageGallery::first();
+
+
         $content = VillaCommonPage::with(['villaCommonPageBlocks' => function($query) {
             $query->orderBy('sort', 'asc');
         }])->first();
 
-        return view('pages.villa.common', compact('content','home'));
+        return view('pages.villa.common', compact('content','home','gallery'));
     }
  
 }
