@@ -17,6 +17,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use App\Filament\Resources\ExclusiveHomePageBlockResource\Pages;
 use App\Filament\Resources\ExclusiveHomePageBlockResource\RelationManagers;
+use Filament\Forms\Components\Select;
 
 class ExclusiveHomePageBlockResource extends Resource
 {
@@ -56,6 +57,17 @@ class ExclusiveHomePageBlockResource extends Resource
             ])
             ->required()
             ->columnSpanFull(),
+
+            Select::make('exclusive_home_page_id')
+            ->label('id strony')
+            ->columns(1)
+            ->relationship('exclusiveHomePage', 'id')
+            ->required()
+   
+            ->default(function () {
+               
+                return \App\Models\ExclusiveHomePage::first()->id ?? null;
+            }),
         ]);
     }
 
@@ -91,6 +103,8 @@ class ExclusiveHomePageBlockResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
+
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

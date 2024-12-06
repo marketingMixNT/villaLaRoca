@@ -71,23 +71,23 @@
             <hr class="opacity-40" />
             <ul class="flex flex-wrap justify-center items-center gap-8 text-xs py-4">
                 <li>
-                    <a href="{{route('privacy-policy')}}" class="link-hover font-light">Polityka Prywatności</a>
+                    <a href="{{route('privacy-policy')}}" class="link-hover font-light">{{__('global.other-pages.privacy-policy')}}</a>
                 </li>
                 <li>
-                    <a href="{{route('regulations')}}" class="link-hover font-light">Regulamin </a>
+                    <a href="{{route('regulations')}}" class="link-hover font-light">{{__('global.other-pages.regulations')}} </a>
                 </li>
                 <li>
-                    <a href="{{route('spa-regulations')}}" class="link-hover font-light">Regulamin SPA</a>
+                    <a href="{{route('spa-regulations')}}" class="link-hover font-light">{{__('global.other-pages.spa-regulations')}}</a>
                 </li>
                 <li>
-                    <a href="{{route('contact')}}" class="link-hover font-light">Kontakt </a>
+                    <a href="{{route('contact')}}" class="link-hover font-light">{{__('global.other-pages.contact')}} </a>
                 </li>
             
                 <li>
-                    <a href="{{route('testimonials')}}" class="link-hover font-light">Opinie</a>
+                    <a href="{{route('testimonials')}}" class="link-hover font-light">{{__('global.other-pages.testimonials')}}</a>
                 </li>
                 <li>
-                    <a href="{{route('info')}}" class="link-hover font-light">Przydatne informacje</a>
+                    <a href="{{route('info')}}" class="link-hover font-light">{{__('global.other-pages.info')}}</a>
                 </li>
            
             </ul>

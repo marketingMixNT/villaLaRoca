@@ -17,6 +17,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\BreakfastPageBlockResource\Pages;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use App\Filament\Resources\BreakfastPageBlockResource\RelationManagers;
+use Filament\Forms\Components\Select;
 
 
 class BreakfastPageBlockResource extends Resource
@@ -57,6 +58,17 @@ class BreakfastPageBlockResource extends Resource
             ])
             ->required()
             ->columnSpanFull(),
+
+            Select::make('breakfast_page_id')
+            ->label('id strony')
+            ->columns(1)
+            ->relationship('breakfastPage', 'id')
+            ->required()
+   
+            ->default(function () {
+               
+                return \App\Models\BreakfastPage::first()->id ?? null;
+            }),
         ]);
     }
 
@@ -92,6 +104,8 @@ class BreakfastPageBlockResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
+
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

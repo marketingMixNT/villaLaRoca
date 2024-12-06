@@ -86,24 +86,16 @@ class NeighborhoodPageResource extends Resource
                                 Forms\Components\Textarea::make('text')
                                     ->label('Tekst')
                                     ->columnSpanFull(),
-                           
-                                Repeater::make('neighborhoodPageBlocks')
-                                    ->schema(NeighborhoodPageBlock::getForm())
-                                    ->label('')
-                                    ->relationship()
-                                    ->columnSpanFull()
-                                    ->addActionLabel('Dodaj blok')
-                                    ->collapsed()
-                                    ->collapsible()
-                                    ->defaultItems(0),
 
                                     Shout::make('info')
-                                    ->content(content: 'Aby przetłumaczyć bloki bądź ułożyc je w innej kolejnosci przejdź do dedykowanej zakładki.')
+                                    ->content(content: 'Bloki dodasz w dedykowanej zakładce.')
                                     ->type('info')
                                     ->columnSpanFull()
                                     ->color('info'),
+                               
                            
                     ]),
+                  
 
                 // META
                 Tabs\Tab::make('Meta')
@@ -167,6 +159,7 @@ class NeighborhoodPageResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

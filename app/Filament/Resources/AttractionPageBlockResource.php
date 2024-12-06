@@ -17,6 +17,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\AttractionPageBlockResource\Pages;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use App\Filament\Resources\AttractionPageBlockResource\RelationManagers;
+use Filament\Forms\Components\Select;
 
 
 class AttractionPageBlockResource extends Resource
@@ -57,6 +58,17 @@ class AttractionPageBlockResource extends Resource
             ])
             ->required()
             ->columnSpanFull(),
+
+            Select::make('attraction_page_id')
+            ->label('id strony')
+            ->columns(1)
+            ->relationship('attractionPage', 'id')
+            ->required()
+   
+            ->default(function () {
+               
+                return \App\Models\AttractionPage::first()->id ?? null;
+            }),
         ]);
     }
 

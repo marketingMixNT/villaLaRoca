@@ -9,6 +9,7 @@ use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use App\Models\InfoPageBlock;
 use Filament\Resources\Resource;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Illuminate\Database\Eloquent\Builder;
@@ -56,6 +57,17 @@ class InfoPageBlockResource extends Resource
             ])
             ->required()
             ->columnSpanFull(),
+
+            Select::make('info_page_id')
+            ->label('id strony')
+            ->columns(1)
+            ->relationship('infoPage', 'id')
+            ->required()
+   
+            ->default(function () {
+               
+                return \App\Models\InfoPage::first()->id ?? null;
+            }),
         ]);
     }
 

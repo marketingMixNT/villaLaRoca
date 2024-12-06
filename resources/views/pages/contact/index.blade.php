@@ -61,7 +61,7 @@
         
                        
         <div>
-            <h3 class="mb-4 md:mb-10 uppercase font-medium font-heading text-2xl">Skontaktuj się z nami</h3>
+            <h3 class="mb-4 md:mb-10 uppercase font-medium font-heading text-2xl">{{__('global.contact.heading')}}</h3>
             <livewire:contact-form/>
         </div>
                 </div>

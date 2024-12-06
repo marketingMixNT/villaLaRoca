@@ -9,6 +9,7 @@ use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use App\Models\VoucherPageBlock;
 use Filament\Resources\Resource;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Illuminate\Database\Eloquent\Builder;
@@ -57,6 +58,17 @@ class VoucherPageBlockResource extends Resource
             ])
             ->required()
             ->columnSpanFull(),
+
+            Select::make('voucher_page_id')
+            ->label('id strony')
+            ->columns(1)
+            ->relationship('voucherPage', 'id')
+            ->required()
+   
+            ->default(function () {
+               
+                return \App\Models\VoucherPage::first()->id ?? null;
+            }),
         ]);
     }
 

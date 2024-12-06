@@ -17,6 +17,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\NeighborhoodPageBlockResource\Pages;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use App\Filament\Resources\NeighborhoodPageBlockResource\RelationManagers;
+use Filament\Forms\Components\Select;
 
 class NeighborhoodPageBlockResource extends Resource
 {
@@ -34,63 +35,75 @@ class NeighborhoodPageBlockResource extends Resource
     public static function form(Form $form): Form
     {
         return $form
-        ->schema([
-            FileUpload::make('image')
-            ->label('Obraz')
-            ->directory('pageNeighborhood')
-            ->getUploadedFileNameForStorageUsing(
-                callback: fn(TemporaryUploadedFile $file): string => 'okolica-' . now()->format('H-i-s') . '-' . str_replace([' ', '.'], '', microtime()) . '.' . $file->getClientOriginalExtension()
-            )
-            ->maxSize(8192)
-            ->columnSpanFull()
-            ->required(),
+            ->schema([
+                FileUpload::make('image')
+                    ->label('Obraz')
+                    ->directory('pageNeighborhood')
+                    ->getUploadedFileNameForStorageUsing(
+                        callback: fn(TemporaryUploadedFile $file): string => 'okolica-' . now()->format('H-i-s') . '-' . str_replace([' ', '.'], '', microtime()) . '.' . $file->getClientOriginalExtension()
+                    )
+                    ->maxSize(8192)
+                    ->columnSpanFull()
+                    ->required(),
+                RichEditor::make('text')
+                    ->label('Tekst')
+                    ->disableToolbarButtons([
+                        'blockquote',
+                        'strike',
+                        'codeBlock',
 
-        RichEditor::make('text')
-            ->label('Tekst')
-            ->disableToolbarButtons([
-                'blockquote',
-                'strike',
-                'codeBlock',
+
+                    ])
+                    ->required()
+                    ->columnSpanFull(),
+
+                    Select::make('neighborhood_page_id')
+                    ->label('id strony')
+                    ->columns(1)
+                    ->relationship('neighborhoodPage', 'id')
+                    ->required()
+           
+                    ->default(function () {
+                       
+                        return \App\Models\NeighborhoodPage::first()->id ?? null;
+                    }),
                 
-
-            ])
-            ->required()
-            ->columnSpanFull(),
-        ]);
+            ]);
     }
 
     public static function table(Table $table): Table
     {
         return $table
-        ->reorderable('sort')
-        ->defaultSort('sort', 'asc')
-        ->columns([
-            Tables\Columns\TextColumn::make('sort')
-                ->label('#')
-                ->sortable(),
-            Tables\Columns\ImageColumn::make('image')
-                ->label('Banner'),
+            ->reorderable('sort')
+            ->defaultSort('sort', 'asc')
+            ->columns([
+                Tables\Columns\TextColumn::make('sort')
+                    ->label('#')
+                    ->sortable(),
+                Tables\Columns\ImageColumn::make('image')
+                    ->label('Banner'),
 
-            Tables\Columns\TextColumn::make('text')
-                ->label('Treść')
-                ->limit(40)
-                ->formatStateUsing(function ($state) {
-                    return Str::limit(strip_tags($state), 40);
-                }),
-            Tables\Columns\TextColumn::make('created_at')
-                ->dateTime()
-                ->sortable()
-                ->toggleable(isToggledHiddenByDefault: true),
-            Tables\Columns\TextColumn::make('updated_at')
-                ->dateTime()
-                ->sortable()
-                ->toggleable(isToggledHiddenByDefault: true),
-        ])
+                Tables\Columns\TextColumn::make('text')
+                    ->label('Treść')
+                    ->limit(40)
+                    ->formatStateUsing(function ($state) {
+                        return Str::limit(strip_tags($state), 40);
+                    }),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+            ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -115,7 +128,7 @@ class NeighborhoodPageBlockResource extends Resource
         ];
     }
 
-      public static function getNavigationLabel(): string
+    public static function getNavigationLabel(): string
     {
         return ('Bloki');
     }

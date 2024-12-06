@@ -10,13 +10,11 @@
         @include('pages.home.partials.garden-spa')
         <x-cta :cta="$cta" />
 
-        <div class="relative">
-            <x-mandala />
+      
 
             @include('pages.home.partials.testimonials')
             @include('pages.home.partials.neighborhood')
 
-        </div>
 
         @if ($home->map)
         {!! $home->map !!}

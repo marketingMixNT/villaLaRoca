@@ -8,6 +8,7 @@ use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use Filament\Resources\Resource;
+use Filament\Forms\Components\Select;
 use App\Models\HomeSecondSectionBlock;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
@@ -60,6 +61,17 @@ class HomeSecondSectionBlockResource extends Resource
             ])
             ->required()
             ->columnSpanFull(),
+
+            Select::make('home_id')
+            ->label('id strony')
+            ->columns(1)
+            ->relationship('Home', 'id')
+            ->required()
+   
+            ->default(function () {
+               
+                return \App\Models\Home::first()->id ?? null;
+            }),
         ]);
     }
 
@@ -95,6 +107,7 @@ class HomeSecondSectionBlockResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

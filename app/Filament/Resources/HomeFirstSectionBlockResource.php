@@ -9,6 +9,7 @@ use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use Filament\Resources\Resource;
 use App\Models\HomeFirstSectionBlock;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Illuminate\Database\Eloquent\Builder;
@@ -60,6 +61,17 @@ class HomeFirstSectionBlockResource extends Resource
             ])
             ->required()
             ->columnSpanFull(),
+
+            Select::make('home_id')
+            ->label('id strony')
+            ->columns(1)
+            ->relationship('home', 'id')
+            ->required()
+   
+            ->default(function () {
+               
+                return \App\Models\Home::first()->id ?? null;
+            }),
         ]);
     }
 

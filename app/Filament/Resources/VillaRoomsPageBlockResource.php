@@ -9,6 +9,7 @@ use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use Filament\Resources\Resource;
 use App\Models\VillaRoomsPageBlock;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Illuminate\Database\Eloquent\Builder;
@@ -57,6 +58,17 @@ class VillaRoomsPageBlockResource extends Resource
                 ])
                 ->required()
                 ->columnSpanFull(),
+
+                Select::make('villa_rooms_page_id')
+                    ->label('id strony')
+                    ->columns(1)
+                    ->relationship('villaRoomsPage', 'id')
+                    ->required()
+                    ->columnSpanFull()
+                    ->default(function () {
+                     
+                        return \App\Models\VillaRoomsPage::first()->id ?? null;
+                    }),
             ]);
     }
 
@@ -92,6 +104,7 @@ class VillaRoomsPageBlockResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

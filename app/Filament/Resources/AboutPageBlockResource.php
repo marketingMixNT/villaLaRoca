@@ -9,6 +9,7 @@ use Filament\Tables\Table;
 use Illuminate\Support\Str;
 use App\Models\AboutPageBlock;
 use Filament\Resources\Resource;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Illuminate\Database\Eloquent\Builder;
@@ -57,6 +58,17 @@ class AboutPageBlockResource extends Resource
                 ])
                 ->required()
                 ->columnSpanFull(),
+
+                Select::make('about_page_id')
+                ->label('id strony')
+                ->columns(1)
+                ->relationship('aboutPage', 'id')
+                ->required()
+       
+                ->default(function () {
+                   
+                    return \App\Models\AboutPage::first()->id ?? null;
+                }),
             ]);
     }
 

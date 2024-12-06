@@ -7,6 +7,7 @@
 'anchor'=>'o-nas',
 'all'=>'wszystkie',
 'movie'=>" Twoja przeglądarka nie obsługuje odtwarzacza wideo.",
+'check-gallery'=>"zobacz galerię",
 
 'mobile-buttons'=>[
     'booking'=>'Zarezerwuj',
@@ -16,14 +17,18 @@
 ],
 
 'nav'=>[
-    '1'=>'O Villi',
-    '2'=>"Okolice",
+    '1'=>'O Willi',
+    '2'=>"Atrakcje okolicy",
     '3'=>"Pokoje",
     '4'=>"Serce domu",
     '5'=>"Strefa Relaksu",
-    '6'=>"Atrakcje",
-    '7'=>"Galeria",
-    '8'=>"Voucher",
+    '6'=>"Pakiety",
+    '7'=>"Dom na wyłączność",
+    '8'=>"Śniadania",
+    '9'=>"Atrakcje",
+    '10'=>"Oferta",
+    '11'=>"Galeria",
+    '12'=>"Voucher",
 ],
 
 'pictograms'=>[
@@ -46,12 +51,16 @@
     "send"=>"Wyślij",
     'email-error'=>"Pole adres e-mail nie jest poprawnym adresem e-mail.",
     "success-message"=>"Dziękujemy za wiadomość",
+    "heading"=>"Skontaktuj się z nami"
 ],
 
 'other-pages'=>[
     'privacy-policy'=>'Polityka Prywatności',
     'regulations'=>"Regulamin",
-    'spa-regulations'=>"Regulamin Spa"
+    'spa-regulations'=>"Regulamin Spa",
+    'contact'=>"Kontakt",
+    'testimonials'=>"Opinie",
+    'info'=>"Przydatne informacje",
 ]
 
 ];

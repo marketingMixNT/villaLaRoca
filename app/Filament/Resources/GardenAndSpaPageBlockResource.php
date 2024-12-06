@@ -17,6 +17,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\GardenAndSpaPageBlockResource\Pages;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use App\Filament\Resources\GardenAndSpaPageBlockResource\RelationManagers;
+use Filament\Forms\Components\Select;
 
 class GardenAndSpaPageBlockResource extends Resource
 {
@@ -57,6 +58,18 @@ class GardenAndSpaPageBlockResource extends Resource
             ])
             ->required()
             ->columnSpanFull(),
+
+
+            Select::make('garden_and_spa_page_id')
+            ->label('id strony')
+            ->columns(1)
+            ->relationship('gardenAndSpaPage', 'id')
+            ->required()
+   
+            ->default(function () {
+               
+                return \App\Models\GardenAndSpaPage::first()->id ?? null;
+            }),
         ]);
     }
 

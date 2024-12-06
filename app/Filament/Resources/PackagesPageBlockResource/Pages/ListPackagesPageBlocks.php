@@ -16,6 +16,8 @@ class ListPackagesPageBlocks extends ListRecords
     {
         return [
             Actions\LocaleSwitcher::make(),
+            Actions\CreateAction::make(),
+
         ];
     }
 }

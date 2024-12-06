@@ -85,20 +85,8 @@ class GardenAndSpaPageResource extends Resource
                                     ->label('Tekst')
                                     ->columnSpanFull(),
                            
-                                Repeater::make('gardenAndSpaPageBlocks')
-                                    ->schema(GardenAndSpaPageBlock::getForm())
-                                    ->label('')
-                                    ->relationship()
-                                    ->columnSpanFull()
-                                  
-                                    ->addActionLabel('Dodaj blok')
-                                    ->collapsed()
-                                    ->collapsible()
-                                    ->defaultItems(0),
-
                                     Shout::make('info')
-                                    ->content(content: 'Aby przetłumaczyć bloki bądź ułożyc je w innej kolejnosci przejdź do dedykowanej zakładki.')
-
+                                    ->content(content: 'Bloki dodasz w dedykowanej zakładce.')
                                     ->type('info')
                                     ->columnSpanFull()
                                     ->color('info'),

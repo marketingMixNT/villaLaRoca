@@ -76,7 +76,7 @@
 
               <a href="{{route('gallery')}}" class=" px-8 py-2.5 border bg-secondary-200  text-xs  uppercase   text-fontLight  duration-300 cursor-pointer  hover:text-black  close
 ">
-Zobacz galerię
+{{__('global.check-gallery')}}
 </a>
             </div>
 

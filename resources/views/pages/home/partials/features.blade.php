@@ -14,7 +14,7 @@
                 @foreach ($pictograms as $pictogram)
 
                 <x-feature-card title="{{$pictogram->title}}" text="{{$pictogram->description}}">
-                    <img src="{{'storage/'.$pictogram->icon}}" alt="{{$pictogram->title}}" class="w-14 sm:w-20"
+                    <img src="{{asset('storage/'.$pictogram->icon)}}" alt="{{$pictogram->title}}" class="w-14 sm:w-20"
                         laoding="lazy" />
                 </x-feature-card>
               

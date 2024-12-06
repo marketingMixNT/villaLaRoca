@@ -50,7 +50,7 @@ class ExclusiveHomePage extends Model
 
     public $translatable = [
         'meta_title',
-        'meta_desc',
+        'meta_description',
         'header_heading',
         'heading',
         'text',

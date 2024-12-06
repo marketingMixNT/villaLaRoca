@@ -85,19 +85,8 @@ class AttractionPageResource extends Resource
                                 ->label('Tekst')
                                 ->columnSpanFull(),
 
-                            Repeater::make('attractionPageBlocks')
-                                ->schema(AttractionPageBlock::getForm())
-                                ->label('')
-                                ->relationship()
-                                ->columnSpanFull()
-                                // ->reorderable()
-                                ->addActionLabel('Dodaj blok')
-                                ->collapsed()
-                                ->collapsible()
-                                ->defaultItems(0),
-
-                            Shout::make('info')
-                                ->content(content: 'Aby przetłumaczyć bloki bądź ułożyc je w innej kolejnosci przejdź do dedykowanej zakładki.')
+                                Shout::make('info')
+                                ->content(content: 'Bloki dodasz w dedykowanej zakładce.')
                                 ->type('info')
                                 ->columnSpanFull()
                                 ->color('info'),

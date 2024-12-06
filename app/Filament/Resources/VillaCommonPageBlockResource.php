@@ -18,6 +18,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\VillaCommonPageBlockResource\Pages;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use App\Filament\Resources\VillaCommonPageBlockResource\RelationManagers;
+use Filament\Forms\Components\Select;
 
 class VillaCommonPageBlockResource extends Resource
 {
@@ -57,42 +58,54 @@ class VillaCommonPageBlockResource extends Resource
                     ])
                     ->required()
                     ->columnSpanFull(),
+
+                Select::make('villa_common_page_id')
+                    ->label('id strony')
+                    ->columns(1)
+                    ->relationship('villaCommonPage', 'id') 
+                    ->required()
+                    
+                    ->default(function () {
+                       
+                        return \App\Models\VillaRoomsPage::first()->id ?? null;
+                    }),
             ]);
     }
 
     public static function table(Table $table): Table
     {
         return $table
-        ->reorderable('sort')
-        ->defaultSort('sort', 'asc')
-        ->columns([
-            Tables\Columns\TextColumn::make('sort')
-                ->label('#')
-                ->sortable(),
-            Tables\Columns\ImageColumn::make('image')
-                ->label('Banner'),
+            ->reorderable('sort')
+            ->defaultSort('sort', 'asc')
+            ->columns([
+                Tables\Columns\TextColumn::make('sort')
+                    ->label('#')
+                    ->sortable(),
+                Tables\Columns\ImageColumn::make('image')
+                    ->label('Banner'),
 
-            Tables\Columns\TextColumn::make('text')
-                ->label('Treść')
-                ->limit(40)
-                ->formatStateUsing(function ($state) {
-                    return Str::limit(strip_tags($state), 40);
-                }),
-            Tables\Columns\TextColumn::make('created_at')
-                ->dateTime()
-                ->sortable()
-                ->toggleable(isToggledHiddenByDefault: true),
-            Tables\Columns\TextColumn::make('updated_at')
-                ->dateTime()
-                ->sortable()
-                ->toggleable(isToggledHiddenByDefault: true),
-        ])
+                Tables\Columns\TextColumn::make('text')
+                    ->label('Treść')
+                    ->limit(40)
+                    ->formatStateUsing(function ($state) {
+                        return Str::limit(strip_tags($state), 40);
+                    }),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+            ])
 
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

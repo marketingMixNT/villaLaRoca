@@ -296,7 +296,7 @@ class HomeResource extends Resource
                         ->columns()
                         ->schema([
                             Shout::make('info')
-                                    ->content(content: 'Aby przetłumaczyć bloki bądź ułożyc je w innej kolejnosci przejdź do dedykowanej zakładki.')
+                                    ->content(content: 'Bloki dodasz w dedykowanej zakładce.')
                                     ->type('info')
                                     ->columnSpanFull()
                                     ->color('info'),
@@ -323,36 +323,7 @@ class HomeResource extends Resource
                                         ->columnSpanFull(),
                                 ]),
 
-                            //first section blocks
-                            Section::make('Bloki - pierwsza sekcja')
-                            ->collapsed()
-                            ->schema([
-                                Repeater::make('homeFirstSectionBlocks')
-                                ->schema(HomeFirstSectionBlock::getForm())
-                                ->label('')
-                                ->relationship()
-                                ->columnSpanFull()
-                                // ->reorderable()
-                                ->addActionLabel('Dodaj blok')
-                                ->collapsed()
-                                ->collapsible()
-                                ->defaultItems(0),
-                            ]),
-                            //second sections blocks
-                            Section::make('Bloki - druga sekcja')
-                            ->collapsed()
-                            ->schema([
-                                Repeater::make('homeSecondSectionBlocks')
-                                ->schema(HomeSecondSectionBlock::getForm())
-                                ->label('')
-                                ->relationship()
-                                ->columnSpanFull()
-                                // ->reorderable()
-                                ->addActionLabel('Dodaj blok')
-                                ->collapsed()
-                                ->collapsible()
-                                ->defaultItems(0),
-                            ]),
+                           
                             // testimonials
                             Section::make('Opinie')
                                 ->collapsed()
