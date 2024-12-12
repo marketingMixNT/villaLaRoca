@@ -1,2 +1,5 @@
 User-agent: *
-Disallow:
+Allow:/
+Disallow: /studio
+
+Sitemap: https://hotel32.mmhub.pl/sitemap.xml
