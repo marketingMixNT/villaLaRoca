@@ -11,7 +11,7 @@
                 {{$banner->title}}</h2>
             <x-text class="text-fontWhite ">{{$banner->text}}</h2>
             </x-text>
-           
+
 
             
             {{--

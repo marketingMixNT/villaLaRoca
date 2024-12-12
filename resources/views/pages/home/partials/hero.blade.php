@@ -10,6 +10,7 @@
     <video autoplay loop muted poster="{{$home->poster}}"
         class="absolute inset-0 w-full h-full object-cover ">
         <source src="{{asset('storage/' . $home->slider_movie)}}" type="video/mp4">
+        {{-- <source src="{{asset('assets/villa_la_roca.webm')}}" type="video/webm"> --}}
 
        {{__('global.movie')}}
     </video>
@@ -17,9 +18,9 @@
     <div class="bg-black absolute top-0 right-0 left-0 bottom-0 opacity-50"></div>
 
 
-    <div class=" z-30 flex justify-center items-center flex-col w-full h-full gap-12">
+    <div class=" z-50 flex justify-center items-center flex-col w-full h-full gap-12" style="z-index:10000">
         <img src="{{asset('storage/' . $home->logo)}}" alt="logo {{$home->title}}" class="sm:w-[250px]  w-[300px] lg:w-[450px] z-40">
-        <h1 class=" px-6 md:px-12 text-center text-4xl xs:text-5xl lg:text-7xl     font-heading  text-fontWhite  tracking-wide z-50 text-fontLight font-extralight pb-44"
+        <h1 class=" px-6 md:px-12 text-center text-3xl sm:text-4xl  lg:text-5xl     font-heading  text-fontWhite  tracking-wide z-50 text-fontLight font-extralight sm:pb-44"
                 style="line-height: 1.2">
                 {{$home->slider_title}} 
                 
@@ -30,7 +31,10 @@
                 
             </h1>
 
-        <x-button-link href="#" class="z-40 mt-12 lg:mt-32">tutaj będzie panel do rezerwacji</x-button-link>
+            <div class=" z-50 pb-12">
+
+                <x-booking-panel />
+            </div>
     </div>
 
 
@@ -56,7 +60,7 @@
 
         <div class="absolute top-1/2 left-0 right-0 -translate-y-1/2 z-40 flex justify-center items-center flex-col">
             <img src="{{asset('storage/' . $home->logo)}}" alt="logo {{$home->title}}" class="sm:w-[250px]  w-[300px] lg:w-[450px] z-40">
-            <h1 class=" px-6 md:px-12 text-center text-4xl xs:text-5xl lg:text-7xl     font-heading  text-fontWhite  tracking-wide z-50 text-fontLight font-extralight pb-44"
+            <h1 class=" px-6 md:px-12 text-center text-3xl sm:text-4xl  lg:text-5xl     font-heading  text-fontWhite  tracking-wide z-50 text-fontLight font-extralight pb-12 sm:pb-44"
                 style="line-height: 1.2">
                 {{$home->slider_title}} 
                 
@@ -68,7 +72,10 @@
             </h1>
 
 
-            <x-booking-panel />
+            <div class=" z-50 pb-12">
+
+                <x-booking-panel />
+            </div>
 
         </div>
 

@@ -24,6 +24,7 @@ class VoucherPage extends Model
         'banner',
         'heading',
         'text',
+        'content'
     ];
 
     /**
@@ -38,6 +39,7 @@ class VoucherPage extends Model
         'header_heading' => 'array',
         'heading' => 'array',
         'text' => 'array',
+        'content' => 'array',
     ];
 
     public function voucherPageBlocks(): HasMany
@@ -51,5 +53,6 @@ class VoucherPage extends Model
         'header_heading',
         'heading',
         'text',
+        'content'
     ];
 }

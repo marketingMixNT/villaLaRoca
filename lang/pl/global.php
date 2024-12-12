@@ -8,6 +8,7 @@
 'all'=>'wszystkie',
 'movie'=>" Twoja przeglądarka nie obsługuje odtwarzacza wideo.",
 'check-gallery'=>"zobacz galerię",
+'check-testimonials'=>"zobacz opinie",
 
 'mobile-buttons'=>[
     'booking'=>'Zarezerwuj',
@@ -41,6 +42,8 @@
     'address'=>"Adres",
     'privacy-policy'=>"Polityka Prywatności",
     'regulations'=>"Regulamin",
+    'newsletter'=>"Zapisz się do newslettera:",
+    'newsletter-submit'=>"Wyślij"
 ],
 
 "contact"=>[
@@ -61,6 +64,12 @@
     'contact'=>"Kontakt",
     'testimonials'=>"Opinie",
     'info'=>"Przydatne informacje",
-]
+],
+
+'room'=>[
+    'equipment'=>"Wyposażenie",
+    'gallery'=>"Galeria",
+    'other-rooms'=>"Pozostałe pokoje"
+],
 
 ];

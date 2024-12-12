@@ -82,7 +82,7 @@
 
                        
                         <div class="prose font-light pt-3">
-                            <x-title> Wyposażenie:</x-title>
+                            <x-title> {{__('global.room.equipment')}}:</x-title>
                             {!! $room->equipment !!}
                         </div>
                         <div class="prose max-w-full font-light">
@@ -102,7 +102,7 @@
             {{-- heading --}}
             <div class="max-w-screen-xl mx-auto  px-6 md:px-12 2xl:px-0 text-center pb-4">
                 <h2 class="text-4xl sm:text-5xl 2xl:text-6xl tracking-wider font-heading font-extralight ">
-                   Galeria
+                   {{__('global.room.gallery')}}
                 </h2>
 
             </div>
@@ -129,7 +129,7 @@
         {{-- @if ($cta)
         <x-cta :cta="$cta" />
         @endif --}}
-<x-cta :cta="$cta"/>
+<x-cta :cta="$cta" :home="$home" />
 
           {{-- other apartments --}}
 
@@ -140,7 +140,7 @@
 
 
             <h2 class="text-4xl sm:text-5xl 2xl:text-6xl tracking-wider font-heading font-extralight text-center">
-              Pozostałe pokoje
+              {{__('global.room.other-rooms')}}
             </h2>
 
 

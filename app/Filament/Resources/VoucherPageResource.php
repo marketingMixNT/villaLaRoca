@@ -85,6 +85,25 @@ class VoucherPageResource extends Resource
                                 ->label('Tekst')
                                 ->columnSpanFull(),
 
+                                Forms\Components\RichEditor::make('content')
+                                ->label('Treść')
+                                ->toolbarButtons([
+                                    'bold',
+                                    'bulletList',
+                                    'codeBlock',
+                                    'h2',
+                                    'h3',
+                                    'italic',
+                                    'link',
+                                    'orderedList',
+                                    'redo',
+                                    'strike',
+                                    'underline',
+                                    'undo',
+                                ])
+                                ->columnSpanFull(),
+                         
+
                                 Shout::make('info')
                                 ->content(content: 'Bloki dodasz w dedykowanej zakładce.')
                                 ->type('info')

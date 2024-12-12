@@ -1,27 +1,26 @@
 <section class="py-12 lg:pt-20 pb-8 relative overflow-hidden md:opacity-0 fadeIn-animation">
 
-    
+
 
     <x-container class="max-w-screen-xl mx-auto space-y-20">
 
         <x-heading-horizontal title="{{$home->testimonials_heading}}">
             <x-text-wrapper>{!!$home->testimonials_text!!}</x-text-wrapper>
-           
-          
-            @if(!is_null($home->google_reviews) )
-            <x-rating 
-                source="google" 
-                rate="{{ $home->google_reviews_average }}" 
-                href="{{ $home->google_reviews_link  }}" 
-                reviews="{{ $home->google_reviews }} {{ __('global.reviews') }}" 
-            />
-        @endif
 
-        @if(!is_null($home->tripadvisor_reviews) )
-        <x-rating source="tripAdvisor" rate="{{$home->tripadvisor_reviews_average}}" href="{{$home->tripadvisor_links}}" reviews="{{$home->tripadvisor_reviews}} {{__('global.reviews')}}" />
-    @endif
-                
-          
+            @if(!is_null($home->google_reviews) )
+            <x-rating source="google" rate="{{ $home->google_reviews_average }}"
+                href="{{ $home->google_reviews_link  }}"
+                reviews="{{ $home->google_reviews }} {{ __('global.reviews') }}" />
+            @endif
+
+            @if(!is_null($home->tripadvisor_reviews) )
+            <x-rating source="tripAdvisor" rate="{{$home->tripadvisor_reviews_average}}"
+                href="{{$home->tripadvisor_links}}" reviews="{{$home->tripadvisor_reviews}} {{__('global.reviews')}}" />
+            @endif
+
+            <x-hotres.testimonials />
+
+
 
         </x-heading-horizontal>
 
@@ -33,6 +32,6 @@
                 @endforeach
 
             </div>
-       
+
     </x-container>
 </section>

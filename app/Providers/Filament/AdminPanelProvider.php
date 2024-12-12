@@ -67,11 +67,11 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
+          
             ->navigationGroups([
                 NavigationGroup::make()
                     ->label('Strona główna')
                     ->collapsed(),
-
                 NavigationGroup::make()
                     ->label('Atrakcje')
                     ->collapsed(),
@@ -91,7 +91,7 @@ class AdminPanelProvider extends PanelProvider
                     ->label('Opinie')
                     ->collapsed(),
                 NavigationGroup::make()
-                    ->label('O villi')
+                    ->label('O willi')
                     ->collapsed(),
                 NavigationGroup::make()
                     ->label('Pakiety')

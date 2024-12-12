@@ -1,0 +1,3 @@
+
+
+<script src="https://panel.hotres.pl/public/api/hotres_v4_popup.js"></script><img id="hotresPlaceRibbon"     style="position:fixed;right:0px;top:300px;width:130px;z-index:99999999;cursor:pointer;"     onclick="showHotresPopup({'action':'places','oid':'4398','lang':'{{ str_replace('_', '-', app()->getLocale()) }}'});"     src="https://panel.hotres.pl/public/places/hotres-places-{{ str_replace('_', '-', app()->getLocale()) }}.svg"     alt="Przewodnik po okolicy" />

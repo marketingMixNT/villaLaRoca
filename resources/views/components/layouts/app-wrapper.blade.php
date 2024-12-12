@@ -11,14 +11,6 @@
 
 <x-shared.mobile-buttons.mobile-buttons :home="$home" />
 
-{{-- <x-footer :home="$home" /> --}}
-{{--
-<x-map :home="$home" />
-<x-mobile-buttons :home="$home" />
 
-<x-scroll-to-top />
+<x-hotres.places/>
 
-
-
-
-<script src="{{$home->booking_script}}{{ str_replace('_', '-', app()->getLocale()) }}" async></script> --}}

@@ -28,7 +28,7 @@
 <meta property="og:description" content="{{ $description }}">
 <meta property="og:url" content="https://villalaroca.pl">
 <meta property="og:type" content="website">
-<meta property="og:image" content="">
+<meta property="og:image" content="{{asset('assets/images/villa-la-roca.webp')}}">
 
 {{-- cookieEasy --}}
 <script async src="https://app.cookieasy.pl/plugin/i0ahh25gp6n18xo.js"></script>

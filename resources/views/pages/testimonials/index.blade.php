@@ -26,6 +26,9 @@
         @if(!is_null($home->tripadvisor_reviews) )
         <x-rating source="tripAdvisor" rate="{{$home->tripadvisor_reviews_average}}" href="{{$home->tripadvisor_links}}" reviews="{{$home->tripadvisor_reviews}} {{__('global.reviews')}}" />
     @endif
+
+    <x-hotres.testimonials />
+
 </x-heading-horizontal>
 
                 <div class="swiper testimonials-carousel max-w-screen-md md:opacity-0 fadeIn-animation">

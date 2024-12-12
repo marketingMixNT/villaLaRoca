@@ -8,6 +8,8 @@
 'all' => 'all',
 'movie' => "Your browser does not support the video player.",
 'check-gallery' => "view gallery",
+'check-testimonials'=>"view testimonials",
+
 
 'mobile-buttons' => [
     'booking' => 'Book',
@@ -41,6 +43,8 @@
     'address' => "Address",
     'privacy-policy' => "Privacy Policy",
     'regulations' => "Regulations",
+    'newsletter'=>"Subscribe to the newsletter:",
+    'newsletter-submit'=>"Submit"
 ],
 
 "contact" => [
@@ -61,6 +65,11 @@
     'contact' => "Contact",
     'testimonials' => "Testimonials",
     'info' => "Useful Information",
-]
+],
+'room'=>[
+    'equipment'=>"Equipment",
+    'gallery'=>"Gallery",
+    'other-rooms'=>"Other rooms"
+],
 
 ];

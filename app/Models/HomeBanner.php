@@ -36,6 +36,6 @@ class HomeBanner extends Model
         'link_text' => 'array',
     ];
 
-    public $translatable = ['title', 'subtitle','link_text'];
+    public $translatable = ['title', 'subtitle','link_text','text'];
 
 }

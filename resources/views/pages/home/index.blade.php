@@ -8,7 +8,7 @@
         @include('pages.home.partials.rooms')
         @include('pages.home.partials.banner')
         @include('pages.home.partials.garden-spa')
-        <x-cta :cta="$cta" />
+        <x-cta :cta="$cta" :home="$home" />
 
       
 

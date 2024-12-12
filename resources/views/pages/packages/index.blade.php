@@ -21,10 +21,12 @@
                 </div>
                 @endif
 
+                @if($content->content)
                 {{-- content --}}
-                <section class="max-w-screen-lg prose md:opacity-0 fadeIn-animation">
+                <section class="max-w-screen-lg mx-auto prose md:opacity-0 fadeIn-animation">
                     {!! $content->content !!}
                 </section>
+                @endif
 
                 {{-- blocks --}}
                 @if(!$content->packagesPageBlocks->isEmpty())

@@ -1,4 +1,4 @@
-@props(['cta'])
+@props(['cta','home'])
 
 <section>
   
@@ -14,15 +14,16 @@
 
             </x-text>
 
-            <div>
+            
 
-                <x-booking-panel />
-            </div>
-
-            {{-- <x-booking-bar  style="position: relative; margin-top:170px;bottom:-20px" /> --}}
+           
 
         </div>
-        {{-- btns --}}
+        <div class="md:opacity-0 fadeIn-animation">
+
+            <x-button-link href="{{$home->booking_link}}" class="bg-black">Zarezerwuj</x-button-link>
+        </div>
+       
 
 
     </div>
