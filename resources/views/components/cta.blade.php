@@ -21,7 +21,7 @@
         </div>
         <div class="md:opacity-0 fadeIn-animation">
 
-            <x-button-link href="{{$home->booking_link}}" class="bg-black">Zarezerwuj</x-button-link>
+            <x-button-link href="{{$home->booking_link}}" class="bg-black">{{__('global.book')}}</x-button-link>
         </div>
        
 

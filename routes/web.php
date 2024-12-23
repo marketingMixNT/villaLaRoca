@@ -16,6 +16,7 @@ use App\Http\Controllers\ExclusiveHomeController;
 use App\Http\Controllers\OtherPagesController;
 use App\Http\Controllers\GardenAndSpaController;
 use App\Http\Controllers\NeighborhoodController;
+use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\TestimonialsController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -69,6 +70,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
     Route::get(LaravelLocalization::transRoute('routes.spa-regulations'), [OtherPagesController::class, 'spaRegulations'])->name('spa-regulations');
 
     Route::get(LaravelLocalization::transRoute('routes.info'), [OtherPagesController::class, 'info'])->name('info');
+
+
+
+    Route::get(LaravelLocalization::transRoute('routes.booking'), ReservationController::class)->name('booking');
 
 
     //opinie

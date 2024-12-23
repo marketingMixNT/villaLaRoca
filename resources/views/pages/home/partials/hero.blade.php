@@ -6,6 +6,21 @@
 
     <x-shared.header.hamburger class="absolute top-12 right-12 z-40" />
 
+    <div class="absolute top-12 left-12 z-40 h-[40px] flex justify-center items-center">
+        <ul id="languageSwitcher"
+    class="flex justify-center items-center gap-2 list-none text-sm ">
+    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+    <li>
+        <a rel="alternate" hreflang="{{ $localeCode }}"
+            href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}"
+            class="relative uppercase hover:text-primary-600 duration-500 text-fontLight text-sm font-light tracking-wider {{ App::getLocale() === $localeCode ? ' before:absolute before:bottom-0 before:left-0 before:w-[70%] before:h-[1px] before:bg-secondary-100 active' : '' }}">
+            {{ strtoupper($localeCode) }}
+        </a>
+    </li>
+    @endforeach
+</ul>
+    </div>
+
 
     <video autoplay loop muted poster="{{$home->poster}}"
         class="absolute inset-0 w-full h-full object-cover ">
@@ -19,8 +34,12 @@
 
 
     <div class=" z-50 flex justify-center items-center flex-col w-full h-full gap-12" style="z-index:10000">
-        <img src="{{asset('storage/' . $home->logo)}}" alt="logo {{$home->title}}" class="sm:w-[250px]  w-[300px] lg:w-[450px] z-40">
-        <h1 class=" px-6 md:px-12 text-center text-3xl sm:text-4xl  lg:text-5xl     font-heading  text-fontWhite  tracking-wide z-50 text-fontLight font-extralight sm:pb-44"
+
+        <a href="{{route('home')}}" class="z-40">
+            <img src="{{asset('storage/' . $home->logo)}}" alt="logo {{$home->title}}" class="sm:w-[250px]  w-[300px]  ">
+        </a>
+        
+        <h1 class=" px-6 md:px-12 text-center text-2xl sm:text-3xl  lg:text-4xl     font-heading  text-fontWhite  tracking-wide z-50 text-fontLight font-extralight sm:pb-44"
                 style="line-height: 1.2">
                 {{$home->slider_title}} 
                 
@@ -31,7 +50,7 @@
                 
             </h1>
 
-            <div class=" z-50 pb-12">
+            <div class=" z-50 ">
 
                 <x-booking-panel />
             </div>

@@ -72,4 +72,9 @@
     'other-rooms'=>"Pozostałe pokoje"
 ],
 
+'booking' => [
+        'meta_title' => "Zarezerwuj Swój Wymarzony Pobyt w Villa La Roca",
+        'meta_desc' => "Zarezerwuj pobyt w Villa La Roca w Zakopanem. Luksusowe pokoje, widoki na góry i komfortowy relaks w Tatrach. Zarezerwuj już teraz i ciesz się wyjątkowym czasem!",
+    ]
+
 ];

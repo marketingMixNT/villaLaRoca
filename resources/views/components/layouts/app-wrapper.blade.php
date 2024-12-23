@@ -1,7 +1,12 @@
-
+@props(['home','rooms','headerScroll'=>false])
 <x-shared.preloader :home="$home"/>
 
-<x-shared.header.header :home="$home" :rooms="$rooms"/>
+@if ($headerScroll)
+<x-shared.header.header :home="$home" :rooms="$rooms" shownOnScroll/>
+@else
+<x-shared.header.header :home="$home" :rooms="$rooms" />
+@endif
+
 
 <x-shared.header.mobile-menu  :home="$home" :rooms="$rooms"/>
 

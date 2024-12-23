@@ -40,6 +40,12 @@
     <x-shared.header.nav-item href="{{route('voucher')}}" activeRoute="voucher">{{__('global.nav.12')}}</x-shared.header.nav-item>
 
     <li>
-        <x-button-link class="hidden xl:block " href="{{$home->booking_link}}">{{__('global.book')}}</x-button-link>
+        <x-button-link class="hidden xl:block " href="{{route('booking')}}">{{__('global.book')}}</x-button-link>
+
+    
+        
     </li>
+
+
+    
 </ul>

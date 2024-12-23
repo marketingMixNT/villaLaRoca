@@ -1,7 +1,7 @@
 <nav id="mobile-bottom-nav"
     class="bottom-nav_container fixed -bottom-20 left-0 right-0  grid lg:hidden grid-cols-4 z-30 transition-all duration-300  ">
 
-    <x-shared.mobile-buttons.mobile-button-item href="{{$home->booking_link}}" target="_blank">
+    <x-shared.mobile-buttons.mobile-button-item href="{{route('booking')}}" target="_blank">
         <x-lucide-pointer class="size-5  text-fontLight" />
         <span class="text-xs uppercase  text-fontLight">{{__('global.mobile-buttons.booking')}}</span>
     </x-shared.mobile-buttons.mobile-button-item>

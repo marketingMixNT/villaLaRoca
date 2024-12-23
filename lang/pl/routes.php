@@ -18,4 +18,5 @@
     'regulations' => 'regulamin-obiektu',
     'spa-regulations' => 'regulamin-spa',
     'info' => 'przydatne-informacje',
+    'booking' => 'rezerwacja',
 ];

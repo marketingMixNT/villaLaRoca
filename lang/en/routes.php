@@ -18,4 +18,5 @@
     'regulations' => 'property-regulations',
     'spa-regulations' => 'spa-regulations',
     'info' => 'useful-information',
+    'booking' => 'booking',
 ];

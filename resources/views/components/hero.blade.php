@@ -10,20 +10,17 @@
 
 
     <!--HEADING-->
-    <div class="flex flex-col justify-center items-center text-center gap-2 z-10">
+    <div class="flex flex-col justify-center items-center text-center gap-16 z-10">
 
-        <span class=" text-sm 2xl:text-base font tracking-widest uppercase ">{{$subtitle}}</span>
-        <h1 class="text-center text-4xl sm:text-5xl md:text-7xl  tracking-wider uppercase font-heading ">
-            {{$title}}
-        </h1>
-    </div>
+        <div class="flex flex-col justify-center items-center text-center gap-2">
 
+            <span class=" text-sm 2xl:text-base font tracking-widest uppercase ">{{$subtitle}}</span>
+            <h1 class="text-center text-4xl sm:text-5xl md:text-7xl  tracking-wider uppercase font-heading ">
+                {{$title}}
+            </h1>
+        </div>
 
-
-    <div
-        class="absolute bottom-12 sm:bottom-24 2xl:bottom-44 left-0 right-0 md:mx-6  lg:mx-32 2xl:mx-0 2xl:left-1/2 2xl:transform 2xl:-translate-x-1/2 ">
         <x-booking-panel />
     </div>
-
 
 </div>
